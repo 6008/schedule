@@ -28,6 +28,38 @@
 </article>
 
 <article class="" id="slide-2" style="background:;">
+  <h3>Check EM algorithm (R)</h3>
+  <ul>
+<li>Use all the default value from GeMS-3gen-submax.R</li>
+<li>Process data from file &quot;samples&quot;</li>
+<li>Run multiEM function</li>
+</ul>
+
+</article>
+
+<article class="" id="slide-3" style="background:;">
+  <h3>Code (Without paste of default values)</h3>
+  <pre><code>data &lt;- read.table(file=&quot;samples&quot;, header=FALSE, sep=&quot;\t&quot;)
+data &lt;- cbind(data, data[,1])
+data &lt;- data[, 4:8]
+data &lt;- t(data)
+source(&quot;em.R&quot;)
+multiEM(&quot;C&quot;, data, c(1),1)
+</code></pre>
+
+</article>
+
+<article class="" id="slide-4" style="background:;">
+  <h3>Check EM algorithm (C++)</h3>
+  <ul>
+<li>Modify code to add debug function</li>
+<li>Modify code to add test function</li>
+<li>Run without parameter</li>
+</ul>
+
+</article>
+
+<article class="" id="slide-5" style="background:;">
   <h3>20150313 learning</h3>
   <ol>
 <li>R basic manipulation</li>
@@ -38,7 +70,7 @@
 
 </article>
 
-<article class="" id="slide-3" style="background:;">
+<article class="" id="slide-6" style="background:;">
   <h3>STUDYING</h3>
   <ol>
 <li>Least Angle Regression</li>
@@ -46,11 +78,12 @@
 <li>A Survey of Clustering Data Mining Techniques</li>
 <li>Sparse Recovery via Differential Inclusions</li>
 <li>ROP: Matrix Recovery via Rank-one Projections</li>
+<li><font color='red'>ParticleCall</font></li>
 </ol>
 
 </article>
 
-<article class="" id="slide-4" style="background:;">
+<article class="" id="slide-7" style="background:;">
   <h3></h3>
   
 </article>

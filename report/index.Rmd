@@ -22,6 +22,35 @@ knit        : slidify::knit2slides
 
 ---
 
+## Check EM algorithm (R)
+
+- Use all the default value from GeMS-3gen-submax.R
+- Process data from file "samples"
+- Run multiEM function
+
+---
+
+## Code (Without paste of default values)
+
+```
+data <- read.table(file="samples", header=FALSE, sep="\t")
+data <- cbind(data, data[,1])
+data <- data[, 4:8]
+data <- t(data)
+source("em.R")
+multiEM("C", data, c(1),1)
+```
+
+---
+
+## Check EM algorithm (C++)
+
+- Modify code to add debug function
+- Modify code to add test function
+- Run without parameter
+
+---
+
 ## 20150313 learning
 
 0. R basic manipulation
@@ -38,5 +67,6 @@ knit        : slidify::knit2slides
 3. A Survey of Clustering Data Mining Techniques
 4. Sparse Recovery via Differential Inclusions
 5. ROP: Matrix Recovery via Rank-one Projections
+6. <font color='red'>ParticleCall</font>
 
 ---
