@@ -39,7 +39,9 @@
 
 <article class="" id="slide-3" style="background:;">
   <h3>Code (Without paste of default values)</h3>
-  <pre><code>data &lt;- read.table(file=&quot;samples&quot;, header=FALSE, sep=&quot;\t&quot;)
+  <pre><code>require(&quot;minqa&quot;)
+require(&quot;Biostrings&quot;)
+data &lt;- read.table(file=&quot;samples&quot;, header=FALSE, sep=&quot;\t&quot;)
 data &lt;- cbind(data, data[,1])
 data &lt;- data[, 4:8]
 data &lt;- t(data)
@@ -60,6 +62,147 @@ multiEM(&quot;C&quot;, data, c(1),1)
 </article>
 
 <article class="" id="slide-5" style="background:;">
+  <h3>Create site file interest.txt</h3>
+  <ul>
+<li>Use upennmed.R (Comment pool part)</li>
+<li>Use gzip -d *.vcf.gz if necessary</li>
+<li>Use gzip -d *.out.gz if necessary</li>
+<li>Use cut -f 1-3 -d . multigemslist if necessary</li>
+<li>Use regions.rda</li>
+<li>Use intersect() setdiff()</li>
+</ul>
+
+</article>
+
+<article class="" id="slide-6" style="background:;">
+  <h3>Select suspicious sites</h3>
+  <pre><code>zgrep -f ~/interest.txt *.pile.gz &gt; ~/sites.txt
+sort -n -k 2 sites.txt &gt; sites.sorted.txt
+</code></pre>
+
+<p>completeness check</p>
+
+<pre><code>cat sites.sorted.txt | cut -f 2 | uniq | wc -l
+cat interest.txt | wc -l
+cat sites.sorted.txt | cut -c 3-7 | sort | uniq | wc -l
+</code></pre>
+
+</article>
+
+<article class="" id="slide-7" style="background:;">
+  <h3>Histgram</h3>
+  <ul>
+<li>The whole dataset</li>
+<li>Every Chromosome</li>
+</ul>
+
+</article>
+
+<article class="" id="slide-8" style="background:;">
+  <h3>GiaB dataset</h3>
+  <pre><code class="r">library(ggplot2)
+load(&quot;GiaB_dataset.rda&quot;)
+p &lt;- ggplot(data=GiaB_dataset, aes(x=Chr, fill=factor(Snp)))
+p + geom_bar(position=&#39;fill&#39;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" /></p>
+
+</article>
+
+<article class="" id="slide-9" style="background:;">
+  <h3>GiaB dataset (Code)</h3>
+  <pre><code class="r">library(ggplot2); 
+load(&quot;GiaB_dataset.rda&quot;)
+p &lt;- ggplot(data=GiaB_dataset[GiaB_dataset$Chr==&quot;chr19&quot;, ], aes(Site))
+p + geom_histogram(binwidth=500000, position=&#39;identity&#39;, 
+alpha=0.5, aes(y=..density.., fill=factor(Snp))) + 
+stat_density(geom=&#39;line&#39;, position = &#39;identity&#39;, aes(colour = factor(Snp))) +
+facet_grid(Snp~.)
+</code></pre>
+
+</article>
+
+<article class="" id="slide-10" style="background:;">
+  <h3>GiaB dataset (Chr18)</h3>
+  <p><img src="assets/fig/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" /></p>
+
+</article>
+
+<article class="" id="slide-11" style="background:;">
+  <h3>GiaB dataset (Chr19)</h3>
+  <p><img src="assets/fig/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" style="display: block; margin: auto;" /></p>
+
+</article>
+
+<article class="" id="slide-12" style="background:;">
+  <h3>GiaB dataset (Chr20)</h3>
+  <p><img src="assets/fig/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" style="display: block; margin: auto;" /></p>
+
+</article>
+
+<article class="" id="slide-13" style="background:;">
+  <h3>GiaB dataset (Chr21)</h3>
+  <p><img src="assets/fig/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" style="display: block; margin: auto;" /></p>
+
+</article>
+
+<article class="" id="slide-14" style="background:;">
+  <h3>GiaB dataset (Chr22)</h3>
+  <p><img src="assets/fig/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" style="display: block; margin: auto;" /></p>
+
+</article>
+
+<article class="" id="slide-15" style="background:;">
+  <h3>Upenn dataset</h3>
+  <pre><code class="r">library(ggplot2)
+load(&quot;upenn_dataset.rda&quot;)
+p &lt;- ggplot(data=upenn_dataset, aes(x=Chr, fill=factor(Snp)))
+p + geom_bar(position=&#39;fill&#39;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" style="display: block; margin: auto;" /></p>
+
+</article>
+
+<article class="" id="slide-16" style="background:;">
+  <h3>Upenn dataset (Code)</h3>
+  <pre><code class="r">library(ggplot2); 
+load(&quot;upenn_dataset.rda&quot;)
+p &lt;- ggplot(data=upenn_dataset[upenn_dataset$Chr==&quot;chr19&quot;, ], aes(Site))
+p + geom_histogram(binwidth=500000, position=&#39;identity&#39;, 
+alpha=0.5, aes(y=..density.., fill=factor(Snp))) + 
+stat_density(geom=&#39;line&#39;, position = &#39;identity&#39;, aes(colour = factor(Snp))) +
+facet_grid(Snp~.)
+</code></pre>
+
+</article>
+
+<article class="" id="slide-17" style="background:;">
+  <h3>Upenn dataset (Chr19)</h3>
+  <p><img src="assets/fig/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" style="display: block; margin: auto;" /></p>
+
+</article>
+
+<article class="" id="slide-18" style="background:;">
+  <h3>Upenn dataset (Chr20)</h3>
+  <p><img src="assets/fig/unnamed-chunk-11-1.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" style="display: block; margin: auto;" /></p>
+
+</article>
+
+<article class="" id="slide-19" style="background:;">
+  <h3>Upenn dataset (Chr21)</h3>
+  <p><img src="assets/fig/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" style="display: block; margin: auto;" /></p>
+
+</article>
+
+<article class="" id="slide-20" style="background:;">
+  <h3>Upenn dataset (Chr22)</h3>
+  <p><img src="assets/fig/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" style="display: block; margin: auto;" /></p>
+
+</article>
+
+<article class="" id="slide-21" style="background:;">
   <h3>20150313 learning</h3>
   <ol>
 <li>R basic manipulation</li>
@@ -70,7 +213,7 @@ multiEM(&quot;C&quot;, data, c(1),1)
 
 </article>
 
-<article class="" id="slide-6" style="background:;">
+<article class="" id="slide-22" style="background:;">
   <h3>STUDYING</h3>
   <ol>
 <li>Least Angle Regression</li>
@@ -83,7 +226,7 @@ multiEM(&quot;C&quot;, data, c(1),1)
 
 </article>
 
-<article class="" id="slide-7" style="background:;">
+<article class="" id="slide-23" style="background:;">
   <h3></h3>
   
 </article>

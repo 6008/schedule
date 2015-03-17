@@ -3,7 +3,7 @@ title       : Schedule
 subtitle    : 
 author      : Wei Cui
 job         : 
-framework   : html5slides        # {io2012, html5slides, shower, dzslides, ...}
+framework   : html5slides       # {io2012, html5slides, shower, dzslides, ...}
 highlighter : prettify  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []            # {mathjax, quiz, bootstrap}
@@ -83,8 +83,157 @@ cat sites.sorted.txt | cut -c 3-7 | sort | uniq | wc -l
 
 ## Histgram
 
-- Every Chromosome
 - The whole dataset
+- Every Chromosome
+
+---
+
+## GiaB dataset
+
+```{r, eval=TRUE, echo=TRUE, fig.align='center', fig.width=6, fig.height=5}
+library(ggplot2)
+load("GiaB_dataset.rda")
+p <- ggplot(data=GiaB_dataset, aes(x=Chr, fill=factor(Snp)))
+p + geom_bar(position='fill')
+```
+
+---
+
+## GiaB dataset (Code)
+
+```{r, echo=TRUE, eval=FALSE}
+library(ggplot2); 
+load("GiaB_dataset.rda")
+p <- ggplot(data=GiaB_dataset[GiaB_dataset$Chr=="chr19", ], aes(Site))
+p + geom_histogram(binwidth=500000, position='identity', 
+alpha=0.5, aes(y=..density.., fill=factor(Snp))) + 
+stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) +
+facet_grid(Snp~.)
+```
+
+---
+
+## GiaB dataset (Chr18)
+
+```{r, eval=TRUE, echo=FALSE, fig.align='center', fig.width=10, fig.height=8}
+library(ggplot2)
+load("GiaB_dataset.rda")
+p <- ggplot(data=GiaB_dataset[GiaB_dataset$Chr=="chr18", ], aes(Site))
+p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
+```
+
+---
+
+## GiaB dataset (Chr19)
+
+```{r, eval=TRUE, echo=FALSE, fig.align='center', fig.width=10, fig.height=8}
+library(ggplot2)
+load("GiaB_dataset.rda")
+p <- ggplot(data=GiaB_dataset[GiaB_dataset$Chr=="chr19", ], aes(Site))
+p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
+```
+
+---
+
+## GiaB dataset (Chr20)
+
+```{r, eval=TRUE, echo=FALSE, fig.align='center', fig.width=10, fig.height=8}
+library(ggplot2)
+load("GiaB_dataset.rda")
+p <- ggplot(data=GiaB_dataset[GiaB_dataset$Chr=="chr20", ], aes(Site))
+p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
+```
+
+---
+
+## GiaB dataset (Chr21)
+
+```{r, eval=TRUE, echo=FALSE, fig.align='center', fig.width=10, fig.height=8}
+library(ggplot2)
+load("GiaB_dataset.rda")
+p <- ggplot(data=GiaB_dataset[GiaB_dataset$Chr=="chr21", ], aes(Site))
+p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
+```
+
+---
+
+## GiaB dataset (Chr22)
+
+```{r, eval=TRUE, echo=FALSE, fig.align='center', fig.width=10, fig.height=8}
+library(ggplot2)
+load("GiaB_dataset.rda")
+p <- ggplot(data=GiaB_dataset[GiaB_dataset$Chr=="chr22", ], aes(Site))
+p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
+```
+
+---
+
+## Upenn dataset
+
+```{r, eval=TRUE, echo=TRUE, fig.align='center', fig.width=6, fig.height=5}
+library(ggplot2)
+load("upenn_dataset.rda")
+p <- ggplot(data=upenn_dataset, aes(x=Chr, fill=factor(Snp)))
+p + geom_bar(position='fill')
+```
+
+---
+
+## Upenn dataset (Code)
+
+```{r, echo=TRUE, eval=FALSE}
+library(ggplot2); 
+load("upenn_dataset.rda")
+p <- ggplot(data=upenn_dataset[upenn_dataset$Chr=="chr19", ], aes(Site))
+p + geom_histogram(binwidth=500000, position='identity', 
+alpha=0.5, aes(y=..density.., fill=factor(Snp))) + 
+stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) +
+facet_grid(Snp~.)
+```
+
+---
+
+## Upenn dataset (Chr19)
+
+```{r, eval=TRUE, echo=FALSE, fig.align='center', fig.width=10, fig.height=8}
+library(ggplot2); 
+load("upenn_dataset.rda")
+p <- ggplot(data=upenn_dataset[upenn_dataset$Chr=="chr19", ], aes(Site))
+p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
+```
+
+---
+
+## Upenn dataset (Chr20)
+
+```{r, eval=TRUE, echo=FALSE, fig.align='center', fig.width=10, fig.height=8}
+library(ggplot2); 
+load("upenn_dataset.rda")
+p <- ggplot(data=upenn_dataset[upenn_dataset$Chr=="chr20", ], aes(Site))
+p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
+```
+
+---
+
+## Upenn dataset (Chr21)
+
+```{r, eval=TRUE, echo=FALSE, fig.align='center', fig.width=10, fig.height=8}
+library(ggplot2); 
+load("upenn_dataset.rda")
+p <- ggplot(data=upenn_dataset[upenn_dataset$Chr=="chr21", ], aes(Site))
+p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
+```
+
+---
+
+## Upenn dataset (Chr22)
+
+```{r, eval=TRUE, echo=FALSE, fig.align='center', fig.width=10, fig.height=8}
+library(ggplot2); 
+load("upenn_dataset.rda")
+p <- ggplot(data=upenn_dataset[upenn_dataset$Chr=="chr22", ], aes(Site))
+p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
+```
 
 ---
 
