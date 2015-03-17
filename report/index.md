@@ -95,10 +95,24 @@ cat sites.sorted.txt | cut -c 3-7 | sort | uniq | wc -l
 library(ggplot2)
 load("GiaB_dataset.rda")
 p <- ggplot(data=GiaB_dataset, aes(x=Chr, fill=factor(Snp)))
-p + geom_bar(position='fill')
+p + geom_bar(position='stack')
 ```
 
 <img src="assets/fig/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" />
+
+---
+
+## GiaB dataset
+
+
+```r
+library(ggplot2)
+load("GiaB_dataset.rda")
+p <- ggplot(data=GiaB_dataset, aes(x=Chr, fill=factor(Snp)))
+p + geom_bar(position='fill')
+```
+
+<img src="assets/fig/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" />
 
 ---
 
@@ -119,31 +133,45 @@ facet_grid(Snp~.)
 
 ## GiaB dataset (Chr18)
 
-<img src="assets/fig/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" style="display: block; margin: auto;" />
 
 ---
 
 ## GiaB dataset (Chr19)
 
-<img src="assets/fig/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" style="display: block; margin: auto;" />
 
 ---
 
 ## GiaB dataset (Chr20)
 
-<img src="assets/fig/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" style="display: block; margin: auto;" />
 
 ---
 
 ## GiaB dataset (Chr21)
 
-<img src="assets/fig/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" style="display: block; margin: auto;" />
 
 ---
 
 ## GiaB dataset (Chr22)
 
-<img src="assets/fig/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" style="display: block; margin: auto;" />
+
+---
+
+## Upenn dataset
+
+
+```r
+library(ggplot2)
+load("upenn_dataset.rda")
+p <- ggplot(data=upenn_dataset, aes(x=Chr, fill=factor(Snp)))
+p + geom_bar(position='stack')
+```
+
+<img src="assets/fig/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" style="display: block; margin: auto;" />
 
 ---
 
@@ -157,7 +185,7 @@ p <- ggplot(data=upenn_dataset, aes(x=Chr, fill=factor(Snp)))
 p + geom_bar(position='fill')
 ```
 
-<img src="assets/fig/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" style="display: block; margin: auto;" />
 
 ---
 
@@ -178,25 +206,25 @@ facet_grid(Snp~.)
 
 ## Upenn dataset (Chr19)
 
-<img src="assets/fig/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" style="display: block; margin: auto;" />
 
 ---
 
 ## Upenn dataset (Chr20)
 
-<img src="assets/fig/unnamed-chunk-11-1.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" style="display: block; margin: auto;" />
 
 ---
 
 ## Upenn dataset (Chr21)
 
-<img src="assets/fig/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-14-1.png" title="plot of chunk unnamed-chunk-14" alt="plot of chunk unnamed-chunk-14" style="display: block; margin: auto;" />
 
 ---
 
 ## Upenn dataset (Chr22)
 
-<img src="assets/fig/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-15-1.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" style="display: block; margin: auto;" />
 
 ---
 
@@ -219,3 +247,12 @@ facet_grid(Snp~.)
 6. <font color='red'>ParticleCall</font>
 
 ---
+
+## Something about RStudio
+
+1. The default device of RStudio maybe has some problem when plot
+2. Try to use `options(device="X11")` or other devices
+3. Library Cairo is required if use alpha parameter which make the graphic pretty
+4. If R can not find Cairo, <font color='red'>do not</font> use alpha parameter
+
+

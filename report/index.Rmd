@@ -94,6 +94,17 @@ cat sites.sorted.txt | cut -c 3-7 | sort | uniq | wc -l
 library(ggplot2)
 load("GiaB_dataset.rda")
 p <- ggplot(data=GiaB_dataset, aes(x=Chr, fill=factor(Snp)))
+p + geom_bar(position='stack')
+```
+
+---
+
+## GiaB dataset
+
+```{r, eval=TRUE, echo=TRUE, fig.align='center', fig.width=6, fig.height=5}
+library(ggplot2)
+load("GiaB_dataset.rda")
+p <- ggplot(data=GiaB_dataset, aes(x=Chr, fill=factor(Snp)))
 p + geom_bar(position='fill')
 ```
 
@@ -119,7 +130,7 @@ facet_grid(Snp~.)
 library(ggplot2)
 load("GiaB_dataset.rda")
 p <- ggplot(data=GiaB_dataset[GiaB_dataset$Chr=="chr18", ], aes(Site))
-p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
+p + geom_histogram(binwidth=500000, position='identity', aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
 ```
 
 ---
@@ -130,7 +141,7 @@ p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..dens
 library(ggplot2)
 load("GiaB_dataset.rda")
 p <- ggplot(data=GiaB_dataset[GiaB_dataset$Chr=="chr19", ], aes(Site))
-p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
+p + geom_histogram(binwidth=500000, position='identity', aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
 ```
 
 ---
@@ -141,7 +152,7 @@ p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..dens
 library(ggplot2)
 load("GiaB_dataset.rda")
 p <- ggplot(data=GiaB_dataset[GiaB_dataset$Chr=="chr20", ], aes(Site))
-p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
+p + geom_histogram(binwidth=500000, position='identity', aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
 ```
 
 ---
@@ -152,7 +163,7 @@ p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..dens
 library(ggplot2)
 load("GiaB_dataset.rda")
 p <- ggplot(data=GiaB_dataset[GiaB_dataset$Chr=="chr21", ], aes(Site))
-p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
+p + geom_histogram(binwidth=500000, position='identity', aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
 ```
 
 ---
@@ -163,7 +174,18 @@ p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..dens
 library(ggplot2)
 load("GiaB_dataset.rda")
 p <- ggplot(data=GiaB_dataset[GiaB_dataset$Chr=="chr22", ], aes(Site))
-p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
+p + geom_histogram(binwidth=500000, position='identity', aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
+```
+
+---
+
+## Upenn dataset
+
+```{r, eval=TRUE, echo=TRUE, fig.align='center', fig.width=6, fig.height=5}
+library(ggplot2)
+load("upenn_dataset.rda")
+p <- ggplot(data=upenn_dataset, aes(x=Chr, fill=factor(Snp)))
+p + geom_bar(position='stack')
 ```
 
 ---
@@ -199,7 +221,7 @@ facet_grid(Snp~.)
 library(ggplot2); 
 load("upenn_dataset.rda")
 p <- ggplot(data=upenn_dataset[upenn_dataset$Chr=="chr19", ], aes(Site))
-p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
+p + geom_histogram(binwidth=500000, position='identity', aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
 ```
 
 ---
@@ -210,7 +232,7 @@ p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..dens
 library(ggplot2); 
 load("upenn_dataset.rda")
 p <- ggplot(data=upenn_dataset[upenn_dataset$Chr=="chr20", ], aes(Site))
-p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
+p + geom_histogram(binwidth=500000, position='identity', aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
 ```
 
 ---
@@ -221,7 +243,7 @@ p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..dens
 library(ggplot2); 
 load("upenn_dataset.rda")
 p <- ggplot(data=upenn_dataset[upenn_dataset$Chr=="chr21", ], aes(Site))
-p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
+p + geom_histogram(binwidth=500000, position='identity', aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
 ```
 
 ---
@@ -232,7 +254,7 @@ p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..dens
 library(ggplot2); 
 load("upenn_dataset.rda")
 p <- ggplot(data=upenn_dataset[upenn_dataset$Chr=="chr22", ], aes(Site))
-p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
+p + geom_histogram(binwidth=500000, position='identity', aes(y=..density.., fill=factor(Snp))) + stat_density(geom='line', position = 'identity', aes(colour = factor(Snp))) + facet_grid(Snp~.)
 ```
 
 ---
@@ -256,3 +278,12 @@ p + geom_histogram(binwidth=500000, position='identity', alpha=0.5, aes(y=..dens
 6. <font color='red'>ParticleCall</font>
 
 ---
+
+## Something about RStudio
+
+1. The default device of RStudio maybe has some problem when plot
+2. Try to use `options(device="X11")` or other devices
+3. Library Cairo is required if use alpha parameter which make the graphic pretty
+4. If R can not find Cairo, <font color='red'>do not</font> use alpha parameter
+
+

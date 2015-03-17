@@ -103,7 +103,7 @@ cat sites.sorted.txt | cut -c 3-7 | sort | uniq | wc -l
   <pre><code class="r">library(ggplot2)
 load(&quot;GiaB_dataset.rda&quot;)
 p &lt;- ggplot(data=GiaB_dataset, aes(x=Chr, fill=factor(Snp)))
-p + geom_bar(position=&#39;fill&#39;)
+p + geom_bar(position=&#39;stack&#39;)
 </code></pre>
 
 <p><img src="assets/fig/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" /></p>
@@ -111,6 +111,18 @@ p + geom_bar(position=&#39;fill&#39;)
 </article>
 
 <article class="" id="slide-9" style="background:;">
+  <h3>GiaB dataset</h3>
+  <pre><code class="r">library(ggplot2)
+load(&quot;GiaB_dataset.rda&quot;)
+p &lt;- ggplot(data=GiaB_dataset, aes(x=Chr, fill=factor(Snp)))
+p + geom_bar(position=&#39;fill&#39;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" /></p>
+
+</article>
+
+<article class="" id="slide-10" style="background:;">
   <h3>GiaB dataset (Code)</h3>
   <pre><code class="r">library(ggplot2); 
 load(&quot;GiaB_dataset.rda&quot;)
@@ -123,37 +135,49 @@ facet_grid(Snp~.)
 
 </article>
 
-<article class="" id="slide-10" style="background:;">
-  <h3>GiaB dataset (Chr18)</h3>
-  <p><img src="assets/fig/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" /></p>
-
-</article>
-
 <article class="" id="slide-11" style="background:;">
-  <h3>GiaB dataset (Chr19)</h3>
+  <h3>GiaB dataset (Chr18)</h3>
   <p><img src="assets/fig/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" style="display: block; margin: auto;" /></p>
 
 </article>
 
 <article class="" id="slide-12" style="background:;">
-  <h3>GiaB dataset (Chr20)</h3>
+  <h3>GiaB dataset (Chr19)</h3>
   <p><img src="assets/fig/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" style="display: block; margin: auto;" /></p>
 
 </article>
 
 <article class="" id="slide-13" style="background:;">
-  <h3>GiaB dataset (Chr21)</h3>
+  <h3>GiaB dataset (Chr20)</h3>
   <p><img src="assets/fig/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" style="display: block; margin: auto;" /></p>
 
 </article>
 
 <article class="" id="slide-14" style="background:;">
-  <h3>GiaB dataset (Chr22)</h3>
+  <h3>GiaB dataset (Chr21)</h3>
   <p><img src="assets/fig/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" style="display: block; margin: auto;" /></p>
 
 </article>
 
 <article class="" id="slide-15" style="background:;">
+  <h3>GiaB dataset (Chr22)</h3>
+  <p><img src="assets/fig/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" style="display: block; margin: auto;" /></p>
+
+</article>
+
+<article class="" id="slide-16" style="background:;">
+  <h3>Upenn dataset</h3>
+  <pre><code class="r">library(ggplot2)
+load(&quot;upenn_dataset.rda&quot;)
+p &lt;- ggplot(data=upenn_dataset, aes(x=Chr, fill=factor(Snp)))
+p + geom_bar(position=&#39;stack&#39;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" style="display: block; margin: auto;" /></p>
+
+</article>
+
+<article class="" id="slide-17" style="background:;">
   <h3>Upenn dataset</h3>
   <pre><code class="r">library(ggplot2)
 load(&quot;upenn_dataset.rda&quot;)
@@ -161,11 +185,11 @@ p &lt;- ggplot(data=upenn_dataset, aes(x=Chr, fill=factor(Snp)))
 p + geom_bar(position=&#39;fill&#39;)
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" style="display: block; margin: auto;" /></p>
+<p><img src="assets/fig/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" style="display: block; margin: auto;" /></p>
 
 </article>
 
-<article class="" id="slide-16" style="background:;">
+<article class="" id="slide-18" style="background:;">
   <h3>Upenn dataset (Code)</h3>
   <pre><code class="r">library(ggplot2); 
 load(&quot;upenn_dataset.rda&quot;)
@@ -178,31 +202,31 @@ facet_grid(Snp~.)
 
 </article>
 
-<article class="" id="slide-17" style="background:;">
-  <h3>Upenn dataset (Chr19)</h3>
-  <p><img src="assets/fig/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" style="display: block; margin: auto;" /></p>
-
-</article>
-
-<article class="" id="slide-18" style="background:;">
-  <h3>Upenn dataset (Chr20)</h3>
-  <p><img src="assets/fig/unnamed-chunk-11-1.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" style="display: block; margin: auto;" /></p>
-
-</article>
-
 <article class="" id="slide-19" style="background:;">
-  <h3>Upenn dataset (Chr21)</h3>
+  <h3>Upenn dataset (Chr19)</h3>
   <p><img src="assets/fig/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" style="display: block; margin: auto;" /></p>
 
 </article>
 
 <article class="" id="slide-20" style="background:;">
-  <h3>Upenn dataset (Chr22)</h3>
+  <h3>Upenn dataset (Chr20)</h3>
   <p><img src="assets/fig/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" style="display: block; margin: auto;" /></p>
 
 </article>
 
 <article class="" id="slide-21" style="background:;">
+  <h3>Upenn dataset (Chr21)</h3>
+  <p><img src="assets/fig/unnamed-chunk-14-1.png" title="plot of chunk unnamed-chunk-14" alt="plot of chunk unnamed-chunk-14" style="display: block; margin: auto;" /></p>
+
+</article>
+
+<article class="" id="slide-22" style="background:;">
+  <h3>Upenn dataset (Chr22)</h3>
+  <p><img src="assets/fig/unnamed-chunk-15-1.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" style="display: block; margin: auto;" /></p>
+
+</article>
+
+<article class="" id="slide-23" style="background:;">
   <h3>20150313 learning</h3>
   <ol>
 <li>R basic manipulation</li>
@@ -213,7 +237,7 @@ facet_grid(Snp~.)
 
 </article>
 
-<article class="" id="slide-22" style="background:;">
+<article class="" id="slide-24" style="background:;">
   <h3>STUDYING</h3>
   <ol>
 <li>Least Angle Regression</li>
@@ -226,9 +250,15 @@ facet_grid(Snp~.)
 
 </article>
 
-<article class="" id="slide-23" style="background:;">
-  <h3></h3>
-  
+<article class="" id="slide-25" style="background:;">
+  <h3>Something about RStudio</h3>
+  <ol>
+<li>The default device of RStudio maybe has some problem when plot</li>
+<li>Try to use <code>options(device=&quot;X11&quot;)</code> or other devices</li>
+<li>Library Cairo is required if use alpha parameter which make the graphic pretty</li>
+<li>If R can not find Cairo, <font color='red'>do not</font> use alpha parameter</li>
+</ol>
+
 </article>
 
   </section>
