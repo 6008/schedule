@@ -1,0 +1,10 @@
+base
+devtools
+slidify
+ggplot2
+data.table
+GGally
+zoo
+xts
+TTR
+quantmod
