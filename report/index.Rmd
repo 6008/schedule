@@ -11,6 +11,14 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
+## 20150318 job
+
+1. Take GiaB Chr18 46593709 and 55580488 as example to analyse the process of GeMS
+2. Make each quntile have same SNPs called and campare softwares
+3. The lowest mapping quality region of GiaB and upenn
+
+---
+
 ## 20150313 job
 
 0. Watch the video of MultiGeMS
