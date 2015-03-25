@@ -1,0 +1,462 @@
+---
+title       : Plot of Diff_Common Data
+subtitle    : 
+author      : Wei Cui
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## GiaB 20 MQ SC HM
+
+82.13 90.46 92.46
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.34821 | 0.18329 | 0.48582 | 0.44252 | 0.44371 |
+| Region 2 | 0.7564 | 0.49341 | 0.8509 | <font color="red">0.85136</font> | 0.83011 |
+| Region 3 | 0.97795 | 0.94855 | 0.98236 | 0.97623 | 0.97935 |
+| Region 4 | 0.99034 | 0.98657 | 0.99169 | 0.98867 | 0.98982 |
+
+---
+
+## GiaB 21 MQ SW TPR
+
+71.78 90.32 91.66
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.76019 | 0.66037 | 0.8293 | <font color="red">0.84347</font> | 0.79268 |
+| Region 2 | 0.90647 | 0.77961 | 0.95246 | 0.6378 | 0.93 |
+| Region 3 | 0.96554 | 0.93626 | 0.96845 | 0.92056 | 0.97832 |
+| Region 4 | 0.98406 | 0.96864 | 0.97347 | 0.96737 | 0.98205 |
+
+---
+
+## GiaB 22 MQ SW TPR
+
+71.345 89.69 91.345
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.76976 | 0.68707 | 0.79169 | <font color="red">0.8095</font> | 0.74418 |
+| Region 2 | 0.9096 | 0.89599 | 0.95408 | 0.85569 | 0.94627 |
+| Region 3 | 0.96895 | 0.96882 | 0.97899 | 0.95396 | 0.981 |
+| Region 4 | 0.98506 | 0.97493 | 0.97711 | 0.97239 | 0.98454 |
+
+---
+
+## GiaB 22 MQ SW HM
+
+68.915 84.83 88.915
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.42985 | 0.32536 | 0.46759 | <font color="red">0.50831</font> | 0.46694 |
+| Region 2 | 0.4304 | 0.22919 | 0.60155 | 0.5781 | 0.5821 |
+| Region 3 | 0.79038 | 0.53492 | 0.87326 | 0.84394 | 0.86132 |
+| Region 4 | 0.96578 | 0.93274 | 0.97112 | 0.96783 | 0.97005 |
+
+---
+
+## MQ-BQ Relation
+
+```{r, echo=FALSE, fig.align='center', fig.width=10, fig.height=6, warning=FALSE}
+load("diff_common.rda")
+library(ggplot2)
+library(data.table)
+p <- ggplot(data=diff_common, aes(x=mq, y=bq, color=factor(type)))
+p + geom_point() + geom_smooth(method=loess)
+```
+
+---
+
+## Coverage-BQ Relation
+
+```{r, echo=FALSE, fig.align='center', fig.width=10, fig.height=6, warning=FALSE}
+load("diff_common.rda")
+library(ggplot2)
+library(data.table)
+p <- ggplot(data=diff_common[coverage < 100], aes(x=coverage, y=bq, color=factor(type)))
+p + geom_point() + geom_smooth(method=loess)
+```
+
+---
+
+## Coverage-MQ Relation
+
+```{r, echo=FALSE, fig.align='center', fig.width=10, fig.height=6, warning=FALSE}
+load("diff_common.rda")
+library(ggplot2)
+library(data.table)
+p <- ggplot(data=diff_common[coverage < 100], aes(x=coverage, y=mq, color=factor(type)))
+p + geom_point() + geom_smooth(method=loess)
+```
+
+---
+
+## Mu0-Mu1 Relation on TYPE
+
+```{r, echo=FALSE, fig.align='center', fig.width=10, fig.height=6, warning=FALSE}
+load("diff_common.rda")
+library(ggplot2)
+library(data.table)
+p <- ggplot(data=diff_common, aes(x=mu0, y=m1, color=factor(type)))
+p + geom_point() + geom_smooth(method=loess)
+```
+
+---
+
+## Mu0-Mu1 Relation on SNP
+
+```{r, echo=FALSE, fig.align='center', fig.width=10, fig.height=6, warning=FALSE}
+load("diff_common.rda")
+library(ggplot2)
+library(data.table)
+p <- ggplot(data=diff_common, aes(x=mu0, y=m1, color=factor(snp)))
+p + geom_point() + geom_smooth(method=loess)
+```
+
+---
+
+## Mu0 with SNP
+
+```{r, echo=FALSE, fig.align='center', fig.width=10, fig.height=6, warning=FALSE}
+load("diff_common.rda")
+library(ggplot2)
+library(data.table)
+p <- ggplot(data=diff_common, aes(x=mu0, color=factor(snp)))
+p + geom_bar(binwidth=0.01, position='fill')
+```
+
+---
+
+## Mu1 with SNP
+
+```{r, echo=FALSE, fig.align='center', fig.width=10, fig.height=6, warning=FALSE}
+load("diff_common.rda")
+library(ggplot2)
+library(data.table)
+p <- ggplot(data=diff_common, aes(x=m1, color=factor(snp)))
+p + geom_bar(binwidth=0.01, position='fill')
+```
+
+---
+
+## GiaB Coverage SW TPR
+
+26.33 50.56 275.03
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.77287 | 0.68525 | 0.78289 | 0.54985 | 0.74705 |
+| Region 2 | 0.96377 | 0.9314 | 0.98553 | 0.92962 | 0.98111 |
+| Region 3 | 0.9695 | 0.93487 | 0.99472 | 0.98428 | 0.98166 |
+| Region 4 | 0.4596 | 0.48485 | 0.44949 | 0.41414 | 0.52525 |
+
+---
+
+## GiaB Coverage SW HM
+
+28.415 54.73 277.315
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.42985 | 0.24499 | 0.47907 | 0.47778 | 0.51342 |
+| Region 2 | 0.91318 | 0.7754 | 0.95408 | 0.93414 | 0.94686 |
+| Region 3 | 0.86365 | 0.73879 | 0.9016 | 0.90112 | 0.88358 |
+| Region 4 | 0.04896 | 0.040985 | 0.052584 | 0.041057 | 0.057471 |
+
+---
+
+## GiaB Coverage SC PPV
+
+46.5 50.9 55.1
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.94096 | 0.91045 | 0.96492 | 0.88413 | 0.95967 |
+| Region 2 | 0.97585 | 0.95581 | 0.99479 | 0.96196 | 0.9883 |
+| Region 3 | 0.97916 | 0.9569 | 0.9916 | 0.96549 | 0.98634 |
+| Region 4 | 0.95338 | 0.90025 | 0.99116 | 0.96291 | 0.9684 |
+
+---
+
+## GiaB Coverage SC HM
+
+42.5 49.65 55.4
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.67333 | 0.43264 | 0.77123 | 0.74463 | 0.78213 |
+| Region 2 | 0.93259 | 0.81524 | 0.96316 | 0.94485 | 0.95648 |
+| Region 3 | 0.9543 | 0.87436 | 0.9741 | 0.96226 | 0.96874 |
+| Region 4 | 0.83844 | 0.70002 | 0.87953 | 0.86742 | 0.85846 |
+
+---
+
+## GiaB BQ SW TPR
+
+57.3 68.94 71.135
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.35963 | 0.34339 | 0.43619 | 0.1949 | 0.44316 |
+| Region 2 | 0.95714 | 0.92258 | 0.98381 | 0.92746 | 0.97719 |
+| Region 3 | 0.97516 | 0.94105 | 0.99055 | 0.96318 | 0.97956 |
+| Region 4 | 0.9628 | 0.92361 | 0.98413 | 0.91075 | 0.96436 |
+
+---
+
+## GiaB BQ SW HM
+
+54.405 67.35 70.59
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.034286 | 0.025343 | 0.068697 | 0.051225 | 0.082645 |
+| Region 2 | 0.71538 | 0.43441 | 0.85596 | 0.81693 | 0.84451 |
+| Region 3 | 0.92526 | 0.85153 | 0.93987 | 0.92962 | 0.93408 |
+| Region 4 | 0.88337 | 0.77673 | 0.90834 | 0.8932 | 0.89813 |
+
+---
+
+## GiaB BQ SC PPV
+
+68.15 69.34 70.22
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.94674 | 0.90818 | 0.97692 | 0.89922 | 0.97079 |
+| Region 2 | 0.97295 | 0.95068 | 0.99044 | 0.96162 | 0.98407 |
+| Region 3 | 0.97568 | 0.94726 | 0.99037 | 0.96625 | 0.98086 |
+| Region 4 | 0.97145 | 0.92937 | 0.98958 | 0.95275 | 0.97448 |
+
+---
+
+## GiaB BQ SC HM
+
+66.01 68.79 70.06
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.55784 | 0.27305 | 0.77585 | 0.72387 | 0.76198 |
+| Region 2 | 0.91225 | 0.81547 | 0.9321 | 0.91572 | 0.92818 |
+| Region 3 | 0.92908 | 0.86131 | 0.9428 | 0.93405 | 0.93765 |
+| Region 4 | 0.90161 | 0.80924 | 0.92193 | 0.90967 | 0.91179 |
+
+---
+
+## GiaB MQ SW TPR
+
+71.69 90.38 91.69
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.80194 | 0.67649 | 0.84936 | 0.81686 | 0.80764 |
+| Region 2 | 0.91494 | 0.84466 | 0.96082 | 0.83376 | 0.94986 |
+| Region 3 | 0.9703 | 0.95302 | 0.9724 | 0.94654 | 0.97818 |
+| Region 4 | 0.98513 | 0.97193 | 0.97539 | 0.97173 | 0.98289 |
+
+---
+
+## GiaB MQ SW HM
+
+69.46 85.92 89.46
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.4362 | 0.29069 | 0.48735 | <font color="red">0.49534</font> | 0.48233 |
+| Region 2 | 0.46265 | 0.2447 | 0.62348 | 0.5602 | 0.59205 |
+| Region 3 | 0.83107 | 0.60107 | 0.88526 | 0.86229 | 0.87573 |
+| Region 4 | 0.97628 | 0.94943 | 0.98029 | 0.97566 | 0.97824 |
+
+---
+
+## GiaB MQ SC PPV
+
+90.8 92.3 92.6
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.912 | 0.84883 | 0.95485 | 0.84459 | 0.94172 |
+| Region 2 | 0.97598 | 0.95689 | 0.9671 | 0.95345 | 0.9773 |
+| Region 3 | 0.98491 | 0.97193 | 0.97451 | 0.97188 | 0.98261 |
+| Region 4 | 0.98991 | 0.98078 | 0.98227 | 0.98115 | 0.98774 |
+
+---
+
+## GiaB MQ SC HM
+
+81.51 89.82 92.41
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.40583 | 0.2307 | 0.52473 | 0.48449 | 0.50323 |
+| Region 2 | 0.74357 | 0.47882 | 0.83908 | 0.80485 | 0.8239 |
+| Region 3 | 0.96647 | 0.92328 | 0.97287 | 0.96595 | 0.9708 |
+| Region 4 | 0.9875 | 0.98262 | 0.98862 | 0.98676 | 0.98659 |
+
+---
+
+## upenn Coverage SW TPR
+
+10.653 19.17 229.435
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.0049682 | 0.0066833 | 0.0061524 | 0.0050635 | 0.0057305 |
+| Region 2 | 0.2365 | 0.27185 | 0.25662 | 0.24519 | 0.24318 |
+| Region 3 | 0.20365 | 0.23756 | 0.20724 | 0.20464 | 0.2167 |
+| Region 4 | 1.3702e-05 | 9.5915e-05 | 4.1107e-05 | 4.1107e-05 | 6.8511e-05 |
+
+---
+
+## upenn Coverage SW HM
+
+10.891 19.75 257.725
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.009333 | 0.0075831 | 0.010328 | 0.0097813 | 0.010688 |
+| Region 2 | 0.15714 | 0.087911 | 0.1114 | 0.14244 | 0.11718 |
+| Region 3 | 0.13999 | 0.089385 | 0.10503 | 0.12521 | 0.10578 |
+| Region 4 | 2.7371e-05 | 0.00016358 | 8.2155e-05 | 8.1897e-05 | 0.00013673 |
+
+---
+
+## upenn Coverage SC TPR
+
+15.94 18.71 21.86
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.72306 | 0.88599 | 0.9349 | 0.85076 | 0.92824 |
+| Region 2 | 0.7204 | 0.90883 | 0.92931 | 0.87474 | 0.86423 |
+| Region 3 | 0.70846 | 0.89454 | 0.876 | 0.883 | 0.83096 |
+| Region 4 | 0.66657 | 0.84247 | 0.87948 | 0.86187 | 0.82397 |
+
+---
+
+## upenn Coverage SC HM
+
+14.79 18.06 21.54
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.13812 | 0.060419 | 0.099226 | 0.13242 | 0.11134 |
+| Region 2 | 0.21002 | 0.10422 | 0.13069 | 0.17769 | 0.13819 |
+| Region 3 | 0.20091 | 0.10444 | 0.11941 | 0.16024 | 0.12429 |
+| Region 4 | 0.19051 | 0.1002 | 0.12534 | 0.15422 | 0.12472 |
+
+---
+
+## upenn BQ SW TPR
+
+57.985 63.3 64.81
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.00021908 | 0.00079415 | 0.00028754 | 0.00019169 | 0.00024646 |
+| Region 2 | 0.20432 | 0.23889 | 0.22454 | 0.21514 | 0.21974 |
+| Region 3 | 0.18788 | 0.22188 | 0.2213 | 0.22265 | 0.20344 |
+| Region 4 | 0.091926 | 0.13069 | 0.13437 | 0.12208 | 0.11198 |
+
+---
+
+## upenn BQ SW HM
+
+53.975 62.88 65.105
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0 | 5.3981e-05 | 2.7373e-05 | 0 | 0 |
+| Region 2 | 0.12312 | 0.07058 | 0.095164 | 0.1146 | 0.098531 |
+| Region 3 | 0.15653 | 0.096431 | 0.11564 | 0.14144 | 0.11962 |
+| Region 4 | 0.074313 | 0.062511 | 0.068696 | 0.08081 | 0.071403 |
+
+---
+
+## upenn BQ SC TPR
+
+61.99 63.59 64.61
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.64899 | 0.82644 | 0.87611 | 0.8338 | 0.80346 |
+| Region 2 | 0.76394 | 0.92215 | 0.95023 | 0.901 | 0.91787 |
+| Region 3 | 0.76524 | 0.93352 | 0.95574 | 0.90172 | 0.91107 |
+| Region 4 | 0.64016 | 0.85754 | 0.84283 | 0.83362 | 0.70443 |
+
+---
+
+## upenn BQ SC HM
+
+61.51 63.14 64.53
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.13674 | 0.060999 | 0.094356 | 0.1221 | 0.099018 |
+| Region 2 | 0.18506 | 0.097928 | 0.12515 | 0.15644 | 0.12995 |
+| Region 3 | 0.20358 | 0.11013 | 0.13899 | 0.17271 | 0.14375 |
+| Region 4 | 0.20866 | 0.10035 | 0.11628 | 0.17039 | 0.12382 |
+
+---
+
+## upenn MQ SW TPR
+
+73.135 91.52 92.205
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.00099895 | 0.0014095 | 0.0011358 | 0.00095789 | 0.0011358 |
+| Region 2 | 0.13255 | 0.14977 | 0.15204 | 0.14127 | 0.13401 |
+| Region 3 | 0.20268 | 0.24993 | 0.23219 | 0.24618 | 0.20865 |
+| Region 4 | 0.15486 | 0.20743 | 0.20543 | 0.19902 | 0.1782 |
+
+---
+
+## upenn MQ SW HM
+
+70.4 87.8 90.4
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.0010996 | 0.0010843 | 0.0011639 | 0.0010335 | 0.0011307 |
+| Region 2 | 0.018826 | 0.010226 | 0.018672 | <font color="red">0.019129</font> | 0.018427 |
+| Region 3 | 0.050733 | 0.036198 | 0.043395 | 0.049068 | 0.044941 |
+| Region 4 | 0.20113 | 0.1279 | 0.1354 | 0.17597 | 0.14221 |
+
+---
+
+## upenn MQ SC TPR
+
+91.53 92.02 92.28
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.721 | 0.81004 | 0.83854 | 0.76385 | 0.74795 |
+| Region 2 | 0.72917 | 0.93423 | 0.93742 | 0.87596 | 0.84535 |
+| Region 3 | 0.70509 | 0.94932 | 0.95047 | 0.87251 | 0.90156 |
+| Region 4 | 0.66344 | 0.92495 | 0.92822 | 0.86035 | 0.83673 |
+
+---
+
+## upenn MQ SC HM
+
+86.29 91.14 92.05
+
+| Software | FREEBAY | GATK    | SAMTOOL | MULTIGE | VARSCAN |
+| -------- | ------- | ------- | ------- | ------- | ------- |
+| Region 1 | 0.021142 | 0.0078383 | 0.017921 | 0.020613 | 0.018001 |
+| Region 2 | 0.12327 | 0.055498 | 0.072816 | 0.096778 | 0.077139 |
+| Region 3 | 0.23067 | 0.12992 | 0.13876 | 0.19044 | 0.14732 |
+| Region 4 | 0.28148 | 0.16637 | 0.17274 | 0.23228 | 0.18142 |
+
+---
+
+
