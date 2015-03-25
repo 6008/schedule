@@ -1,22 +1,7357 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset='utf-8'>
-	<title>Schedule</title>
-	<meta name="description" content="Schedule">
-	<meta name="author" content="Wei Cui">
-	<meta name="generator" content="slidify" />
-	
-	<!-- LOAD STYLE SHEETS -->
-	<link rel="stylesheet" href="libraries/frameworks/html5slides/default/styles.css">
-	<link rel="stylesheet" href="libraries/highlighters/prettify/css/tomorrow.css" />  <link rel="stylesheet" href = "assets/css/ribbons.css">
+  <title>Schedule</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Schedule">
+  <meta name="author" content="Wei Cui">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/prettify/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
   
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
 </head>
-<body style='display: none'>
-	<section class='slides layout-regular template-regular'>
-     <article class="" id="slide-1" style="background:;">
-  <h3>20150313 job</h3>
-  <ol>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Schedule</h1>
+    <h2></h2>
+    <p>Wei Cui<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>20150323 job</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Quntile job</li>
+<li>Improve the performance of C++ code</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Quntile Job</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Data Classification: Chromosome, Dataset, Whole</li>
+<li>Property Classification: Coverage, BQ, MQ</li>
+<li>Quntile Classification: Same wide, Same count</li>
+<li>Method Classification: TPR(to SNP), HM(to candidate set)</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>GiaB Coverage SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>26.33 50.56 275.03</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.77287</td>
+<td>0.68525</td>
+<td>0.78289</td>
+<td>0.54985</td>
+<td>0.74705</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.96377</td>
+<td>0.9314</td>
+<td>0.98553</td>
+<td>0.92962</td>
+<td>0.98111</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.9695</td>
+<td>0.93487</td>
+<td>0.99472</td>
+<td>0.98428</td>
+<td>0.98166</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.4596</td>
+<td>0.48485</td>
+<td>0.44949</td>
+<td>0.41414</td>
+<td>0.52525</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>GiaB Coverage SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>28.415 54.73 277.315</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.34224</td>
+<td>0.30395</td>
+<td>0.28257</td>
+<td>0.075947</td>
+<td>0.33187</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.019219</td>
+<td>0.01904</td>
+<td>0.01813</td>
+<td>0.0064678</td>
+<td>0.019256</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.0085783</td>
+<td>0.0091842</td>
+<td>0.04801</td>
+<td>0.016471</td>
+<td>0.041903</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.052929</td>
+<td>0.055902</td>
+<td>0.05174</td>
+<td>0.048766</td>
+<td>0.06185</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>GiaB Coverage SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>46.5 50.9 55.1</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.94096</td>
+<td>0.91045</td>
+<td>0.96492</td>
+<td>0.88413</td>
+<td>0.95967</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.97585</td>
+<td>0.95581</td>
+<td>0.99479</td>
+<td>0.96196</td>
+<td>0.9883</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.97916</td>
+<td>0.9569</td>
+<td>0.9916</td>
+<td>0.96549</td>
+<td>0.98634</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.95338</td>
+<td>0.90025</td>
+<td>0.99116</td>
+<td>0.96291</td>
+<td>0.9684</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>GiaB Coverage SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>42.5 49.65 55.4</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.51673</td>
+<td>0.54251</td>
+<td>0.52112</td>
+<td>0.52527</td>
+<td>0.51569</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.94927</td>
+<td>0.91244</td>
+<td>0.95335</td>
+<td>0.91</td>
+<td>0.96307</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.91737</td>
+<td>0.89021</td>
+<td>0.91063</td>
+<td>0.88155</td>
+<td>0.92748</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.84018</td>
+<td>0.80281</td>
+<td>0.85323</td>
+<td>0.85263</td>
+<td>0.84055</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>GiaB BQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>57.3 68.94 71.135</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.35963</td>
+<td>0.34339</td>
+<td>0.43619</td>
+<td>0.1949</td>
+<td>0.44316</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.95714</td>
+<td>0.92258</td>
+<td>0.98381</td>
+<td>0.92746</td>
+<td>0.97719</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.97516</td>
+<td>0.94105</td>
+<td>0.99055</td>
+<td>0.96318</td>
+<td>0.97956</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.9628</td>
+<td>0.92361</td>
+<td>0.98413</td>
+<td>0.91075</td>
+<td>0.96436</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>GiaB BQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>54.405 67.35 70.59</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.0057342</td>
+<td>0.013953</td>
+<td>0.0050652</td>
+<td>0.0043962</td>
+<td>0.0047785</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.40707</td>
+<td>0.39128</td>
+<td>0.38095</td>
+<td>0.17238</td>
+<td>0.41085</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.092631</td>
+<td>0.093926</td>
+<td>0.11623</td>
+<td>0.074501</td>
+<td>0.1026</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.39357</td>
+<td>0.38871</td>
+<td>0.45207</td>
+<td>0.34564</td>
+<td>0.39371</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>GiaB BQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>68.15 69.34 70.22</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.94674</td>
+<td>0.90818</td>
+<td>0.97692</td>
+<td>0.89922</td>
+<td>0.97079</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.97295</td>
+<td>0.95068</td>
+<td>0.99044</td>
+<td>0.96162</td>
+<td>0.98407</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.97568</td>
+<td>0.94726</td>
+<td>0.99037</td>
+<td>0.96625</td>
+<td>0.98086</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.97145</td>
+<td>0.92937</td>
+<td>0.98958</td>
+<td>0.95275</td>
+<td>0.97448</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>GiaB BQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>66.01 68.79 70.06</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.3581</td>
+<td>0.37663</td>
+<td>0.36414</td>
+<td>0.36742</td>
+<td>0.36322</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.89085</td>
+<td>0.84573</td>
+<td>0.87119</td>
+<td>0.82986</td>
+<td>0.91004</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.84937</td>
+<td>0.82105</td>
+<td>0.84157</td>
+<td>0.82657</td>
+<td>0.86227</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.85653</td>
+<td>0.81914</td>
+<td>0.86389</td>
+<td>0.84759</td>
+<td>0.87986</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>GiaB MQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>71.69 90.38 91.69</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.80194</td>
+<td>0.67649</td>
+<td>0.84936</td>
+<td>0.81686</td>
+<td>0.80764</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.91494</td>
+<td>0.84466</td>
+<td>0.96082</td>
+<td>0.83376</td>
+<td>0.94986</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.9703</td>
+<td>0.95302</td>
+<td>0.9724</td>
+<td>0.94654</td>
+<td>0.97818</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.98513</td>
+<td>0.97193</td>
+<td>0.97539</td>
+<td>0.97173</td>
+<td>0.98289</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>GiaB MQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>69.46 85.92 89.46</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.048293</td>
+<td>0.054121</td>
+<td>0.047436</td>
+<td>0.046798</td>
+<td>0.043645</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.1809</td>
+<td>0.19996</td>
+<td>0.18388</td>
+<td>0.18893</td>
+<td>0.18494</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.21405</td>
+<td>0.22559</td>
+<td>0.22104</td>
+<td>0.22175</td>
+<td>0.21882</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.87441</td>
+<td>0.85884</td>
+<td>0.86439</td>
+<td>0.85741</td>
+<td>0.87435</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>GiaB MQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>90.8 92.3 92.6</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.912</td>
+<td>0.84883</td>
+<td>0.95485</td>
+<td>0.84459</td>
+<td>0.94172</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.97598</td>
+<td>0.95689</td>
+<td>0.9671</td>
+<td>0.95345</td>
+<td>0.9773</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.98491</td>
+<td>0.97193</td>
+<td>0.97451</td>
+<td>0.97188</td>
+<td>0.98261</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.98991</td>
+<td>0.98078</td>
+<td>0.98227</td>
+<td>0.98115</td>
+<td>0.98774</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>GiaB MQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>81.51 89.82 92.41</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.31999</td>
+<td>0.32993</td>
+<td>0.31732</td>
+<td>0.32478</td>
+<td>0.31252</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.66466</td>
+<td>0.69125</td>
+<td>0.68694</td>
+<td>0.69102</td>
+<td>0.68103</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.77528</td>
+<td>0.7563</td>
+<td>0.76515</td>
+<td>0.75078</td>
+<td>0.77393</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.73292</td>
+<td>0.72536</td>
+<td>0.72553</td>
+<td>0.72619</td>
+<td>0.73152</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>upenn Coverage SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>10.653 19.17 229.435</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.0035118</td>
+<td>0.0039882</td>
+<td>0.0036343</td>
+<td>0.0034437</td>
+<td>0.0035254</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.17723</td>
+<td>0.19269</td>
+<td>0.19128</td>
+<td>0.18773</td>
+<td>0.19106</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.14825</td>
+<td>0.16259</td>
+<td>0.16159</td>
+<td>0.15885</td>
+<td>0.16193</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>1.3702e-05</td>
+<td>1.3702e-05</td>
+<td>0</td>
+<td>1.3702e-05</td>
+<td>1.3702e-05</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>upenn Coverage SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>10.891 19.75 257.725</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.0046635</td>
+<td>0.0052498</td>
+<td>0.0048544</td>
+<td>0.0046362</td>
+<td>0.0047317</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.11677</td>
+<td>0.10969</td>
+<td>0.079622</td>
+<td>0.079427</td>
+<td>0.11267</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.10115</td>
+<td>0.092337</td>
+<td>0.10032</td>
+<td>0.095957</td>
+<td>0.097283</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>1.3695e-05</td>
+<td>1.3695e-05</td>
+<td>0</td>
+<td>1.3695e-05</td>
+<td>1.3695e-05</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>upenn Coverage SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>15.94 18.71 21.86</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.54133</td>
+<td>0.59209</td>
+<td>0.5859</td>
+<td>0.57328</td>
+<td>0.58465</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.54081</td>
+<td>0.58457</td>
+<td>0.58075</td>
+<td>0.57126</td>
+<td>0.58009</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.51878</td>
+<td>0.56741</td>
+<td>0.56364</td>
+<td>0.55455</td>
+<td>0.56454</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.48324</td>
+<td>0.53131</td>
+<td>0.52808</td>
+<td>0.51856</td>
+<td>0.52946</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>upenn Coverage SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>14.79 18.06 21.54</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.063367</td>
+<td>0.069162</td>
+<td>0.068249</td>
+<td>0.066803</td>
+<td>0.06802</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.10664</td>
+<td>0.11592</td>
+<td>0.11514</td>
+<td>0.11311</td>
+<td>0.11504</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.10371</td>
+<td>0.11313</td>
+<td>0.11245</td>
+<td>0.11055</td>
+<td>0.11253</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.092384</td>
+<td>0.10148</td>
+<td>0.10084</td>
+<td>0.099057</td>
+<td>0.10115</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>upenn BQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>57.985 63.3 64.81</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>9.5846e-05</td>
+<td>0.00045184</td>
+<td>9.5846e-05</td>
+<td>0.00010954</td>
+<td>0.00010954</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.15066</td>
+<td>0.1643</td>
+<td>0.16287</td>
+<td>0.16018</td>
+<td>0.16317</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.14038</td>
+<td>0.1506</td>
+<td>0.14982</td>
+<td>0.14772</td>
+<td>0.14981</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.06691</td>
+<td>0.075969</td>
+<td>0.075572</td>
+<td>0.073214</td>
+<td>0.07528</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>upenn BQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>53.975 62.88 65.105</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0</td>
+<td>1.914e-05</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.11141</td>
+<td>0.1142</td>
+<td>0.12074</td>
+<td>0.11532</td>
+<td>0.12099</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.14378</td>
+<td>0.13164</td>
+<td>0.13386</td>
+<td>0.12832</td>
+<td>0.14584</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.028706</td>
+<td>0.032881</td>
+<td>0.032677</td>
+<td>0.031511</td>
+<td>0.032501</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>upenn BQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>61.99 63.59 64.61</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.46921</td>
+<td>0.52134</td>
+<td>0.51326</td>
+<td>0.50398</td>
+<td>0.51541</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.57598</td>
+<td>0.61696</td>
+<td>0.61375</td>
+<td>0.60538</td>
+<td>0.61387</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.57079</td>
+<td>0.61007</td>
+<td>0.60696</td>
+<td>0.59911</td>
+<td>0.60678</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.46805</td>
+<td>0.52687</td>
+<td>0.5243</td>
+<td>0.50906</td>
+<td>0.52257</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-22" style="background:;">
+  <hgroup>
+    <h2>upenn BQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>61.51 63.14 64.53</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.055837</td>
+<td>0.063141</td>
+<td>0.061548</td>
+<td>0.060345</td>
+<td>0.062008</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.11127</td>
+<td>0.11994</td>
+<td>0.11951</td>
+<td>0.11774</td>
+<td>0.11945</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.13112</td>
+<td>0.13975</td>
+<td>0.13906</td>
+<td>0.13731</td>
+<td>0.13903</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.097572</td>
+<td>0.10941</td>
+<td>0.10884</td>
+<td>0.10581</td>
+<td>0.10855</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-23" style="background:;">
+  <hgroup>
+    <h2>upenn MQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>73.135 91.52 92.205</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.00078</td>
+<td>0.00099895</td>
+<td>0.00076631</td>
+<td>0.00071158</td>
+<td>0.00075263</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.10143</td>
+<td>0.11104</td>
+<td>0.10884</td>
+<td>0.10761</td>
+<td>0.10932</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.15105</td>
+<td>0.16364</td>
+<td>0.16308</td>
+<td>0.15987</td>
+<td>0.163</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.11001</td>
+<td>0.12105</td>
+<td>0.12091</td>
+<td>0.11837</td>
+<td>0.12062</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-24" style="background:;">
+  <hgroup>
+    <h2>upenn MQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>70.4 87.8 90.4</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.00033189</td>
+<td>0.0004367</td>
+<td>0.00034062</td>
+<td>0.00029695</td>
+<td>0.00031442</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.010179</td>
+<td>0.011451</td>
+<td>0.010551</td>
+<td>0.010612</td>
+<td>0.010742</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.021509</td>
+<td>0.023633</td>
+<td>0.023145</td>
+<td>0.022913</td>
+<td>0.02329</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.17596</td>
+<td>0.16796</td>
+<td>0.1554</td>
+<td>0.16014</td>
+<td>0.17465</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-25" style="background:;">
+  <hgroup>
+    <h2>upenn MQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>91.53 92.02 92.28</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.55136</td>
+<td>0.60353</td>
+<td>0.59146</td>
+<td>0.58458</td>
+<td>0.59396</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.55147</td>
+<td>0.59609</td>
+<td>0.59367</td>
+<td>0.58256</td>
+<td>0.59337</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.51458</td>
+<td>0.56004</td>
+<td>0.55882</td>
+<td>0.5474</td>
+<td>0.55828</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.4669</td>
+<td>0.51507</td>
+<td>0.51453</td>
+<td>0.50326</td>
+<td>0.51329</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-26" style="background:;">
+  <hgroup>
+    <h2>upenn MQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>86.29 91.14 92.05</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.010477</td>
+<td>0.0121</td>
+<td>0.01084</td>
+<td>0.010912</td>
+<td>0.011057</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.074182</td>
+<td>0.080706</td>
+<td>0.079478</td>
+<td>0.078673</td>
+<td>0.079847</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.16512</td>
+<td>0.17888</td>
+<td>0.17807</td>
+<td>0.17475</td>
+<td>0.178</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.18375</td>
+<td>0.20141</td>
+<td>0.20111</td>
+<td>0.19682</td>
+<td>0.20075</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-27" style="background:;">
+  <hgroup>
+    <h2>GiaB 18 Coverage SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>26.62 51.14 272.27</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.80186</td>
+<td>0.70023</td>
+<td>0.80046</td>
+<td>0.55916</td>
+<td>0.76195</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.96841</td>
+<td>0.91796</td>
+<td>0.98867</td>
+<td>0.94047</td>
+<td>0.98235</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.97693</td>
+<td>0.94355</td>
+<td>0.98939</td>
+<td>0.97586</td>
+<td>0.98396</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.66667</td>
+<td>1</td>
+<td>0.66667</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-28" style="background:;">
+  <hgroup>
+    <h2>GiaB 18 Coverage SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>25.86 49.62 274.71</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.50474</td>
+<td>0.30551</td>
+<td>0.53725</td>
+<td>0.51107</td>
+<td>0.55203</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.90191</td>
+<td>0.74551</td>
+<td>0.94874</td>
+<td>0.92298</td>
+<td>0.93847</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.9587</td>
+<td>0.88797</td>
+<td>0.97568</td>
+<td>0.96901</td>
+<td>0.96858</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.039604</td>
+<td>0.014388</td>
+<td>0.11765</td>
+<td>0.018237</td>
+<td>0.077922</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-29" style="background:;">
+  <hgroup>
+    <h2>GiaB 18 Coverage SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>47.8 52.1 55.9</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.95135</td>
+<td>0.89655</td>
+<td>0.97297</td>
+<td>0.89989</td>
+<td>0.96578</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.97923</td>
+<td>0.94782</td>
+<td>0.99042</td>
+<td>0.96359</td>
+<td>0.98585</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.98215</td>
+<td>0.94997</td>
+<td>0.98511</td>
+<td>0.96558</td>
+<td>0.98598</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.96832</td>
+<td>0.93122</td>
+<td>0.99546</td>
+<td>0.98177</td>
+<td>0.98183</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-30" style="background:;">
+  <hgroup>
+    <h2>GiaB 18 Coverage SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>44.5 50.8 55.4</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.76986</td>
+<td>0.54243</td>
+<td>0.84612</td>
+<td>0.81003</td>
+<td>0.84474</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.95426</td>
+<td>0.86693</td>
+<td>0.97531</td>
+<td>0.95976</td>
+<td>0.96775</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.96817</td>
+<td>0.90506</td>
+<td>0.98101</td>
+<td>0.97069</td>
+<td>0.97622</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.94605</td>
+<td>0.8645</td>
+<td>0.96826</td>
+<td>0.96379</td>
+<td>0.95788</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-31" style="background:;">
+  <hgroup>
+    <h2>GiaB 18 BQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>57.56 69.46 71.225</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.46575</td>
+<td>0.36986</td>
+<td>0.52055</td>
+<td>0.24658</td>
+<td>0.54795</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.96431</td>
+<td>0.91141</td>
+<td>0.98829</td>
+<td>0.93938</td>
+<td>0.97945</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.97985</td>
+<td>0.9498</td>
+<td>0.98702</td>
+<td>0.96555</td>
+<td>0.98136</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.97306</td>
+<td>0.92947</td>
+<td>0.98777</td>
+<td>0.92469</td>
+<td>0.9697</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-32" style="background:;">
+  <hgroup>
+    <h2>GiaB 18 BQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>56.62 68.18 70.885</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.06574</td>
+<td>0.034156</td>
+<td>0.19424</td>
+<td>0.1691</td>
+<td>0.2197</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.79211</td>
+<td>0.53477</td>
+<td>0.89396</td>
+<td>0.8588</td>
+<td>0.88258</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.96316</td>
+<td>0.91545</td>
+<td>0.97183</td>
+<td>0.96236</td>
+<td>0.96667</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.93955</td>
+<td>0.85569</td>
+<td>0.95578</td>
+<td>0.94356</td>
+<td>0.94813</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-33" style="background:;">
+  <hgroup>
+    <h2>GiaB 18 BQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>68.85 69.84 70.52</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.95535</td>
+<td>0.89215</td>
+<td>0.98404</td>
+<td>0.92202</td>
+<td>0.97552</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.97944</td>
+<td>0.95367</td>
+<td>0.98804</td>
+<td>0.96349</td>
+<td>0.98399</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.9816</td>
+<td>0.95212</td>
+<td>0.98703</td>
+<td>0.96711</td>
+<td>0.98295</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.97644</td>
+<td>0.94184</td>
+<td>0.98843</td>
+<td>0.95602</td>
+<td>0.97678</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-34" style="background:;">
+  <hgroup>
+    <h2>GiaB 18 BQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>67.46 69.48 70.4</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.70487</td>
+<td>0.41566</td>
+<td>0.85489</td>
+<td>0.80845</td>
+<td>0.84095</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.95315</td>
+<td>0.891</td>
+<td>0.96326</td>
+<td>0.95078</td>
+<td>0.95922</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.96594</td>
+<td>0.92241</td>
+<td>0.97357</td>
+<td>0.96521</td>
+<td>0.96889</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.95459</td>
+<td>0.89218</td>
+<td>0.96721</td>
+<td>0.95735</td>
+<td>0.95946</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-35" style="background:;">
+  <hgroup>
+    <h2>GiaB 18 MQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>71.915 90.78 91.89</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.85228</td>
+<td>0.70489</td>
+<td>0.88735</td>
+<td>0.78954</td>
+<td>0.84722</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.92356</td>
+<td>0.84486</td>
+<td>0.96952</td>
+<td>0.8589</td>
+<td>0.95915</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.97362</td>
+<td>0.9485</td>
+<td>0.96974</td>
+<td>0.9463</td>
+<td>0.97522</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.98569</td>
+<td>0.97249</td>
+<td>0.9763</td>
+<td>0.97226</td>
+<td>0.98299</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-36" style="background:;">
+  <hgroup>
+    <h2>GiaB 18 MQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>70.29 87.53 90.265</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.59014</td>
+<td>0.39484</td>
+<td>0.64049</td>
+<td>0.60867</td>
+<td>0.62998</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.6205</td>
+<td>0.34391</td>
+<td>0.78338</td>
+<td>0.72192</td>
+<td>0.7563</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.91003</td>
+<td>0.73803</td>
+<td>0.94201</td>
+<td>0.91405</td>
+<td>0.93236</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.98397</td>
+<td>0.96606</td>
+<td>0.987</td>
+<td>0.9821</td>
+<td>0.98364</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-37" style="background:;">
+  <hgroup>
+    <h2>GiaB 18 MQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>91.63 92.48 92.68</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.93245</td>
+<td>0.85724</td>
+<td>0.96883</td>
+<td>0.87506</td>
+<td>0.95443</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.97996</td>
+<td>0.96113</td>
+<td>0.96962</td>
+<td>0.96071</td>
+<td>0.97759</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.98629</td>
+<td>0.97315</td>
+<td>0.97572</td>
+<td>0.97282</td>
+<td>0.98276</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.98996</td>
+<td>0.98164</td>
+<td>0.98301</td>
+<td>0.9808</td>
+<td>0.9876</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-38" style="background:;">
+  <hgroup>
+    <h2>GiaB 18 MQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>84.5 91.95 92.6</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.55959</td>
+<td>0.31509</td>
+<td>0.70272</td>
+<td>0.64884</td>
+<td>0.68232</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.91646</td>
+<td>0.75415</td>
+<td>0.94802</td>
+<td>0.92357</td>
+<td>0.93738</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.98514</td>
+<td>0.97329</td>
+<td>0.9875</td>
+<td>0.98361</td>
+<td>0.98554</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.99068</td>
+<td>0.987</td>
+<td>0.99192</td>
+<td>0.98942</td>
+<td>0.98844</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-39" style="background:;">
+  <hgroup>
+    <h2>GiaB 19 Coverage SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>25.355 48.61 148.655</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.74909</td>
+<td>0.66424</td>
+<td>0.76485</td>
+<td>0.47273</td>
+<td>0.73394</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.95528</td>
+<td>0.91543</td>
+<td>0.97961</td>
+<td>0.90847</td>
+<td>0.97671</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.97245</td>
+<td>0.9397</td>
+<td>0.99336</td>
+<td>0.96121</td>
+<td>0.98336</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.5283</td>
+<td>0.28302</td>
+<td>0.73585</td>
+<td>0.43396</td>
+<td>0.5283</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-40" style="background:;">
+  <hgroup>
+    <h2>GiaB 19 Coverage SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>24.175 46.25 272.925</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.36681</td>
+<td>0.18614</td>
+<td>0.401</td>
+<td>0.3959</td>
+<td>0.44534</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.81963</td>
+<td>0.59426</td>
+<td>0.9104</td>
+<td>0.8731</td>
+<td>0.90305</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.91689</td>
+<td>0.79745</td>
+<td>0.94816</td>
+<td>0.93378</td>
+<td>0.942</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-41" style="background:;">
+  <hgroup>
+    <h2>GiaB 19 Coverage SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>44.7 49.2 53.4</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.93076</td>
+<td>0.89018</td>
+<td>0.95483</td>
+<td>0.83712</td>
+<td>0.95262</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.96989</td>
+<td>0.94599</td>
+<td>0.99279</td>
+<td>0.94898</td>
+<td>0.98728</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.97375</td>
+<td>0.95209</td>
+<td>0.99223</td>
+<td>0.95246</td>
+<td>0.98661</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.96907</td>
+<td>0.92237</td>
+<td>0.99258</td>
+<td>0.96216</td>
+<td>0.97845</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-42" style="background:;">
+  <hgroup>
+    <h2>GiaB 19 Coverage SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>39.5 47 52.6</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.59715</td>
+<td>0.34129</td>
+<td>0.71384</td>
+<td>0.67592</td>
+<td>0.73643</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.89626</td>
+<td>0.7279</td>
+<td>0.949</td>
+<td>0.92351</td>
+<td>0.94219</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.94098</td>
+<td>0.83231</td>
+<td>0.96795</td>
+<td>0.9497</td>
+<td>0.96347</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.88828</td>
+<td>0.75895</td>
+<td>0.92448</td>
+<td>0.91385</td>
+<td>0.91567</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-43" style="background:;">
+  <hgroup>
+    <h2>GiaB 19 BQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>57.08 68.34 70.835</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.30882</td>
+<td>0.29412</td>
+<td>0.44853</td>
+<td>0.13235</td>
+<td>0.40441</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.95313</td>
+<td>0.9132</td>
+<td>0.98016</td>
+<td>0.90948</td>
+<td>0.97612</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.96977</td>
+<td>0.94336</td>
+<td>0.98506</td>
+<td>0.94422</td>
+<td>0.97865</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.96638</td>
+<td>0.92356</td>
+<td>0.97977</td>
+<td>0.87654</td>
+<td>0.96454</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-44" style="background:;">
+  <hgroup>
+    <h2>GiaB 19 BQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>53.83 66.2 69.925</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.032432</td>
+<td>0.024029</td>
+<td>0.054795</td>
+<td>0.026622</td>
+<td>0.071066</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.61784</td>
+<td>0.31417</td>
+<td>0.8291</td>
+<td>0.77549</td>
+<td>0.81832</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.93215</td>
+<td>0.85605</td>
+<td>0.94556</td>
+<td>0.93013</td>
+<td>0.94529</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.89379</td>
+<td>0.78821</td>
+<td>0.90819</td>
+<td>0.89376</td>
+<td>0.90306</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-45" style="background:;">
+  <hgroup>
+    <h2>GiaB 19 BQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>67.47 68.72 69.69</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.94118</td>
+<td>0.8957</td>
+<td>0.97009</td>
+<td>0.87336</td>
+<td>0.96719</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.96841</td>
+<td>0.94219</td>
+<td>0.98212</td>
+<td>0.94022</td>
+<td>0.983</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.96882</td>
+<td>0.94729</td>
+<td>0.98262</td>
+<td>0.94434</td>
+<td>0.98022</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.96931</td>
+<td>0.93255</td>
+<td>0.98384</td>
+<td>0.93346</td>
+<td>0.97261</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-46" style="background:;">
+  <hgroup>
+    <h2>GiaB 19 BQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>63.78 67.81 69.39</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.34733</td>
+<td>0.13049</td>
+<td>0.64754</td>
+<td>0.57478</td>
+<td>0.63698</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.88017</td>
+<td>0.72817</td>
+<td>0.92435</td>
+<td>0.89852</td>
+<td>0.92416</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.9395</td>
+<td>0.87278</td>
+<td>0.9509</td>
+<td>0.93627</td>
+<td>0.95064</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.90764</td>
+<td>0.81446</td>
+<td>0.92012</td>
+<td>0.90676</td>
+<td>0.91611</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-47" style="background:;">
+  <hgroup>
+    <h2>GiaB 19 MQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>71.435 89.83 91.415</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.80645</td>
+<td>0.6696</td>
+<td>0.83822</td>
+<td>0.68231</td>
+<td>0.81085</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.91805</td>
+<td>0.86385</td>
+<td>0.9599</td>
+<td>0.81657</td>
+<td>0.95379</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.96692</td>
+<td>0.9595</td>
+<td>0.97217</td>
+<td>0.95349</td>
+<td>0.97908</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.9836</td>
+<td>0.97014</td>
+<td>0.97355</td>
+<td>0.97259</td>
+<td>0.98242</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-48" style="background:;">
+  <hgroup>
+    <h2>GiaB 19 MQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>69.35 85.7 89.35</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.4743</td>
+<td>0.30216</td>
+<td>0.51384</td>
+<td>0.50673</td>
+<td>0.52875</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.50914</td>
+<td>0.25778</td>
+<td>0.71338</td>
+<td>0.62367</td>
+<td>0.699</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.83896</td>
+<td>0.6048</td>
+<td>0.89363</td>
+<td>0.87149</td>
+<td>0.89064</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.96802</td>
+<td>0.93439</td>
+<td>0.97311</td>
+<td>0.97036</td>
+<td>0.97203</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-49" style="background:;">
+  <hgroup>
+    <h2>GiaB 19 MQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>89.52 91.83 92.43</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.90485</td>
+<td>0.84767</td>
+<td>0.94905</td>
+<td>0.79452</td>
+<td>0.94162</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.96928</td>
+<td>0.95977</td>
+<td>0.97168</td>
+<td>0.95195</td>
+<td>0.97879</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.98004</td>
+<td>0.96577</td>
+<td>0.96957</td>
+<td>0.96668</td>
+<td>0.97921</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.98874</td>
+<td>0.97735</td>
+<td>0.97888</td>
+<td>0.98373</td>
+<td>0.98717</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-50" style="background:;">
+  <hgroup>
+    <h2>GiaB 19 MQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>81.58 88.35 92</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.44377</td>
+<td>0.23704</td>
+<td>0.60522</td>
+<td>0.53774</td>
+<td>0.60328</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.71334</td>
+<td>0.41795</td>
+<td>0.84061</td>
+<td>0.78843</td>
+<td>0.83091</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.94082</td>
+<td>0.85265</td>
+<td>0.95348</td>
+<td>0.94676</td>
+<td>0.95233</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.9799</td>
+<td>0.97326</td>
+<td>0.98198</td>
+<td>0.98182</td>
+<td>0.98113</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-51" style="background:;">
+  <hgroup>
+    <h2>GiaB 20 Coverage SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>26.54 50.98 266.09</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.76568</td>
+<td>0.65911</td>
+<td>0.78685</td>
+<td>0.50869</td>
+<td>0.75359</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.96778</td>
+<td>0.93937</td>
+<td>0.98714</td>
+<td>0.93805</td>
+<td>0.98211</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.95157</td>
+<td>0.90951</td>
+<td>0.99117</td>
+<td>0.99177</td>
+<td>0.96983</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.22449</td>
+<td>0.22449</td>
+<td>0.2449</td>
+<td>0.18367</td>
+<td>0.22449</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-52" style="background:;">
+  <hgroup>
+    <h2>GiaB 20 Coverage SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>28.66 55.22 277.46</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.42358</td>
+<td>0.22462</td>
+<td>0.48029</td>
+<td>0.45882</td>
+<td>0.51588</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.92475</td>
+<td>0.79339</td>
+<td>0.96339</td>
+<td>0.94514</td>
+<td>0.95578</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.84565</td>
+<td>0.70653</td>
+<td>0.89773</td>
+<td>0.91868</td>
+<td>0.8687</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.035503</td>
+<td>0.046838</td>
+<td>0.046316</td>
+<td>0.033573</td>
+<td>0.036419</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-53" style="background:;">
+  <hgroup>
+    <h2>GiaB 20 Coverage SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>47 51.3 55.4</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.9487</td>
+<td>0.91923</td>
+<td>0.96982</td>
+<td>0.88775</td>
+<td>0.96405</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.97727</td>
+<td>0.96403</td>
+<td>0.9955</td>
+<td>0.96998</td>
+<td>0.98872</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.98007</td>
+<td>0.9635</td>
+<td>0.99396</td>
+<td>0.97261</td>
+<td>0.98695</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.92173</td>
+<td>0.85528</td>
+<td>0.98847</td>
+<td>0.98905</td>
+<td>0.95533</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-54" style="background:;">
+  <hgroup>
+    <h2>GiaB 20 Coverage SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>43.9 50.4 56.1</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.72744</td>
+<td>0.47254</td>
+<td>0.82493</td>
+<td>0.7892</td>
+<td>0.82846</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.94647</td>
+<td>0.84221</td>
+<td>0.97239</td>
+<td>0.95746</td>
+<td>0.96616</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.95795</td>
+<td>0.88093</td>
+<td>0.97723</td>
+<td>0.96735</td>
+<td>0.9719</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.81264</td>
+<td>0.65819</td>
+<td>0.87287</td>
+<td>0.88367</td>
+<td>0.8372</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-55" style="background:;">
+  <hgroup>
+    <h2>GiaB 20 BQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>57.885 68.96 70.83</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.31429</td>
+<td>0.31429</td>
+<td>0.35714</td>
+<td>0.23571</td>
+<td>0.37857</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.95915</td>
+<td>0.92326</td>
+<td>0.98474</td>
+<td>0.93474</td>
+<td>0.97856</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.97673</td>
+<td>0.94506</td>
+<td>0.99279</td>
+<td>0.99058</td>
+<td>0.98073</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.94094</td>
+<td>0.89271</td>
+<td>0.98887</td>
+<td>0.96691</td>
+<td>0.96186</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-56" style="background:;">
+  <hgroup>
+    <h2>GiaB 20 BQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>55.175 67.43 70.5</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.040632</td>
+<td>0.033478</td>
+<td>0.06747</td>
+<td>0.048889</td>
+<td>0.074534</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.72463</td>
+<td>0.44061</td>
+<td>0.86915</td>
+<td>0.82841</td>
+<td>0.85433</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.9366</td>
+<td>0.86372</td>
+<td>0.9524</td>
+<td>0.94775</td>
+<td>0.94356</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.86615</td>
+<td>0.74751</td>
+<td>0.90485</td>
+<td>0.90024</td>
+<td>0.88188</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-57" style="background:;">
+  <hgroup>
+    <h2>GiaB 20 BQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>68.24 69.34 70.15</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.94718</td>
+<td>0.90658</td>
+<td>0.97563</td>
+<td>0.90213</td>
+<td>0.96982</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.97605</td>
+<td>0.95474</td>
+<td>0.99373</td>
+<td>0.98199</td>
+<td>0.98726</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.97887</td>
+<td>0.94963</td>
+<td>0.9933</td>
+<td>0.99034</td>
+<td>0.98302</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.96017</td>
+<td>0.92251</td>
+<td>0.99114</td>
+<td>0.9895</td>
+<td>0.97243</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-58" style="background:;">
+  <hgroup>
+    <h2>GiaB 20 BQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>66.28 68.89 70.05</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.57154</td>
+<td>0.28552</td>
+<td>0.78786</td>
+<td>0.73566</td>
+<td>0.77345</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.92956</td>
+<td>0.83604</td>
+<td>0.94953</td>
+<td>0.93521</td>
+<td>0.94344</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.93998</td>
+<td>0.87366</td>
+<td>0.95499</td>
+<td>0.95164</td>
+<td>0.94575</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.89424</td>
+<td>0.79314</td>
+<td>0.92269</td>
+<td>0.92165</td>
+<td>0.90384</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-59" style="background:;">
+  <hgroup>
+    <h2>GiaB 20 MQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>72.3 90.88 91.94</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.79135</td>
+<td>0.58447</td>
+<td>0.85062</td>
+<td>0.77712</td>
+<td>0.80202</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.90547</td>
+<td>0.82172</td>
+<td>0.95933</td>
+<td>0.90981</td>
+<td>0.93793</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.97043</td>
+<td>0.95152</td>
+<td>0.96848</td>
+<td>0.94761</td>
+<td>0.97585</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.98623</td>
+<td>0.9742</td>
+<td>0.9761</td>
+<td>0.97347</td>
+<td>0.98364</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-60" style="background:;">
+  <hgroup>
+    <h2>GiaB 20 MQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>69.715 86.43 89.715</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.4301</td>
+<td>0.25358</td>
+<td>0.48064</td>
+<td>0.45748</td>
+<td>0.4686</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.40649</td>
+<td>0.207</td>
+<td>0.5834</td>
+<td>0.55066</td>
+<td>0.52932</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.83407</td>
+<td>0.59593</td>
+<td>0.88917</td>
+<td>0.88629</td>
+<td>0.88011</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.98216</td>
+<td>0.9593</td>
+<td>0.98566</td>
+<td>0.98075</td>
+<td>0.98324</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-61" style="background:;">
+  <hgroup>
+    <h2>GiaB 20 MQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>91.39 92.37 92.61</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.908</td>
+<td>0.82869</td>
+<td>0.95702</td>
+<td>0.89024</td>
+<td>0.93968</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.9792</td>
+<td>0.96214</td>
+<td>0.969</td>
+<td>0.96047</td>
+<td>0.97871</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.98531</td>
+<td>0.97292</td>
+<td>0.97481</td>
+<td>0.97221</td>
+<td>0.98224</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.99024</td>
+<td>0.98146</td>
+<td>0.98235</td>
+<td>0.98089</td>
+<td>0.98833</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-62" style="background:;">
+  <hgroup>
+    <h2>GiaB 20 MQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>82.13 90.46 92.46</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.34821</td>
+<td>0.18329</td>
+<td>0.48582</td>
+<td>0.44252</td>
+<td>0.44371</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.7564</td>
+<td>0.49341</td>
+<td>0.8509</td>
+<td>0.85136</td>
+<td>0.83011</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.97795</td>
+<td>0.94855</td>
+<td>0.98236</td>
+<td>0.97623</td>
+<td>0.97935</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.99034</td>
+<td>0.98657</td>
+<td>0.99169</td>
+<td>0.98867</td>
+<td>0.98982</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-63" style="background:;">
+  <hgroup>
+    <h2>GiaB 21 Coverage SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>27.796 53.37 276.435</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.78504</td>
+<td>0.74337</td>
+<td>0.80587</td>
+<td>0.62311</td>
+<td>0.77462</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.96993</td>
+<td>0.9571</td>
+<td>0.99101</td>
+<td>0.94732</td>
+<td>0.98561</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.96051</td>
+<td>0.90075</td>
+<td>0.98667</td>
+<td>0.94157</td>
+<td>0.9602</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.52</td>
+<td>0.54</td>
+<td>0.49333</td>
+<td>0.54</td>
+<td>0.60667</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-64" style="background:;">
+  <hgroup>
+    <h2>GiaB 21 Coverage SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>41.615 81.13 290.515</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.59539</td>
+<td>0.38484</td>
+<td>0.69442</td>
+<td>0.68979</td>
+<td>0.71601</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.9293</td>
+<td>0.83663</td>
+<td>0.95432</td>
+<td>0.94526</td>
+<td>0.94526</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.18857</td>
+<td>0.12968</td>
+<td>0.22293</td>
+<td>0.18753</td>
+<td>0.1929</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.052356</td>
+<td>0.040882</td>
+<td>0.052423</td>
+<td>0.043808</td>
+<td>0.061751</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-65" style="background:;">
+  <hgroup>
+    <h2>GiaB 21 Coverage SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>47.5 51.9 56.1</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.94775</td>
+<td>0.94657</td>
+<td>0.97139</td>
+<td>0.90409</td>
+<td>0.96872</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.97701</td>
+<td>0.96879</td>
+<td>0.99627</td>
+<td>0.96734</td>
+<td>0.98945</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.9797</td>
+<td>0.96846</td>
+<td>0.99296</td>
+<td>0.9677</td>
+<td>0.98542</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.94119</td>
+<td>0.83613</td>
+<td>0.97494</td>
+<td>0.76506</td>
+<td>0.93431</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-66" style="background:;">
+  <hgroup>
+    <h2>GiaB 21 Coverage SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>45.3 52.7 62.8</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.70903</td>
+<td>0.49821</td>
+<td>0.79396</td>
+<td>0.78211</td>
+<td>0.80445</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.94481</td>
+<td>0.85589</td>
+<td>0.96576</td>
+<td>0.95211</td>
+<td>0.95938</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.94994</td>
+<td>0.87871</td>
+<td>0.96811</td>
+<td>0.96092</td>
+<td>0.96068</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.27484</td>
+<td>0.17783</td>
+<td>0.31156</td>
+<td>0.26024</td>
+<td>0.28188</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-67" style="background:;">
+  <hgroup>
+    <h2>GiaB 21 BQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>59.06 69.29 71.01</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.56522</td>
+<td>0.52174</td>
+<td>0.65217</td>
+<td>0.34783</td>
+<td>0.73913</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.95721</td>
+<td>0.91624</td>
+<td>0.98438</td>
+<td>0.9115</td>
+<td>0.97655</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.96765</td>
+<td>0.91659</td>
+<td>0.98771</td>
+<td>0.91517</td>
+<td>0.97435</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.96447</td>
+<td>0.93155</td>
+<td>0.98206</td>
+<td>0.86762</td>
+<td>0.96586</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-68" style="background:;">
+  <hgroup>
+    <h2>GiaB 21 BQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>55.475 68.2 70.825</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.042636</td>
+<td>0.018975</td>
+<td>0.097778</td>
+<td>0.080645</td>
+<td>0.12987</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.72847</td>
+<td>0.49149</td>
+<td>0.81755</td>
+<td>0.78438</td>
+<td>0.80108</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.84839</td>
+<td>0.7389</td>
+<td>0.87301</td>
+<td>0.84915</td>
+<td>0.86106</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.81378</td>
+<td>0.68884</td>
+<td>0.84422</td>
+<td>0.80869</td>
+<td>0.83547</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-69" style="background:;">
+  <hgroup>
+    <h2>GiaB 21 BQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>68.56 69.72 70.49</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.95026</td>
+<td>0.90971</td>
+<td>0.98059</td>
+<td>0.89079</td>
+<td>0.97411</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.96974</td>
+<td>0.93739</td>
+<td>0.98803</td>
+<td>0.94335</td>
+<td>0.97993</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.96619</td>
+<td>0.9178</td>
+<td>0.98784</td>
+<td>0.92196</td>
+<td>0.97308</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.96757</td>
+<td>0.9188</td>
+<td>0.98613</td>
+<td>0.88563</td>
+<td>0.97225</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-70" style="background:;">
+  <hgroup>
+    <h2>GiaB 21 BQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>67.46 69.42 70.42</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.65732</td>
+<td>0.39639</td>
+<td>0.78109</td>
+<td>0.74383</td>
+<td>0.76559</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.85175</td>
+<td>0.73969</td>
+<td>0.87417</td>
+<td>0.85524</td>
+<td>0.8654</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.85082</td>
+<td>0.74319</td>
+<td>0.87515</td>
+<td>0.85147</td>
+<td>0.86171</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.82336</td>
+<td>0.70245</td>
+<td>0.85347</td>
+<td>0.81814</td>
+<td>0.84134</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-71" style="background:;">
+  <hgroup>
+    <h2>GiaB 21 MQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>71.78 90.32 91.66</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.76019</td>
+<td>0.66037</td>
+<td>0.8293</td>
+<td>0.84347</td>
+<td>0.79268</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.90647</td>
+<td>0.77961</td>
+<td>0.95246</td>
+<td>0.6378</td>
+<td>0.93</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.96554</td>
+<td>0.93626</td>
+<td>0.96845</td>
+<td>0.92056</td>
+<td>0.97832</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.98406</td>
+<td>0.96864</td>
+<td>0.97347</td>
+<td>0.96737</td>
+<td>0.98205</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-72" style="background:;">
+  <hgroup>
+    <h2>GiaB 21 MQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>68.59 84.18 88.59</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.27257</td>
+<td>0.18967</td>
+<td>0.33438</td>
+<td>0.37117</td>
+<td>0.32348</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.32266</td>
+<td>0.18497</td>
+<td>0.40435</td>
+<td>0.3401</td>
+<td>0.37341</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.66226</td>
+<td>0.43895</td>
+<td>0.71662</td>
+<td>0.66677</td>
+<td>0.70251</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.97002</td>
+<td>0.93324</td>
+<td>0.97431</td>
+<td>0.96739</td>
+<td>0.97317</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-73" style="background:;">
+  <hgroup>
+    <h2>GiaB 21 MQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>90.95 92.39 92.65</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.90031</td>
+<td>0.80322</td>
+<td>0.94562</td>
+<td>0.70101</td>
+<td>0.92612</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.97402</td>
+<td>0.94603</td>
+<td>0.96118</td>
+<td>0.94153</td>
+<td>0.97511</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.98442</td>
+<td>0.97044</td>
+<td>0.97406</td>
+<td>0.97032</td>
+<td>0.98277</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.98994</td>
+<td>0.98227</td>
+<td>0.98321</td>
+<td>0.98064</td>
+<td>0.98755</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-74" style="background:;">
+  <hgroup>
+    <h2>GiaB 21 MQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>78.26 87.53 92.39</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.28018</td>
+<td>0.17591</td>
+<td>0.34512</td>
+<td>0.32535</td>
+<td>0.32198</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.46271</td>
+<td>0.26997</td>
+<td>0.55098</td>
+<td>0.47553</td>
+<td>0.52477</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.93265</td>
+<td>0.84548</td>
+<td>0.94266</td>
+<td>0.92808</td>
+<td>0.94287</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.98899</td>
+<td>0.98319</td>
+<td>0.99062</td>
+<td>0.98886</td>
+<td>0.9882</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-75" style="background:;">
+  <hgroup>
+    <h2>GiaB 22 Coverage SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>25.4555 48.8 214.35</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.74774</td>
+<td>0.68323</td>
+<td>0.74516</td>
+<td>0.64774</td>
+<td>0.70839</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.95714</td>
+<td>0.95587</td>
+<td>0.98073</td>
+<td>0.92221</td>
+<td>0.97784</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.97407</td>
+<td>0.97155</td>
+<td>0.99279</td>
+<td>0.99179</td>
+<td>0.98331</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0</td>
+<td>0</td>
+<td>0.5</td>
+<td>0.5</td>
+<td>0</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-76" style="background:;">
+  <hgroup>
+    <h2>GiaB 22 Coverage SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>24.09 46.08 272.79</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.39064</td>
+<td>0.25298</td>
+<td>0.41507</td>
+<td>0.45481</td>
+<td>0.4462</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.79982</td>
+<td>0.59928</td>
+<td>0.87915</td>
+<td>0.85416</td>
+<td>0.87</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.90631</td>
+<td>0.79621</td>
+<td>0.94157</td>
+<td>0.93776</td>
+<td>0.93239</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0</td>
+<td>0.032787</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-77" style="background:;">
+  <hgroup>
+    <h2>GiaB 22 Coverage SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>45.1 49.5 53.9</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.92164</td>
+<td>0.91459</td>
+<td>0.94717</td>
+<td>0.87045</td>
+<td>0.93964</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.97441</td>
+<td>0.97559</td>
+<td>0.99499</td>
+<td>0.9628</td>
+<td>0.99006</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.97801</td>
+<td>0.97978</td>
+<td>0.99532</td>
+<td>0.97028</td>
+<td>0.98962</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.96858</td>
+<td>0.9554</td>
+<td>0.9871</td>
+<td>0.99094</td>
+<td>0.97077</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-78" style="background:;">
+  <hgroup>
+    <h2>GiaB 22 Coverage SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>39.9 47.6 53.4</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.5574</td>
+<td>0.35781</td>
+<td>0.64142</td>
+<td>0.64946</td>
+<td>0.66445</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.89562</td>
+<td>0.7547</td>
+<td>0.93991</td>
+<td>0.92062</td>
+<td>0.93173</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.936</td>
+<td>0.84296</td>
+<td>0.96067</td>
+<td>0.94853</td>
+<td>0.95669</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.86478</td>
+<td>0.73705</td>
+<td>0.91326</td>
+<td>0.92263</td>
+<td>0.89728</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-79" style="background:;">
+  <hgroup>
+    <h2>GiaB 22 BQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>58.33 68.4 70.7</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.52525</td>
+<td>0.46465</td>
+<td>0.55556</td>
+<td>0.46465</td>
+<td>0.60606</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.95161</td>
+<td>0.95112</td>
+<td>0.9809</td>
+<td>0.93737</td>
+<td>0.97348</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.97167</td>
+<td>0.97332</td>
+<td>0.98569</td>
+<td>0.97897</td>
+<td>0.97935</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.95096</td>
+<td>0.94897</td>
+<td>0.97117</td>
+<td>0.945</td>
+<td>0.9493</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-80" style="background:;">
+  <hgroup>
+    <h2>GiaB 22 BQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>54.145 66.72 70.275</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.028571</td>
+<td>0.02445</td>
+<td>0.060606</td>
+<td>0.054422</td>
+<td>0.06</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.66205</td>
+<td>0.38279</td>
+<td>0.82621</td>
+<td>0.79302</td>
+<td>0.81159</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.90899</td>
+<td>0.84158</td>
+<td>0.92607</td>
+<td>0.92577</td>
+<td>0.92521</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.82816</td>
+<td>0.7053</td>
+<td>0.86055</td>
+<td>0.87002</td>
+<td>0.85801</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-81" style="background:;">
+  <hgroup>
+    <h2>GiaB 22 BQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>67.58 68.74 69.66</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.94146</td>
+<td>0.93712</td>
+<td>0.97333</td>
+<td>0.90389</td>
+<td>0.96514</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.96806</td>
+<td>0.97362</td>
+<td>0.98668</td>
+<td>0.9755</td>
+<td>0.98219</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.97196</td>
+<td>0.9725</td>
+<td>0.98564</td>
+<td>0.97481</td>
+<td>0.98087</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.96683</td>
+<td>0.96924</td>
+<td>0.98227</td>
+<td>0.97616</td>
+<td>0.97045</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-82" style="background:;">
+  <hgroup>
+    <h2>GiaB 22 BQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>65.03 68.12 69.48</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.46162</td>
+<td>0.20647</td>
+<td>0.71098</td>
+<td>0.66771</td>
+<td>0.69023</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.8845</td>
+<td>0.77911</td>
+<td>0.9142</td>
+<td>0.90304</td>
+<td>0.9123</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.91593</td>
+<td>0.85534</td>
+<td>0.93042</td>
+<td>0.92994</td>
+<td>0.93007</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.8712</td>
+<td>0.77756</td>
+<td>0.89509</td>
+<td>0.90263</td>
+<td>0.89327</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-83" style="background:;">
+  <hgroup>
+    <h2>GiaB 22 MQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>71.345 89.69 91.345</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.76976</td>
+<td>0.68707</td>
+<td>0.79169</td>
+<td>0.8095</td>
+<td>0.74418</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.9096</td>
+<td>0.89599</td>
+<td>0.95408</td>
+<td>0.85569</td>
+<td>0.94627</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.96895</td>
+<td>0.96882</td>
+<td>0.97899</td>
+<td>0.95396</td>
+<td>0.981</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.98506</td>
+<td>0.97493</td>
+<td>0.97711</td>
+<td>0.97239</td>
+<td>0.98454</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-84" style="background:;">
+  <hgroup>
+    <h2>GiaB 22 MQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>68.915 84.83 88.915</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.42985</td>
+<td>0.32536</td>
+<td>0.46759</td>
+<td>0.50831</td>
+<td>0.46694</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.4304</td>
+<td>0.22919</td>
+<td>0.60155</td>
+<td>0.5781</td>
+<td>0.5821</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.79038</td>
+<td>0.53492</td>
+<td>0.87326</td>
+<td>0.84394</td>
+<td>0.86132</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.96578</td>
+<td>0.93274</td>
+<td>0.97112</td>
+<td>0.96783</td>
+<td>0.97005</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-85" style="background:;">
+  <hgroup>
+    <h2>GiaB 22 MQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>90.15 92.09 92.48</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.89783</td>
+<td>0.88439</td>
+<td>0.93969</td>
+<td>0.89999</td>
+<td>0.92673</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.97308</td>
+<td>0.96422</td>
+<td>0.971</td>
+<td>0.95589</td>
+<td>0.98026</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.98388</td>
+<td>0.97005</td>
+<td>0.97253</td>
+<td>0.9687</td>
+<td>0.98126</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.99197</td>
+<td>0.98605</td>
+<td>0.98605</td>
+<td>0.98401</td>
+<td>0.99136</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-86" style="background:;">
+  <hgroup>
+    <h2>GiaB 22 MQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>80.18 88.68 92.2</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.40727</td>
+<td>0.25688</td>
+<td>0.4971</td>
+<td>0.51274</td>
+<td>0.49286</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.66145</td>
+<td>0.38724</td>
+<td>0.80995</td>
+<td>0.77455</td>
+<td>0.79121</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.9494</td>
+<td>0.88299</td>
+<td>0.96132</td>
+<td>0.95496</td>
+<td>0.95886</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.97772</td>
+<td>0.97171</td>
+<td>0.9784</td>
+<td>0.97719</td>
+<td>0.9782</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-87" style="background:;">
+  <hgroup>
+    <h2>upenn 19 Coverage SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>11.238 20.34 230.02</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.69714</td>
+<td>0.66286</td>
+<td>0.80571</td>
+<td>0.56571</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.71601</td>
+<td>0.71187</td>
+<td>0.53215</td>
+<td>0.44316</td>
+<td>0.63884</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.63478</td>
+<td>0.62058</td>
+<td>0.44889</td>
+<td>0.38119</td>
+<td>0.59465</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0</td>
+<td>0</td>
+<td>0.42857</td>
+<td>0.28571</td>
+<td>0.42857</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-88" style="background:;">
+  <hgroup>
+    <h2>upenn 19 Coverage SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>10.366 18.7 257.05</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.020277</td>
+<td>0.0078018</td>
+<td>0.016732</td>
+<td>0.018215</td>
+<td>0.020613</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.13332</td>
+<td>0.05962</td>
+<td>0.085954</td>
+<td>0.11142</td>
+<td>0.091259</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.16617</td>
+<td>0.090621</td>
+<td>0.10586</td>
+<td>0.13089</td>
+<td>0.10901</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.046512</td>
+<td>0.063492</td>
+<td>0.19355</td>
+<td>0.040816</td>
+<td>0.13889</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-89" style="background:;">
+  <hgroup>
+    <h2>upenn 19 Coverage SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>16.91 19.82 22.68</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.71185</td>
+<td>0.72718</td>
+<td>0.63938</td>
+<td>0.47885</td>
+<td>0.7393</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.71749</td>
+<td>0.70419</td>
+<td>0.49483</td>
+<td>0.4133</td>
+<td>0.66749</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.67076</td>
+<td>0.6629</td>
+<td>0.46428</td>
+<td>0.39897</td>
+<td>0.62436</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.61519</td>
+<td>0.58797</td>
+<td>0.44296</td>
+<td>0.38357</td>
+<td>0.56199</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-90" style="background:;">
+  <hgroup>
+    <h2>upenn 19 Coverage SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>15.03 18.29 21.38</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.089407</td>
+<td>0.035718</td>
+<td>0.066259</td>
+<td>0.082508</td>
+<td>0.073663</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.14672</td>
+<td>0.069173</td>
+<td>0.090523</td>
+<td>0.11937</td>
+<td>0.095664</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.152</td>
+<td>0.078361</td>
+<td>0.090279</td>
+<td>0.11792</td>
+<td>0.094334</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.17736</td>
+<td>0.10032</td>
+<td>0.11926</td>
+<td>0.14087</td>
+<td>0.12132</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-91" style="background:;">
+  <hgroup>
+    <h2>upenn 19 BQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>57.9 63.13 64.7</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.24324</td>
+<td>0.18919</td>
+<td>0.32432</td>
+<td>0.27027</td>
+<td>0.32432</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.66314</td>
+<td>0.68324</td>
+<td>0.54933</td>
+<td>0.40777</td>
+<td>0.67748</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.73767</td>
+<td>0.72912</td>
+<td>0.55494</td>
+<td>0.46126</td>
+<td>0.67729</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.61529</td>
+<td>0.60239</td>
+<td>0.35601</td>
+<td>0.3157</td>
+<td>0.48146</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-92" style="background:;">
+  <hgroup>
+    <h2>upenn 19 BQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>53.865 62.66 64.83</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0</td>
+<td>0.008016</td>
+<td>0.04878</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.12228</td>
+<td>0.059413</td>
+<td>0.086175</td>
+<td>0.1054</td>
+<td>0.090469</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.16044</td>
+<td>0.084058</td>
+<td>0.10609</td>
+<td>0.12978</td>
+<td>0.11084</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.16901</td>
+<td>0.076483</td>
+<td>0.087536</td>
+<td>0.12774</td>
+<td>0.09367</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-93" style="background:;">
+  <hgroup>
+    <h2>upenn 19 BQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>61.82 63.36 64.48</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.59569</td>
+<td>0.62936</td>
+<td>0.51721</td>
+<td>0.36469</td>
+<td>0.6566</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.74186</td>
+<td>0.7421</td>
+<td>0.60103</td>
+<td>0.46853</td>
+<td>0.71712</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.74883</td>
+<td>0.73918</td>
+<td>0.56836</td>
+<td>0.47787</td>
+<td>0.69567</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.62846</td>
+<td>0.61734</td>
+<td>0.37154</td>
+<td>0.3414</td>
+<td>0.50025</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-94" style="background:;">
+  <hgroup>
+    <h2>upenn 19 BQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>61.3 62.85 64.36</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.0929</td>
+<td>0.043389</td>
+<td>0.071896</td>
+<td>0.086329</td>
+<td>0.075758</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.14435</td>
+<td>0.076621</td>
+<td>0.098193</td>
+<td>0.11936</td>
+<td>0.10244</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.15715</td>
+<td>0.083966</td>
+<td>0.10857</td>
+<td>0.12924</td>
+<td>0.11328</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.17119</td>
+<td>0.080636</td>
+<td>0.093533</td>
+<td>0.13071</td>
+<td>0.099363</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-95" style="background:;">
+  <hgroup>
+    <h2>upenn 19 MQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>73.18 91.26 92.06</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.71053</td>
+<td>0.52632</td>
+<td>0.76316</td>
+<td>0.52632</td>
+<td>0.68421</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.68823</td>
+<td>0.68925</td>
+<td>0.53923</td>
+<td>0.42078</td>
+<td>0.65436</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.71291</td>
+<td>0.7094</td>
+<td>0.4709</td>
+<td>0.46628</td>
+<td>0.56882</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.64635</td>
+<td>0.65804</td>
+<td>0.42208</td>
+<td>0.39488</td>
+<td>0.55044</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-96" style="background:;">
+  <hgroup>
+    <h2>upenn 19 MQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>70.46 87.85 90.425</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.0073109</td>
+<td>0.0028564</td>
+<td>0.0050385</td>
+<td>0.0050096</td>
+<td>0.0054182</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.036832</td>
+<td>0.013838</td>
+<td>0.030284</td>
+<td>0.031711</td>
+<td>0.031545</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.091049</td>
+<td>0.043088</td>
+<td>0.055576</td>
+<td>0.070824</td>
+<td>0.058563</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.19552</td>
+<td>0.11072</td>
+<td>0.11957</td>
+<td>0.1584</td>
+<td>0.12599</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-97" style="background:;">
+  <hgroup>
+    <h2>upenn 19 MQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>91.29 91.95 92.26</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.69111</td>
+<td>0.69456</td>
+<td>0.55722</td>
+<td>0.42186</td>
+<td>0.67364</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.70924</td>
+<td>0.70401</td>
+<td>0.47274</td>
+<td>0.46652</td>
+<td>0.56311</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.69212</td>
+<td>0.69648</td>
+<td>0.46521</td>
+<td>0.44315</td>
+<td>0.57794</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.62238</td>
+<td>0.63883</td>
+<td>0.3993</td>
+<td>0.36765</td>
+<td>0.53564</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-98" style="background:;">
+  <hgroup>
+    <h2>upenn 19 MQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>86.18 90.74 91.92</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.02508</td>
+<td>0.0097561</td>
+<td>0.021709</td>
+<td>0.022698</td>
+<td>0.023313</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.087763</td>
+<td>0.040561</td>
+<td>0.054276</td>
+<td>0.068411</td>
+<td>0.057081</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.1588</td>
+<td>0.085555</td>
+<td>0.093555</td>
+<td>0.12617</td>
+<td>0.099119</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.24161</td>
+<td>0.14277</td>
+<td>0.15072</td>
+<td>0.19777</td>
+<td>0.15797</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-99" style="background:;">
+  <hgroup>
+    <h2>upenn 20 Coverage SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>11.8385 18.81 121.105</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.72184</td>
+<td>0.74483</td>
+<td>0.84138</td>
+<td>0.64828</td>
+<td>0.85977</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.71841</td>
+<td>0.71649</td>
+<td>0.56886</td>
+<td>0.50794</td>
+<td>0.62135</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.70243</td>
+<td>0.67757</td>
+<td>0.52168</td>
+<td>0.51496</td>
+<td>0.6029</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-100" style="background:;">
+  <hgroup>
+    <h2>upenn 20 Coverage SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>10.392 18.75 218.725</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.025953</td>
+<td>0.0099868</td>
+<td>0.022724</td>
+<td>0.028809</td>
+<td>0.029056</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.2366</td>
+<td>0.11741</td>
+<td>0.15128</td>
+<td>0.20863</td>
+<td>0.16126</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.23359</td>
+<td>0.12531</td>
+<td>0.14696</td>
+<td>0.19521</td>
+<td>0.14857</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0</td>
+<td>0.016807</td>
+<td>0.090909</td>
+<td>0.021739</td>
+<td>0.032258</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-101" style="background:;">
+  <hgroup>
+    <h2>upenn 20 Coverage SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>15.91 18.38 21.32</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.72465</td>
+<td>0.73683</td>
+<td>0.66731</td>
+<td>0.54942</td>
+<td>0.69982</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.71659</td>
+<td>0.71272</td>
+<td>0.53438</td>
+<td>0.47853</td>
+<td>0.65171</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.71563</td>
+<td>0.70715</td>
+<td>0.51864</td>
+<td>0.46039</td>
+<td>0.64042</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.68754</td>
+<td>0.6491</td>
+<td>0.51521</td>
+<td>0.50881</td>
+<td>0.61851</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-102" style="background:;">
+  <hgroup>
+    <h2>upenn 20 Coverage SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>14.97 17.91 21.18</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.17809</td>
+<td>0.079328</td>
+<td>0.12408</td>
+<td>0.16806</td>
+<td>0.13796</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.25398</td>
+<td>0.13075</td>
+<td>0.15907</td>
+<td>0.21973</td>
+<td>0.16791</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.2509</td>
+<td>0.13315</td>
+<td>0.15032</td>
+<td>0.20687</td>
+<td>0.15623</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.22223</td>
+<td>0.12034</td>
+<td>0.14633</td>
+<td>0.1899</td>
+<td>0.14509</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-103" style="background:;">
+  <hgroup>
+    <h2>upenn 20 BQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>59.055 63.38 64.815</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.33333</td>
+<td>0.30769</td>
+<td>0.4359</td>
+<td>0.33333</td>
+<td>0.46154</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.70976</td>
+<td>0.71449</td>
+<td>0.59479</td>
+<td>0.51517</td>
+<td>0.60727</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.76082</td>
+<td>0.74483</td>
+<td>0.61651</td>
+<td>0.58944</td>
+<td>0.63508</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.62776</td>
+<td>0.61491</td>
+<td>0.45259</td>
+<td>0.40117</td>
+<td>0.43411</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-104" style="background:;">
+  <hgroup>
+    <h2>upenn 20 BQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>54.765 63 64.91</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0</td>
+<td>0.0037244</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.20648</td>
+<td>0.099852</td>
+<td>0.13625</td>
+<td>0.17898</td>
+<td>0.14201</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.24344</td>
+<td>0.13611</td>
+<td>0.16419</td>
+<td>0.21376</td>
+<td>0.16983</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.24788</td>
+<td>0.11566</td>
+<td>0.13144</td>
+<td>0.20803</td>
+<td>0.14017</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-105" style="background:;">
+  <hgroup>
+    <h2>upenn 20 BQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>62.11 63.7 64.66</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.67056</td>
+<td>0.69503</td>
+<td>0.58212</td>
+<td>0.4569</td>
+<td>0.5874</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.76309</td>
+<td>0.74767</td>
+<td>0.6558</td>
+<td>0.60922</td>
+<td>0.67122</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.77071</td>
+<td>0.75373</td>
+<td>0.6241</td>
+<td>0.59638</td>
+<td>0.63676</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.63989</td>
+<td>0.62878</td>
+<td>0.45782</td>
+<td>0.41693</td>
+<td>0.45557</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-106" style="background:;">
+  <hgroup>
+    <h2>upenn 20 BQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>61.63 63.31 64.61</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.17904</td>
+<td>0.079089</td>
+<td>0.11747</td>
+<td>0.15697</td>
+<td>0.12316</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.22592</td>
+<td>0.12347</td>
+<td>0.15472</td>
+<td>0.19704</td>
+<td>0.16017</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.24712</td>
+<td>0.13925</td>
+<td>0.16955</td>
+<td>0.21714</td>
+<td>0.17477</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.24867</td>
+<td>0.12189</td>
+<td>0.13857</td>
+<td>0.21084</td>
+<td>0.14692</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-107" style="background:;">
+  <hgroup>
+    <h2>upenn 20 MQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>78.125 91.69 92.29</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.78571</td>
+<td>0.64286</td>
+<td>0.71429</td>
+<td>0.75</td>
+<td>0.71429</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.73539</td>
+<td>0.71868</td>
+<td>0.60701</td>
+<td>0.54223</td>
+<td>0.59104</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.71436</td>
+<td>0.71486</td>
+<td>0.52152</td>
+<td>0.51062</td>
+<td>0.54922</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.67818</td>
+<td>0.6846</td>
+<td>0.49285</td>
+<td>0.47069</td>
+<td>0.49687</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-108" style="background:;">
+  <hgroup>
+    <h2>upenn 20 MQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>70.955 88.66 90.83</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.0028225</td>
+<td>0.0013607</td>
+<td>0.0023692</td>
+<td>0.0041189</td>
+<td>0.0029756</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.046634</td>
+<td>0.016213</td>
+<td>0.03931</td>
+<td>0.047025</td>
+<td>0.036901</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.15105</td>
+<td>0.068127</td>
+<td>0.086465</td>
+<td>0.11893</td>
+<td>0.092772</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.28603</td>
+<td>0.1658</td>
+<td>0.17394</td>
+<td>0.23986</td>
+<td>0.18372</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-109" style="background:;">
+  <hgroup>
+    <h2>upenn 20 MQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>91.64 92.04 92.29</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.73442</td>
+<td>0.71285</td>
+<td>0.64382</td>
+<td>0.56903</td>
+<td>0.60722</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.73136</td>
+<td>0.72696</td>
+<td>0.53549</td>
+<td>0.51921</td>
+<td>0.55389</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.70071</td>
+<td>0.70531</td>
+<td>0.5134</td>
+<td>0.50119</td>
+<td>0.53719</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.67818</td>
+<td>0.6846</td>
+<td>0.49285</td>
+<td>0.47069</td>
+<td>0.49687</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-110" style="background:;">
+  <hgroup>
+    <h2>upenn 20 MQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>88.07 91.51 92.14</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.032641</td>
+<td>0.01187</td>
+<td>0.029052</td>
+<td>0.035042</td>
+<td>0.02756</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.18094</td>
+<td>0.086422</td>
+<td>0.10407</td>
+<td>0.14457</td>
+<td>0.1111</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.29276</td>
+<td>0.17144</td>
+<td>0.17978</td>
+<td>0.24738</td>
+<td>0.19049</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.30815</td>
+<td>0.18247</td>
+<td>0.1879</td>
+<td>0.25762</td>
+<td>0.19717</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-111" style="background:;">
+  <hgroup>
+    <h2>upenn 21 Coverage SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>10.215 17.51 81.055</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.76636</td>
+<td>0.72897</td>
+<td>0.86916</td>
+<td>0.79439</td>
+<td>0.8785</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.73416</td>
+<td>0.72986</td>
+<td>0.59613</td>
+<td>0.52511</td>
+<td>0.64393</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.72349</td>
+<td>0.67219</td>
+<td>0.46494</td>
+<td>0.38877</td>
+<td>0.53972</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.5</td>
+<td>0.5</td>
+<td>0</td>
+<td>0</td>
+<td>0.66667</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-112" style="background:;">
+  <hgroup>
+    <h2>upenn 21 Coverage SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>12.896 23.76 259.73</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.11821</td>
+<td>0.055764</td>
+<td>0.08778</td>
+<td>0.1194</td>
+<td>0.1012</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.22017</td>
+<td>0.1159</td>
+<td>0.13589</td>
+<td>0.18438</td>
+<td>0.14318</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.10508</td>
+<td>0.040935</td>
+<td>0.071299</td>
+<td>0.082112</td>
+<td>0.065202</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-113" style="background:;">
+  <hgroup>
+    <h2>upenn 21 Coverage SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>14.47 16.79 19.89</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.73043</td>
+<td>0.75712</td>
+<td>0.69835</td>
+<td>0.6048</td>
+<td>0.75652</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.73673</td>
+<td>0.72924</td>
+<td>0.55322</td>
+<td>0.50345</td>
+<td>0.65847</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.73477</td>
+<td>0.72372</td>
+<td>0.51195</td>
+<td>0.43847</td>
+<td>0.66577</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.71707</td>
+<td>0.61836</td>
+<td>0.42124</td>
+<td>0.30573</td>
+<td>0.48155</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-114" style="background:;">
+  <hgroup>
+    <h2>upenn 21 Coverage SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>13.89 17.11 21.79</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.14576</td>
+<td>0.071212</td>
+<td>0.10488</td>
+<td>0.1433</td>
+<td>0.11841</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.22987</td>
+<td>0.12192</td>
+<td>0.14602</td>
+<td>0.19995</td>
+<td>0.1558</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.21885</td>
+<td>0.11347</td>
+<td>0.12915</td>
+<td>0.17605</td>
+<td>0.13463</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.13484</td>
+<td>0.057533</td>
+<td>0.088218</td>
+<td>0.1051</td>
+<td>0.08353</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-115" style="background:;">
+  <hgroup>
+    <h2>upenn 21 BQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>60.515 63.44 64.845</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.57239</td>
+<td>0.58249</td>
+<td>0.67677</td>
+<td>0.43434</td>
+<td>0.60269</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.73841</td>
+<td>0.71685</td>
+<td>0.57995</td>
+<td>0.48599</td>
+<td>0.59378</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.78154</td>
+<td>0.73806</td>
+<td>0.58866</td>
+<td>0.50682</td>
+<td>0.61125</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.64235</td>
+<td>0.58262</td>
+<td>0.39914</td>
+<td>0.47067</td>
+<td>0.40701</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-116" style="background:;">
+  <hgroup>
+    <h2>upenn 21 BQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>55.55 63.18 65.16</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.17465</td>
+<td>0.082884</td>
+<td>0.11528</td>
+<td>0.15025</td>
+<td>0.11954</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.19591</td>
+<td>0.10272</td>
+<td>0.1293</td>
+<td>0.167</td>
+<td>0.13388</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.19161</td>
+<td>0.083445</td>
+<td>0.10248</td>
+<td>0.1585</td>
+<td>0.1126</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-117" style="background:;">
+  <hgroup>
+    <h2>upenn 21 BQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>62.16 63.77 64.72</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.69754</td>
+<td>0.68945</td>
+<td>0.57524</td>
+<td>0.44844</td>
+<td>0.55516</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.77678</td>
+<td>0.74617</td>
+<td>0.62766</td>
+<td>0.52355</td>
+<td>0.65737</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.7861</td>
+<td>0.73847</td>
+<td>0.59527</td>
+<td>0.51618</td>
+<td>0.60875</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.65879</td>
+<td>0.60167</td>
+<td>0.41776</td>
+<td>0.47428</td>
+<td>0.42673</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-118" style="background:;">
+  <hgroup>
+    <h2>upenn 21 BQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>61.84 63.55 64.71</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.16624</td>
+<td>0.073476</td>
+<td>0.10797</td>
+<td>0.14282</td>
+<td>0.11224</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.18296</td>
+<td>0.095065</td>
+<td>0.12505</td>
+<td>0.15791</td>
+<td>0.12899</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.19877</td>
+<td>0.10488</td>
+<td>0.13461</td>
+<td>0.16981</td>
+<td>0.1385</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.1936</td>
+<td>0.092302</td>
+<td>0.1112</td>
+<td>0.1622</td>
+<td>0.11943</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-119" style="background:;">
+  <hgroup>
+    <h2>upenn 21 MQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>73.265 91.53 92.175</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.6</td>
+<td>0.5</td>
+<td>0.65</td>
+<td>0.55</td>
+<td>0.65</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.7369</td>
+<td>0.65244</td>
+<td>0.59741</td>
+<td>0.49117</td>
+<td>0.50294</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.74392</td>
+<td>0.73611</td>
+<td>0.53345</td>
+<td>0.52955</td>
+<td>0.57693</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.70607</td>
+<td>0.71003</td>
+<td>0.52292</td>
+<td>0.48895</td>
+<td>0.51966</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-120" style="background:;">
+  <hgroup>
+    <h2>upenn 21 MQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>69.91 86.82 89.91</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.0030876</td>
+<td>0.0015813</td>
+<td>0.0024102</td>
+<td>0.0030127</td>
+<td>0.0022711</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.02362</td>
+<td>0.0076144</td>
+<td>0.018032</td>
+<td>0.019245</td>
+<td>0.016216</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.11681</td>
+<td>0.047741</td>
+<td>0.06956</td>
+<td>0.092336</td>
+<td>0.073652</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.24423</td>
+<td>0.14018</td>
+<td>0.14904</td>
+<td>0.20494</td>
+<td>0.15898</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-121" style="background:;">
+  <hgroup>
+    <h2>upenn 21 MQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>91.51 91.97 92.25</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.73678</td>
+<td>0.67127</td>
+<td>0.63251</td>
+<td>0.48978</td>
+<td>0.53425</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.74081</td>
+<td>0.73086</td>
+<td>0.55455</td>
+<td>0.54671</td>
+<td>0.57806</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.74022</td>
+<td>0.73468</td>
+<td>0.50817</td>
+<td>0.50963</td>
+<td>0.57385</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.70101</td>
+<td>0.70682</td>
+<td>0.53195</td>
+<td>0.48731</td>
+<td>0.50718</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-122" style="background:;">
+  <hgroup>
+    <h2>upenn 21 MQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>84.04 91.03 92</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.0099084</td>
+<td>0.0036334</td>
+<td>0.0081447</td>
+<td>0.0090481</td>
+<td>0.0075737</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.12121</td>
+<td>0.051111</td>
+<td>0.07337</td>
+<td>0.097374</td>
+<td>0.077119</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.22849</td>
+<td>0.13336</td>
+<td>0.14169</td>
+<td>0.19477</td>
+<td>0.15187</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.28588</td>
+<td>0.16678</td>
+<td>0.17279</td>
+<td>0.23774</td>
+<td>0.18318</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-123" style="background:;">
+  <hgroup>
+    <h2>upenn 22 Coverage SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>11.185 20.13 82.465</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.71429</td>
+<td>0.77679</td>
+<td>0.8125</td>
+<td>0.79464</td>
+<td>0.86607</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.71678</td>
+<td>0.7155</td>
+<td>0.5916</td>
+<td>0.45953</td>
+<td>0.62205</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.67975</td>
+<td>0.6665</td>
+<td>0.52077</td>
+<td>0.44782</td>
+<td>0.5983</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.16667</td>
+<td>0.16667</td>
+<td>1</td>
+<td>0</td>
+<td>0.5</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-124" style="background:;">
+  <hgroup>
+    <h2>upenn 22 Coverage SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>10.4115 18.79 195.245</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.015731</td>
+<td>0.0072933</td>
+<td>0.013075</td>
+<td>0.01824</td>
+<td>0.018208</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.18556</td>
+<td>0.083654</td>
+<td>0.11749</td>
+<td>0.15911</td>
+<td>0.1248</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.20464</td>
+<td>0.10897</td>
+<td>0.1261</td>
+<td>0.16134</td>
+<td>0.12887</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-125" style="background:;">
+  <hgroup>
+    <h2>upenn 22 Coverage SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>17.03 20.03 22.91</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.72463</td>
+<td>0.76516</td>
+<td>0.68251</td>
+<td>0.52904</td>
+<td>0.75782</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.7098</td>
+<td>0.69507</td>
+<td>0.5599</td>
+<td>0.43113</td>
+<td>0.64894</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.68251</td>
+<td>0.67766</td>
+<td>0.54252</td>
+<td>0.43097</td>
+<td>0.62334</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.67649</td>
+<td>0.65439</td>
+<td>0.50224</td>
+<td>0.45131</td>
+<td>0.59001</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-126" style="background:;">
+  <hgroup>
+    <h2>upenn 22 Coverage SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>15.26 18.86 22.14</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.11781</td>
+<td>0.048742</td>
+<td>0.08465</td>
+<td>0.11744</td>
+<td>0.096808</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.2039</td>
+<td>0.098686</td>
+<td>0.12473</td>
+<td>0.16835</td>
+<td>0.13072</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.19658</td>
+<td>0.10324</td>
+<td>0.11736</td>
+<td>0.15436</td>
+<td>0.12162</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.21252</td>
+<td>0.11488</td>
+<td>0.13524</td>
+<td>0.16802</td>
+<td>0.13624</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-127" style="background:;">
+  <hgroup>
+    <h2>upenn 22 BQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>59.725 63.2 64.76</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.45</td>
+<td>0.5</td>
+<td>0.6875</td>
+<td>0.5875</td>
+<td>0.7625</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.70182</td>
+<td>0.7168</td>
+<td>0.58261</td>
+<td>0.44578</td>
+<td>0.63534</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.754</td>
+<td>0.7524</td>
+<td>0.60964</td>
+<td>0.50548</td>
+<td>0.64596</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.59522</td>
+<td>0.61657</td>
+<td>0.38728</td>
+<td>0.35226</td>
+<td>0.43424</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-128" style="background:;">
+  <hgroup>
+    <h2>upenn 22 BQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>54.8 62.75 65.04</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.16137</td>
+<td>0.076626</td>
+<td>0.10676</td>
+<td>0.13756</td>
+<td>0.11139</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.20486</td>
+<td>0.10792</td>
+<td>0.13204</td>
+<td>0.16969</td>
+<td>0.13803</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.21143</td>
+<td>0.096313</td>
+<td>0.1098</td>
+<td>0.17185</td>
+<td>0.11846</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-129" style="background:;">
+  <hgroup>
+    <h2>upenn 22 BQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>61.84 63.43 64.54</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.63494</td>
+<td>0.67788</td>
+<td>0.56026</td>
+<td>0.41731</td>
+<td>0.61442</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.77388</td>
+<td>0.77324</td>
+<td>0.63332</td>
+<td>0.53844</td>
+<td>0.69444</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.76738</td>
+<td>0.76386</td>
+<td>0.62095</td>
+<td>0.53124</td>
+<td>0.6687</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.61795</td>
+<td>0.63558</td>
+<td>0.42372</td>
+<td>0.38077</td>
+<td>0.45449</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-130" style="background:;">
+  <hgroup>
+    <h2>upenn 22 BQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>61.39 62.92 64.43</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.13372</td>
+<td>0.059911</td>
+<td>0.093345</td>
+<td>0.12151</td>
+<td>0.098137</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.18162</td>
+<td>0.094188</td>
+<td>0.11874</td>
+<td>0.15001</td>
+<td>0.1231</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.20261</td>
+<td>0.10949</td>
+<td>0.13808</td>
+<td>0.17011</td>
+<td>0.14346</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.21362</td>
+<td>0.10279</td>
+<td>0.11785</td>
+<td>0.17204</td>
+<td>0.12566</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-131" style="background:;">
+  <hgroup>
+    <h2>upenn 22 MQ SW TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>73.13 91.51 92.18</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.75</td>
+<td>0.55556</td>
+<td>0.66667</td>
+<td>0.72222</td>
+<td>0.58333</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.73151</td>
+<td>0.73046</td>
+<td>0.6176</td>
+<td>0.46933</td>
+<td>0.61374</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.71192</td>
+<td>0.70611</td>
+<td>0.56654</td>
+<td>0.49631</td>
+<td>0.55558</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.66797</td>
+<td>0.67678</td>
+<td>0.51184</td>
+<td>0.44257</td>
+<td>0.52827</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-132" style="background:;">
+  <hgroup>
+    <h2>upenn 22 MQ SW HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>70.225 87.45 90.205</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.0086885</td>
+<td>0.0037486</td>
+<td>0.0061162</td>
+<td>0.0086412</td>
+<td>0.0070154</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.038162</td>
+<td>0.012354</td>
+<td>0.029967</td>
+<td>0.034989</td>
+<td>0.030711</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.12127</td>
+<td>0.050409</td>
+<td>0.068349</td>
+<td>0.091293</td>
+<td>0.072403</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.23996</td>
+<td>0.13571</td>
+<td>0.14457</td>
+<td>0.1935</td>
+<td>0.15189</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-133" style="background:;">
+  <hgroup>
+    <h2>upenn 22 MQ SC TPR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>91.58 92.08 92.33</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.73014</td>
+<td>0.74705</td>
+<td>0.63923</td>
+<td>0.48389</td>
+<td>0.64561</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.71218</td>
+<td>0.7017</td>
+<td>0.55763</td>
+<td>0.50098</td>
+<td>0.54912</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.70231</td>
+<td>0.70324</td>
+<td>0.54582</td>
+<td>0.48099</td>
+<td>0.54458</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.64855</td>
+<td>0.66482</td>
+<td>0.50504</td>
+<td>0.42174</td>
+<td>0.51643</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-134" style="background:;">
+  <hgroup>
+    <h2>upenn 22 MQ SC HM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>85.98 91.19 92.14</p>
+
+<table><thead>
+<tr>
+<th>Software</th>
+<th>FREEBAY</th>
+<th>GATK</th>
+<th>SAMTOOL</th>
+<th>MULTIGE</th>
+<th>VARSCAN</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Region 1</td>
+<td>0.023784</td>
+<td>0.0081758</td>
+<td>0.018656</td>
+<td>0.023548</td>
+<td>0.019943</td>
+</tr>
+<tr>
+<td>Region 2</td>
+<td>0.13044</td>
+<td>0.05693</td>
+<td>0.075127</td>
+<td>0.10024</td>
+<td>0.079243</td>
+</tr>
+<tr>
+<td>Region 3</td>
+<td>0.2363</td>
+<td>0.13328</td>
+<td>0.14229</td>
+<td>0.19319</td>
+<td>0.15028</td>
+</tr>
+<tr>
+<td>Region 4</td>
+<td>0.27102</td>
+<td>0.15955</td>
+<td>0.16505</td>
+<td>0.21718</td>
+<td>0.17235</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-135" style="background:;">
+  <hgroup>
+    <h2>20150318 job</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Take GiaB Chr18 46593709 and 55580488 as example to analyse the process of GeMS</li>
+<li>Make each quntile have same SNPs called and campare softwares</li>
+<li>The lowest mapping quality region of GiaB and upenn</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-136" style="background:;">
+  <hgroup>
+    <h2>20150313 job</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
 <li>Watch the video of MultiGeMS</li>
 <li>Check EM algorithm of R code</li>
 <li>Check EM algorithm of C++ code</li>
@@ -25,21 +7360,31 @@
 <li>Find some special region according to properties</li>
 </ol>
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
-<article class="" id="slide-2" style="background:;">
-  <h3>Check EM algorithm (R)</h3>
-  <ul>
+<slide class="" id="slide-137" style="background:;">
+  <hgroup>
+    <h2>Check EM algorithm (R)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
 <li>Use all the default value from GeMS-3gen-submax.R</li>
 <li>Process data from file &quot;samples&quot;</li>
 <li>Run multiEM function</li>
 </ul>
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
-<article class="" id="slide-3" style="background:;">
-  <h3>Code (Without paste of default values)</h3>
-  <pre><code>require(&quot;minqa&quot;)
+<slide class="" id="slide-138" style="background:;">
+  <hgroup>
+    <h2>Code (Without paste of default values)</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code>require(&quot;minqa&quot;)
 require(&quot;Biostrings&quot;)
 data &lt;- read.table(file=&quot;samples&quot;, header=FALSE, sep=&quot;\t&quot;)
 data &lt;- cbind(data, data[,1])
@@ -49,21 +7394,31 @@ source(&quot;em.R&quot;)
 multiEM(&quot;C&quot;, data, c(1),1)
 </code></pre>
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
-<article class="" id="slide-4" style="background:;">
-  <h3>Check EM algorithm (C++)</h3>
-  <ul>
+<slide class="" id="slide-139" style="background:;">
+  <hgroup>
+    <h2>Check EM algorithm (C++)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
 <li>Modify code to add debug function</li>
 <li>Modify code to add test function</li>
 <li>Run without parameter</li>
 </ul>
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
-<article class="" id="slide-5" style="background:;">
-  <h3>Create site file interest.txt</h3>
-  <ul>
+<slide class="" id="slide-140" style="background:;">
+  <hgroup>
+    <h2>Create site file interest.txt</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
 <li>Use upennmed.R (Comment pool part)</li>
 <li>Use gzip -d *.vcf.gz if necessary</li>
 <li>Use gzip -d *.out.gz if necessary</li>
@@ -72,11 +7427,16 @@ multiEM(&quot;C&quot;, data, c(1),1)
 <li>Use intersect() setdiff()</li>
 </ul>
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
-<article class="" id="slide-6" style="background:;">
-  <h3>Select suspicious sites</h3>
-  <pre><code>zgrep -f ~/interest.txt *.pile.gz &gt; ~/sites.txt
+<slide class="" id="slide-141" style="background:;">
+  <hgroup>
+    <h2>Select suspicious sites</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code>zgrep -f ~/interest.txt *.pile.gz &gt; ~/sites.txt
 sort -n -k 2 sites.txt &gt; sites.sorted.txt
 </code></pre>
 
@@ -87,8 +7447,11 @@ cat interest.txt | wc -l
 cat sites.sorted.txt | cut -c 3-7 | sort | uniq | wc -l
 </code></pre>
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<<<<<<< HEAD
 <article class="" id="slide-7" style="background:;">
   <h3>table</h3>
   <table><thead>
@@ -140,15 +7503,34 @@ cat sites.sorted.txt | cut -c 3-7 | sort | uniq | wc -l
 <article class="" id="slide-8" style="background:;">
   <h3>Histgram</h3>
   <ul>
+=======
+<slide class="" id="slide-142" style="background:;">
+  <hgroup>
+    <h2>Histgram</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+>>>>>>> a4a11d67e8740451d199f52de97f4097435c5a66
 <li>The whole dataset</li>
 <li>Every Chromosome</li>
 </ul>
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<<<<<<< HEAD
 <article class="" id="slide-9" style="background:;">
   <h3>GiaB dataset</h3>
   <pre><code class="r">library(ggplot2)
+=======
+<slide class="" id="slide-143" style="background:;">
+  <hgroup>
+    <h2>GiaB dataset</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(ggplot2)
+>>>>>>> a4a11d67e8740451d199f52de97f4097435c5a66
 load(&quot;GiaB_dataset.rda&quot;)
 p &lt;- ggplot(data=GiaB_dataset, aes(x=Chr, fill=factor(Snp)))
 p + geom_bar(position=&#39;stack&#39;)
@@ -156,11 +7538,22 @@ p + geom_bar(position=&#39;stack&#39;)
 
 <p><img src="assets/fig/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" /></p>
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<<<<<<< HEAD
 <article class="" id="slide-10" style="background:;">
   <h3>GiaB dataset</h3>
   <pre><code class="r">library(ggplot2)
+=======
+<slide class="" id="slide-144" style="background:;">
+  <hgroup>
+    <h2>GiaB dataset</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(ggplot2)
+>>>>>>> a4a11d67e8740451d199f52de97f4097435c5a66
 load(&quot;GiaB_dataset.rda&quot;)
 p &lt;- ggplot(data=GiaB_dataset, aes(x=Chr, fill=factor(Snp)))
 p + geom_bar(position=&#39;fill&#39;)
@@ -168,11 +7561,22 @@ p + geom_bar(position=&#39;fill&#39;)
 
 <p><img src="assets/fig/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" /></p>
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<<<<<<< HEAD
 <article class="" id="slide-11" style="background:;">
   <h3>GiaB dataset (Code)</h3>
   <pre><code class="r">library(ggplot2); 
+=======
+<slide class="" id="slide-145" style="background:;">
+  <hgroup>
+    <h2>GiaB dataset (Code)</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(ggplot2); 
+>>>>>>> a4a11d67e8740451d199f52de97f4097435c5a66
 load(&quot;GiaB_dataset.rda&quot;)
 p &lt;- ggplot(data=GiaB_dataset[GiaB_dataset$Chr==&quot;chr19&quot;, ], aes(Site))
 p + geom_histogram(binwidth=500000, position=&#39;identity&#39;, 
@@ -181,41 +7585,107 @@ stat_density(geom=&#39;line&#39;, position = &#39;identity&#39;, aes(colour = fa
 facet_grid(Snp~.)
 </code></pre>
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<<<<<<< HEAD
 <article class="" id="slide-12" style="background:;">
   <h3>GiaB dataset (Chr18)</h3>
   <p><img src="assets/fig/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" style="display: block; margin: auto;" /></p>
+=======
+<slide class="" id="slide-146" style="background:;">
+  <hgroup>
+    <h2>GiaB dataset (Chr18)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" style="display: block; margin: auto;" /></p>
+>>>>>>> a4a11d67e8740451d199f52de97f4097435c5a66
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<<<<<<< HEAD
 <article class="" id="slide-13" style="background:;">
   <h3>GiaB dataset (Chr19)</h3>
   <p><img src="assets/fig/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" style="display: block; margin: auto;" /></p>
+=======
+<slide class="" id="slide-147" style="background:;">
+  <hgroup>
+    <h2>GiaB dataset (Chr19)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" style="display: block; margin: auto;" /></p>
+>>>>>>> a4a11d67e8740451d199f52de97f4097435c5a66
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<<<<<<< HEAD
 <article class="" id="slide-14" style="background:;">
   <h3>GiaB dataset (Chr20)</h3>
   <p><img src="assets/fig/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" style="display: block; margin: auto;" /></p>
+=======
+<slide class="" id="slide-148" style="background:;">
+  <hgroup>
+    <h2>GiaB dataset (Chr20)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" style="display: block; margin: auto;" /></p>
+>>>>>>> a4a11d67e8740451d199f52de97f4097435c5a66
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<<<<<<< HEAD
 <article class="" id="slide-15" style="background:;">
   <h3>GiaB dataset (Chr21)</h3>
   <p><img src="assets/fig/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" style="display: block; margin: auto;" /></p>
+=======
+<slide class="" id="slide-149" style="background:;">
+  <hgroup>
+    <h2>GiaB dataset (Chr21)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" style="display: block; margin: auto;" /></p>
+>>>>>>> a4a11d67e8740451d199f52de97f4097435c5a66
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<<<<<<< HEAD
 <article class="" id="slide-16" style="background:;">
   <h3>GiaB dataset (Chr22)</h3>
   <p><img src="assets/fig/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" style="display: block; margin: auto;" /></p>
+=======
+<slide class="" id="slide-150" style="background:;">
+  <hgroup>
+    <h2>GiaB dataset (Chr22)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" style="display: block; margin: auto;" /></p>
+>>>>>>> a4a11d67e8740451d199f52de97f4097435c5a66
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<<<<<<< HEAD
 <article class="" id="slide-17" style="background:;">
   <h3>Upenn dataset</h3>
   <pre><code class="r">library(ggplot2)
+=======
+<slide class="" id="slide-151" style="background:;">
+  <hgroup>
+    <h2>Upenn dataset</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(ggplot2)
+>>>>>>> a4a11d67e8740451d199f52de97f4097435c5a66
 load(&quot;upenn_dataset.rda&quot;)
 p &lt;- ggplot(data=upenn_dataset, aes(x=Chr, fill=factor(Snp)))
 p + geom_bar(position=&#39;stack&#39;)
@@ -223,11 +7693,22 @@ p + geom_bar(position=&#39;stack&#39;)
 
 <p><img src="assets/fig/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" style="display: block; margin: auto;" /></p>
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<<<<<<< HEAD
 <article class="" id="slide-18" style="background:;">
   <h3>Upenn dataset</h3>
   <pre><code class="r">library(ggplot2)
+=======
+<slide class="" id="slide-152" style="background:;">
+  <hgroup>
+    <h2>Upenn dataset</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(ggplot2)
+>>>>>>> a4a11d67e8740451d199f52de97f4097435c5a66
 load(&quot;upenn_dataset.rda&quot;)
 p &lt;- ggplot(data=upenn_dataset, aes(x=Chr, fill=factor(Snp)))
 p + geom_bar(position=&#39;fill&#39;)
@@ -235,11 +7716,22 @@ p + geom_bar(position=&#39;fill&#39;)
 
 <p><img src="assets/fig/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" style="display: block; margin: auto;" /></p>
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<<<<<<< HEAD
 <article class="" id="slide-19" style="background:;">
   <h3>Upenn dataset (Code)</h3>
   <pre><code class="r">library(ggplot2); 
+=======
+<slide class="" id="slide-153" style="background:;">
+  <hgroup>
+    <h2>Upenn dataset (Code)</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(ggplot2); 
+>>>>>>> a4a11d67e8740451d199f52de97f4097435c5a66
 load(&quot;upenn_dataset.rda&quot;)
 p &lt;- ggplot(data=upenn_dataset[upenn_dataset$Chr==&quot;chr19&quot;, ], aes(Site))
 p + geom_histogram(binwidth=500000, position=&#39;identity&#39;, 
@@ -248,46 +7740,112 @@ stat_density(geom=&#39;line&#39;, position = &#39;identity&#39;, aes(colour = fa
 facet_grid(Snp~.)
 </code></pre>
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<<<<<<< HEAD
 <article class="" id="slide-20" style="background:;">
   <h3>Upenn dataset (Chr19)</h3>
   <p><img src="assets/fig/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" style="display: block; margin: auto;" /></p>
+=======
+<slide class="" id="slide-154" style="background:;">
+  <hgroup>
+    <h2>Upenn dataset (Chr19)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" style="display: block; margin: auto;" /></p>
+>>>>>>> a4a11d67e8740451d199f52de97f4097435c5a66
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<<<<<<< HEAD
 <article class="" id="slide-21" style="background:;">
   <h3>Upenn dataset (Chr20)</h3>
   <p><img src="assets/fig/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" style="display: block; margin: auto;" /></p>
+=======
+<slide class="" id="slide-155" style="background:;">
+  <hgroup>
+    <h2>Upenn dataset (Chr20)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" style="display: block; margin: auto;" /></p>
+>>>>>>> a4a11d67e8740451d199f52de97f4097435c5a66
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<<<<<<< HEAD
 <article class="" id="slide-22" style="background:;">
   <h3>Upenn dataset (Chr21)</h3>
   <p><img src="assets/fig/unnamed-chunk-14-1.png" title="plot of chunk unnamed-chunk-14" alt="plot of chunk unnamed-chunk-14" style="display: block; margin: auto;" /></p>
+=======
+<slide class="" id="slide-156" style="background:;">
+  <hgroup>
+    <h2>Upenn dataset (Chr21)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-14-1.png" title="plot of chunk unnamed-chunk-14" alt="plot of chunk unnamed-chunk-14" style="display: block; margin: auto;" /></p>
+>>>>>>> a4a11d67e8740451d199f52de97f4097435c5a66
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<<<<<<< HEAD
 <article class="" id="slide-23" style="background:;">
   <h3>Upenn dataset (Chr22)</h3>
   <p><img src="assets/fig/unnamed-chunk-15-1.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" style="display: block; margin: auto;" /></p>
+=======
+<slide class="" id="slide-157" style="background:;">
+  <hgroup>
+    <h2>Upenn dataset (Chr22)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-15-1.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" style="display: block; margin: auto;" /></p>
+>>>>>>> a4a11d67e8740451d199f52de97f4097435c5a66
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<<<<<<< HEAD
 <article class="" id="slide-24" style="background:;">
   <h3>20150313 learning</h3>
   <ol>
+=======
+<slide class="" id="slide-158" style="background:;">
+  <hgroup>
+    <h2>20150313 learning</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+>>>>>>> a4a11d67e8740451d199f52de97f4097435c5a66
 <li>R basic manipulation</li>
 <li>slidify</li>
 <li>ggplot2</li>
 <li>googleVis</li>
 </ol>
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<<<<<<< HEAD
 <article class="" id="slide-25" style="background:;">
   <h3>STUDYING</h3>
   <ol>
+=======
+<slide class="" id="slide-159" style="background:;">
+  <hgroup>
+    <h2>STUDYING</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+>>>>>>> a4a11d67e8740451d199f52de97f4097435c5a66
 <li>Least Angle Regression</li>
 <li>Robust subspace clustering</li>
 <li>A Survey of Clustering Data Mining Techniques</li>
@@ -296,32 +7854,1015 @@ facet_grid(Snp~.)
 <li><font color='red'>ParticleCall</font></li>
 </ol>
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<<<<<<< HEAD
 <article class="" id="slide-26" style="background:;">
   <h3>Something about RStudio</h3>
   <ol>
+=======
+<slide class="" id="slide-160" style="background:;">
+  <hgroup>
+    <h2>Something about RStudio</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+>>>>>>> a4a11d67e8740451d199f52de97f4097435c5a66
 <li>The default device of RStudio maybe has some problem when plot</li>
 <li>Try to use <code>options(device=&quot;X11&quot;)</code> or other devices</li>
 <li>Library Cairo is required if use alpha parameter which make the graphic pretty</li>
 <li>If R can not find Cairo, <font color='red'>do not</font> use alpha parameter</li>
 </ol>
 
-</article>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
-  </section>
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='20150323 job'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Quntile Job'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='GiaB Coverage SW TPR'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='GiaB Coverage SW HM'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='GiaB Coverage SC TPR'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='GiaB Coverage SC HM'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='GiaB BQ SW TPR'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='GiaB BQ SW HM'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='GiaB BQ SC TPR'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='GiaB BQ SC HM'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='GiaB MQ SW TPR'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='GiaB MQ SW HM'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='GiaB MQ SC TPR'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='GiaB MQ SC HM'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='upenn Coverage SW TPR'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='upenn Coverage SW HM'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='upenn Coverage SC TPR'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='upenn Coverage SC HM'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='upenn BQ SW TPR'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='upenn BQ SW HM'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='upenn BQ SC TPR'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='upenn BQ SC HM'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='upenn MQ SW TPR'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='upenn MQ SW HM'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='upenn MQ SC TPR'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='upenn MQ SC HM'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='GiaB 18 Coverage SW TPR'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='GiaB 18 Coverage SW HM'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='GiaB 18 Coverage SC TPR'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='GiaB 18 Coverage SC HM'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='GiaB 18 BQ SW TPR'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='GiaB 18 BQ SW HM'>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title='GiaB 18 BQ SC TPR'>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='GiaB 18 BQ SC HM'>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='GiaB 18 MQ SW TPR'>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title='GiaB 18 MQ SW HM'>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title='GiaB 18 MQ SC TPR'>
+         37
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=38 title='GiaB 18 MQ SC HM'>
+         38
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=39 title='GiaB 19 Coverage SW TPR'>
+         39
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=40 title='GiaB 19 Coverage SW HM'>
+         40
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=41 title='GiaB 19 Coverage SC TPR'>
+         41
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=42 title='GiaB 19 Coverage SC HM'>
+         42
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=43 title='GiaB 19 BQ SW TPR'>
+         43
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=44 title='GiaB 19 BQ SW HM'>
+         44
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=45 title='GiaB 19 BQ SC TPR'>
+         45
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=46 title='GiaB 19 BQ SC HM'>
+         46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='GiaB 19 MQ SW TPR'>
+         47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='GiaB 19 MQ SW HM'>
+         48
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=49 title='GiaB 19 MQ SC TPR'>
+         49
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=50 title='GiaB 19 MQ SC HM'>
+         50
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=51 title='GiaB 20 Coverage SW TPR'>
+         51
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=52 title='GiaB 20 Coverage SW HM'>
+         52
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=53 title='GiaB 20 Coverage SC TPR'>
+         53
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=54 title='GiaB 20 Coverage SC HM'>
+         54
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=55 title='GiaB 20 BQ SW TPR'>
+         55
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=56 title='GiaB 20 BQ SW HM'>
+         56
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=57 title='GiaB 20 BQ SC TPR'>
+         57
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=58 title='GiaB 20 BQ SC HM'>
+         58
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=59 title='GiaB 20 MQ SW TPR'>
+         59
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=60 title='GiaB 20 MQ SW HM'>
+         60
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=61 title='GiaB 20 MQ SC TPR'>
+         61
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=62 title='GiaB 20 MQ SC HM'>
+         62
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=63 title='GiaB 21 Coverage SW TPR'>
+         63
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=64 title='GiaB 21 Coverage SW HM'>
+         64
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=65 title='GiaB 21 Coverage SC TPR'>
+         65
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=66 title='GiaB 21 Coverage SC HM'>
+         66
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=67 title='GiaB 21 BQ SW TPR'>
+         67
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=68 title='GiaB 21 BQ SW HM'>
+         68
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=69 title='GiaB 21 BQ SC TPR'>
+         69
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=70 title='GiaB 21 BQ SC HM'>
+         70
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=71 title='GiaB 21 MQ SW TPR'>
+         71
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=72 title='GiaB 21 MQ SW HM'>
+         72
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=73 title='GiaB 21 MQ SC TPR'>
+         73
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=74 title='GiaB 21 MQ SC HM'>
+         74
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=75 title='GiaB 22 Coverage SW TPR'>
+         75
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=76 title='GiaB 22 Coverage SW HM'>
+         76
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=77 title='GiaB 22 Coverage SC TPR'>
+         77
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=78 title='GiaB 22 Coverage SC HM'>
+         78
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=79 title='GiaB 22 BQ SW TPR'>
+         79
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=80 title='GiaB 22 BQ SW HM'>
+         80
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=81 title='GiaB 22 BQ SC TPR'>
+         81
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=82 title='GiaB 22 BQ SC HM'>
+         82
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=83 title='GiaB 22 MQ SW TPR'>
+         83
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=84 title='GiaB 22 MQ SW HM'>
+         84
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=85 title='GiaB 22 MQ SC TPR'>
+         85
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=86 title='GiaB 22 MQ SC HM'>
+         86
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=87 title='upenn 19 Coverage SW TPR'>
+         87
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=88 title='upenn 19 Coverage SW HM'>
+         88
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=89 title='upenn 19 Coverage SC TPR'>
+         89
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=90 title='upenn 19 Coverage SC HM'>
+         90
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=91 title='upenn 19 BQ SW TPR'>
+         91
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=92 title='upenn 19 BQ SW HM'>
+         92
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=93 title='upenn 19 BQ SC TPR'>
+         93
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=94 title='upenn 19 BQ SC HM'>
+         94
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=95 title='upenn 19 MQ SW TPR'>
+         95
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=96 title='upenn 19 MQ SW HM'>
+         96
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=97 title='upenn 19 MQ SC TPR'>
+         97
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=98 title='upenn 19 MQ SC HM'>
+         98
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=99 title='upenn 20 Coverage SW TPR'>
+         99
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=100 title='upenn 20 Coverage SW HM'>
+         100
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=101 title='upenn 20 Coverage SC TPR'>
+         101
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=102 title='upenn 20 Coverage SC HM'>
+         102
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=103 title='upenn 20 BQ SW TPR'>
+         103
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=104 title='upenn 20 BQ SW HM'>
+         104
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=105 title='upenn 20 BQ SC TPR'>
+         105
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=106 title='upenn 20 BQ SC HM'>
+         106
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=107 title='upenn 20 MQ SW TPR'>
+         107
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=108 title='upenn 20 MQ SW HM'>
+         108
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=109 title='upenn 20 MQ SC TPR'>
+         109
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=110 title='upenn 20 MQ SC HM'>
+         110
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=111 title='upenn 21 Coverage SW TPR'>
+         111
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=112 title='upenn 21 Coverage SW HM'>
+         112
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=113 title='upenn 21 Coverage SC TPR'>
+         113
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=114 title='upenn 21 Coverage SC HM'>
+         114
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=115 title='upenn 21 BQ SW TPR'>
+         115
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=116 title='upenn 21 BQ SW HM'>
+         116
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=117 title='upenn 21 BQ SC TPR'>
+         117
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=118 title='upenn 21 BQ SC HM'>
+         118
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=119 title='upenn 21 MQ SW TPR'>
+         119
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=120 title='upenn 21 MQ SW HM'>
+         120
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=121 title='upenn 21 MQ SC TPR'>
+         121
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=122 title='upenn 21 MQ SC HM'>
+         122
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=123 title='upenn 22 Coverage SW TPR'>
+         123
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=124 title='upenn 22 Coverage SW HM'>
+         124
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=125 title='upenn 22 Coverage SC TPR'>
+         125
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=126 title='upenn 22 Coverage SC HM'>
+         126
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=127 title='upenn 22 BQ SW TPR'>
+         127
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=128 title='upenn 22 BQ SW HM'>
+         128
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=129 title='upenn 22 BQ SC TPR'>
+         129
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=130 title='upenn 22 BQ SC HM'>
+         130
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=131 title='upenn 22 MQ SW TPR'>
+         131
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=132 title='upenn 22 MQ SW HM'>
+         132
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=133 title='upenn 22 MQ SC TPR'>
+         133
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=134 title='upenn 22 MQ SC HM'>
+         134
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=135 title='20150318 job'>
+         135
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=136 title='20150313 job'>
+         136
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=137 title='Check EM algorithm (R)'>
+         137
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=138 title='Code (Without paste of default values)'>
+         138
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=139 title='Check EM algorithm (C++)'>
+         139
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=140 title='Create site file interest.txt'>
+         140
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=141 title='Select suspicious sites'>
+         141
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=142 title='Histgram'>
+         142
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=143 title='GiaB dataset'>
+         143
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=144 title='GiaB dataset'>
+         144
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=145 title='GiaB dataset (Code)'>
+         145
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=146 title='GiaB dataset (Chr18)'>
+         146
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=147 title='GiaB dataset (Chr19)'>
+         147
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=148 title='GiaB dataset (Chr20)'>
+         148
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=149 title='GiaB dataset (Chr21)'>
+         149
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=150 title='GiaB dataset (Chr22)'>
+         150
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=151 title='Upenn dataset'>
+         151
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=152 title='Upenn dataset'>
+         152
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=153 title='Upenn dataset (Code)'>
+         153
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=154 title='Upenn dataset (Chr19)'>
+         154
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=155 title='Upenn dataset (Chr20)'>
+         155
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=156 title='Upenn dataset (Chr21)'>
+         156
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=157 title='Upenn dataset (Chr22)'>
+         157
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=158 title='20150313 learning'>
+         158
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=159 title='STUDYING'>
+         159
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=160 title='Something about RStudio'>
+         160
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
 </body>
-  <!-- LOAD JAVASCRIPTS  -->
-	<script src='libraries/frameworks/html5slides/default/slides.js'></script>
-	<!-- Google Prettify -->
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
-	<script src='libraries/highlighters/prettify/js/lang-r.js'></script>
-	<script>
-	  var pres = document.getElementsByTagName("pre");
-	  for (var i=0; i < pres.length; ++i) {
-	    pres[i].className = "prettyprint linenums";
-	  }
-	  prettyPrint();
-	</script>
-	<!-- End Google Prettify --> 
-	</html>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- Google Prettify -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+  <script src='libraries/highlighters/prettify/js/lang-r.js'></script>
+  <script>
+    var pres = document.getElementsByTagName("pre");
+    for (var i=0; i < pres.length; ++i) {
+      pres[i].className = "prettyprint linenums";
+    }
+    prettyPrint();
+  </script>
+  <!-- End Google Prettify --> 
+  </html>
