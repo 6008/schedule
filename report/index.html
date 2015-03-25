@@ -90,6 +90,54 @@ cat sites.sorted.txt | cut -c 3-7 | sort | uniq | wc -l
 </article>
 
 <article class="" id="slide-7" style="background:;">
+  <h3>table</h3>
+  <table><thead>
+<tr>
+<th>bq</th>
+<th>FreeBayes</th>
+<th>GATK</th>
+<th>Samtools</th>
+<th>Varscan</th>
+<th>GeMS</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>&lt;52</td>
+<td>0.32394</td>
+<td>0.97183</td>
+<td>0.30985</td>
+<td>0.28169</td>
+<td>0.16901</td>
+</tr>
+<tr>
+<td>52-59</td>
+<td>0.66583</td>
+<td>0.95279</td>
+<td>0.58012</td>
+<td>0.59130</td>
+<td>0.61490</td>
+</tr>
+<tr>
+<td>59-66</td>
+<td>0.93621</td>
+<td>0.99730</td>
+<td>0.95496</td>
+<td>0.95180</td>
+<td>0.96279</td>
+</tr>
+<tr>
+<td>&gt;66</td>
+<td>0.97383</td>
+<td>0.99956</td>
+<td>0.99066</td>
+<td>0.98009</td>
+<td>0.99051</td>
+</tr>
+</tbody></table>
+
+</article>
+
+<article class="" id="slide-8" style="background:;">
   <h3>Histgram</h3>
   <ul>
 <li>The whole dataset</li>
@@ -98,7 +146,7 @@ cat sites.sorted.txt | cut -c 3-7 | sort | uniq | wc -l
 
 </article>
 
-<article class="" id="slide-8" style="background:;">
+<article class="" id="slide-9" style="background:;">
   <h3>GiaB dataset</h3>
   <pre><code class="r">library(ggplot2)
 load(&quot;GiaB_dataset.rda&quot;)
@@ -110,7 +158,7 @@ p + geom_bar(position=&#39;stack&#39;)
 
 </article>
 
-<article class="" id="slide-9" style="background:;">
+<article class="" id="slide-10" style="background:;">
   <h3>GiaB dataset</h3>
   <pre><code class="r">library(ggplot2)
 load(&quot;GiaB_dataset.rda&quot;)
@@ -122,7 +170,7 @@ p + geom_bar(position=&#39;fill&#39;)
 
 </article>
 
-<article class="" id="slide-10" style="background:;">
+<article class="" id="slide-11" style="background:;">
   <h3>GiaB dataset (Code)</h3>
   <pre><code class="r">library(ggplot2); 
 load(&quot;GiaB_dataset.rda&quot;)
@@ -135,37 +183,37 @@ facet_grid(Snp~.)
 
 </article>
 
-<article class="" id="slide-11" style="background:;">
+<article class="" id="slide-12" style="background:;">
   <h3>GiaB dataset (Chr18)</h3>
   <p><img src="assets/fig/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" style="display: block; margin: auto;" /></p>
 
 </article>
 
-<article class="" id="slide-12" style="background:;">
+<article class="" id="slide-13" style="background:;">
   <h3>GiaB dataset (Chr19)</h3>
   <p><img src="assets/fig/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" style="display: block; margin: auto;" /></p>
 
 </article>
 
-<article class="" id="slide-13" style="background:;">
+<article class="" id="slide-14" style="background:;">
   <h3>GiaB dataset (Chr20)</h3>
   <p><img src="assets/fig/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" style="display: block; margin: auto;" /></p>
 
 </article>
 
-<article class="" id="slide-14" style="background:;">
+<article class="" id="slide-15" style="background:;">
   <h3>GiaB dataset (Chr21)</h3>
   <p><img src="assets/fig/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" style="display: block; margin: auto;" /></p>
 
 </article>
 
-<article class="" id="slide-15" style="background:;">
+<article class="" id="slide-16" style="background:;">
   <h3>GiaB dataset (Chr22)</h3>
   <p><img src="assets/fig/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" style="display: block; margin: auto;" /></p>
 
 </article>
 
-<article class="" id="slide-16" style="background:;">
+<article class="" id="slide-17" style="background:;">
   <h3>Upenn dataset</h3>
   <pre><code class="r">library(ggplot2)
 load(&quot;upenn_dataset.rda&quot;)
@@ -177,7 +225,7 @@ p + geom_bar(position=&#39;stack&#39;)
 
 </article>
 
-<article class="" id="slide-17" style="background:;">
+<article class="" id="slide-18" style="background:;">
   <h3>Upenn dataset</h3>
   <pre><code class="r">library(ggplot2)
 load(&quot;upenn_dataset.rda&quot;)
@@ -189,7 +237,7 @@ p + geom_bar(position=&#39;fill&#39;)
 
 </article>
 
-<article class="" id="slide-18" style="background:;">
+<article class="" id="slide-19" style="background:;">
   <h3>Upenn dataset (Code)</h3>
   <pre><code class="r">library(ggplot2); 
 load(&quot;upenn_dataset.rda&quot;)
@@ -202,31 +250,31 @@ facet_grid(Snp~.)
 
 </article>
 
-<article class="" id="slide-19" style="background:;">
+<article class="" id="slide-20" style="background:;">
   <h3>Upenn dataset (Chr19)</h3>
   <p><img src="assets/fig/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" style="display: block; margin: auto;" /></p>
 
 </article>
 
-<article class="" id="slide-20" style="background:;">
+<article class="" id="slide-21" style="background:;">
   <h3>Upenn dataset (Chr20)</h3>
   <p><img src="assets/fig/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" style="display: block; margin: auto;" /></p>
 
 </article>
 
-<article class="" id="slide-21" style="background:;">
+<article class="" id="slide-22" style="background:;">
   <h3>Upenn dataset (Chr21)</h3>
   <p><img src="assets/fig/unnamed-chunk-14-1.png" title="plot of chunk unnamed-chunk-14" alt="plot of chunk unnamed-chunk-14" style="display: block; margin: auto;" /></p>
 
 </article>
 
-<article class="" id="slide-22" style="background:;">
+<article class="" id="slide-23" style="background:;">
   <h3>Upenn dataset (Chr22)</h3>
   <p><img src="assets/fig/unnamed-chunk-15-1.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" style="display: block; margin: auto;" /></p>
 
 </article>
 
-<article class="" id="slide-23" style="background:;">
+<article class="" id="slide-24" style="background:;">
   <h3>20150313 learning</h3>
   <ol>
 <li>R basic manipulation</li>
@@ -237,7 +285,7 @@ facet_grid(Snp~.)
 
 </article>
 
-<article class="" id="slide-24" style="background:;">
+<article class="" id="slide-25" style="background:;">
   <h3>STUDYING</h3>
   <ol>
 <li>Least Angle Regression</li>
@@ -250,7 +298,7 @@ facet_grid(Snp~.)
 
 </article>
 
-<article class="" id="slide-25" style="background:;">
+<article class="" id="slide-26" style="background:;">
   <h3>Something about RStudio</h3>
   <ol>
 <li>The default device of RStudio maybe has some problem when plot</li>
