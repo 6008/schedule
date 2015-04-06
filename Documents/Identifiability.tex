@@ -1,0 +1,178 @@
+\documentclass[12pt]{extarticle}
+\usepackage[top=0.5in, bottom=0.8in, left=0.5in, right=0.5in]{geometry}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm}            
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{bm}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+\usepackage[pdftex]{hyperref}
+\usepackage{multirow}
+\hypersetup{colorlinks=false, linkcolor=blue, pdffitwindow=true, pdftitle={The Identifiability Issue of Parameters in IDE model}}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+
+\title{The Identifiability Issue of Parameters in IDE model}
+
+\begin{document}
+\maketitle
+	
+\section{Target Model Selection}
+\label{sect:TargetModelSelection}
+
+There are several models in the review paper, include IDE model (2), Equation (4), single pollen tube model (2)\&(7) and multiple pollen tubes model (2)\&(11). Actually, the parameters of Equation (4) are not identifiable. But this will not affect the analysis and result of the paper so we just ignore it.
+
+The Identifiability of IDE model (2) is as same as the single pollen tube model (2)\&(7). And if we can justify the identifiablity of single pollen tube model then obviously the parameters of multiple pollen tubes model are identifiable because the multiple model is combination of some single models.
+
+What is more, when we talk about identifiability, it must relate to some dynamic system include state model and measurement model. So it is convenient to take single pollen tube model (2)\&(7) as the target of discussion. 
+
+\begin{equation*}
+\left\{
+\begin{array}{rcl}
+D\frac{{\partial}^{2}R(x)}{{\partial}x^{2}} & = & k_{nf}R(x)-k_{pf}R^{\alpha}(x)\left(1-\frac{\int_{-L}^{L}R(x)dx}{R_{tot}}\right) \\
+y & = & R(x;k_{nf},k_{pf}) \\
+R(L) & = & 0 \\
+R(-L) & = & 0
+
+\end{array} \right.
+\end{equation*}
+
+\section{About Identifiable}
+\label{sect:AboutIdentifiable}
+
+There are several kinds of definition of identifiable which include globally identifiable, locally identifiable, locally strongly identifiable and structurally identifiable etc. The first two definitions are too general and the third one is too restrict, so most identifiability methods are based on the fourth definition. However, to our case, the initial state is fixed, so we only need to verify the parameters are locally strongly identifiable. What is more, there are two kinds of method, theoretical ones and practical ones. We should use both of them. Actually, we can use 'Direct Test' method to verify that the parameters of our model are global identifiable (So they are of course locally strongly identifiable) theoretically and use 'Monte Carlo Simulation' to practically verify the locally strong identifiability again. Then we can ensure that the parameters of our model are identifiable. 
+
+\section{Direct Test}
+\label{sect:DirectTest}
+
+In this section, we will prove that the global identifiability of parameters under some common conditions which must be true in reality.
+
+\theoremstyle{definition} \newtheorem{proposition}{Proposition}
+
+\begin{proposition} \label{proposition:box}
+ Denote the solution of the (unknown bound edition) model as $R(x)$. Suppose $R(x)>0$ is not constant in some interval $[-L_{0},L{0}]\subset[-L,L]$, $\int_{-L}^{L}R(x)dx<R_{tot}$, then the parameters of the model are global identifiable. 
+\end{proposition}
+
+\begin{proof}
+We just need to verify that for parameters $(k_{nf}^{0},k_{pf}^{0})$ and $(k_{nf}^{1},k_{pf}^{1})$, $R(x;k_{nf}^{0},k_{pf}^{0})=R(x;k_{nf}^{1},k_{pf}^{1})$ in $[-L_{0},L_{0}]$ only if $k_{nf}^{0}=k_{nf}^{1}$ and $k_{pf}^{0}=k_{pf}^{1}$.
+
+From the first equation of the model, we can get
+\begin{equation*}
+k_{nf}^{0}R(x)-k_{pf}^{0}R^{\alpha}(x)\left(1-\frac{\int_{-L}^{L}R(x)dx}{R_{tot}}\right)=k_{nf}^{1}R(x)-k_{pf}^{1}R^{\alpha}(x)\left(1-\frac{\int_{-L}^{L}R(x)dx}{R_{tot}}\right)
+\end{equation*}
+
+\begin{equation*}
+k_{nf}^{0}R(x)-k_{nf}^{1}R(x)=k_{pf}^{0}R^{\alpha}(x)\left(1-\frac{\int_{-L}^{L}R(x)dx}{R_{tot}}\right)-k_{pf}^{1}R^{\alpha}(x)\left(1-\frac{\int_{-L}^{L}R(x)dx}{R_{tot}}\right)
+\end{equation*}
+
+\begin{equation*}
+(k_{nf}^{0}-k_{nf}^{1})R(x)=R(x)(k_{pf}^{0}-k_{pf}^{1})R^{\alpha-1}(x)\left(1-\frac{\int_{-L}^{L}R(x)dx}{R_{tot}}\right)
+\end{equation*}
+
+For $R(x)>0$ in $[-L_{0},L_{0}]$
+\begin{equation*}
+k_{nf}^{0}-k_{nf}^{1}=(k_{pf}^{0}-k_{pf}^{1})R^{\alpha-1}(x)\left(1-\frac{\int_{-L}^{L}R(x)dx}{R_{tot}}\right)
+\end{equation*}
+
+If $k_{pf}^{0}-k_{pf}^{1}\ne{}0$, we can get
+\begin{equation*}
+R^{\alpha-1}(x)=(k_{nf}^{0}-k_{nf}^{1})/\left((k_{pf}^{0}-k_{pf}^{1})\left(1-\frac{\int_{-L}^{L}R(x)dx}{R_{tot}}\right)\right)
+\end{equation*}
+
+Because $1-\frac{\int_{-L}^{L}R(x)dx}{R_{tot}}>0$.
+
+This is contradiction to the condition that $R(x)$ is not constant in $[-L_{0},L_{0}]$. So we can get that $k_{pf}^{0}-k_{pf}^{1}=0$ then we have $k_{nf}^{0}-k_{nf}^{1}=0$.
+
+
+This proofs the proposition. 
+
+
+\end{proof}
+
+
+\section{Monte Carlo Simulation}
+\label{sect:MonteCarloSimulation}
+
+The steps of Monte Carlo Simulation are similar to Section6.1 of the review paper.
+
+Steps:
+
+1. Determine all the parameters and compute $\lambda$ and $\mu$ (Which actually are known according to the paper).
+
+2. Generate $DN=100$ datasets with $SN=301$ samples of $x$.
+
+3. Compute the solution of the following DE
+
+\begin{equation*}
+\left\{
+\begin{array}{rcl}
+\frac{\partial^{2}y}{\partial{}x^{2}} & = & y-y^{\alpha} \\
+y(-L) & = & 0 \\
+y(L) & = & 0
+\end{array}\right.
+\end{equation*}
+
+R or other software can do this. Denote the solution as $y_{0}(x)$.
+
+4. Generate $y$ by $y=\lambda{}y_{0}(\mu{}x)+\epsilon{}, \epsilon{}\sim{}N(0,\sigma{})$.
+
+5. Estimate $\lambda$ and $\mu$ for each dataset by 
+
+\begin{equation*}
+(\hat{\lambda},\hat{\mu})={argmin}_{\lambda,\mu}\sum_{j=1}^{SN}\left(y_{j}-\lambda{}y_{0}(\mu{}x_{j})\right)^2
+\end{equation*}
+
+Under constraint
+
+\begin{equation*}
+\left\{
+\begin{array}{l}
+\lambda>0, \mu>0 \\
+\mu{}R_{tot}-\lambda{}\|y_{0}\|_{1}>0
+\end{array}
+\right.
+\end{equation*}
+
+6. Convert $\hat{\lambda}$ and $\hat{\mu}$ to $\hat{k}_{nf}$ and $\hat{k}_{pf}$ by
+
+\begin{equation*}
+\begin{array}{rcl}
+\hat{k}_{nf} & = & D\hat{\mu}^2 \\
+\hat{k}_{pf} & = & \frac{D\hat{\mu}^{2}}{\hat{\lambda}^{\alpha-1}-\frac{\lambda{}^{\alpha}\|y_{0}\|_{1}}{\hat{\mu}R_{tot}}}
+\end{array}
+\end{equation*}
+
+7. Calculate $ARE$ for the parameters through all datasets
+
+\begin{equation*}
+\begin{array}{rcl}
+ARE_{k_{nf}} & = & \frac{1}{DN}\sum_{i=1}^{DN}\frac{\left|\hat{k}_{nf}^{(i)}-k_{nf}\right|}{k_{nf}} \\
+ARE_{k_{pf}} & = & \frac{1}{DN}\sum_{i=1}^{DN}\frac{\left|\hat{k}_{pf}^{(i)}-k_{pf}\right|}{k_{pf}}
+\end{array}
+\end{equation*}
+
+If the $ARE$s are close to 0 then the parameters should be identifiable. However, it is hard to decide that 'how close' will be enough to give a judgment. It is the disadvantage of this method. 
+
+    
+\begin{table}
+\caption{The result table}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{5}{|c|}{$L=15$, $\alpha=1.2$, $D=0.1$, $R_{tot}=791$, $DN=100$, $SN=301$} \\
+\hline
+$\sigma$ & $K_nf$ & $ARE_{k_{nf}}$ & $K_pf$ & $ARE_{k_{pf}}$ \\
+\hline
+$\sigma=1$ & \multirow{4}{*}{$0.1$} & $1.3626\%$ & \multirow{4}{*}{$0.1125$} & $1.0041\%$ \\
+$\sigma=2$ &  & $1.7907\%$ &  & $1.2870\%$ \\
+$\sigma=4$ &  & $2.6026\%$ &  & $1.9821\%$ \\
+$\sigma=8$ &  & $4.1384\%$ &  & $3.2497\%$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\end{document}
