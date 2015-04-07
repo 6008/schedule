@@ -10,17 +10,29 @@
 \usepackage[all]{xy}
 \usepackage[pdftex]{hyperref}
 \usepackage{multirow}
-\hypersetup{colorlinks=false, linkcolor=blue, pdffitwindow=true, pdftitle={The Identifiability Issue of Parameters in IDE model}}
-\DeclareMathOperator*{\argmax}{argmax}
-\DeclareMathOperator*{\argmin}{argmin}
+\hypersetup{colorlinks=false, linkcolor=blue, pdffitwindow=true, pdftitle={mixed_effects_model}}
 
-\title{The Identifiability Issue of Parameters in IDE model}
+\title{Review of Nonlinear Mixed Effects Model}
 
 \begin{document}
 \maketitle
-	
-\section{Target Model Selection}
-\label{sect:TargetModelSelection}
+\begin{abstract}
+This is a review of the nonlinear mixed effects model based on.
+\end{abstract}
+\section{Introduction of NLME}
+\label{sect:Introduction}
+
+\subsection{A Simple Nonliear Mixed Effects Model}
+\label{sect:What}
+
+\sybsection{}
+
+\cite{Putter02}
+\cite{Huang0601}
+\cite{Huang0602}
+\cite{Guedj07}
+\cite{Li02}
+\cite{Lu11}
 
 There are several models in the review paper, include IDE model (2), Equation (4), single pollen tube model (2)\&(7) and multiple pollen tubes model (2)\&(11). Actually, the parameters of Equation (4) are not identifiable. But this will not affect the analysis and result of the paper so we just ignore it.
 
@@ -28,16 +40,15 @@ The Identifiability of IDE model (2) is as same as the single pollen tube model 
 
 What is more, when we talk about identifiability, it must relate to some dynamic system include state model and measurement model. So it is convenient to take single pollen tube model (2)\&(7) as the target of discussion. 
 
-\begin{equation*}
+\begin{equation}
 \left\{
 \begin{array}{rcl}
 D\frac{{\partial}^{2}R(x)}{{\partial}x^{2}} & = & k_{nf}R(x)-k_{pf}R^{\alpha}(x)\left(1-\frac{\int_{-L}^{L}R(x)dx}{R_{tot}}\right) \\
 y & = & R(x;k_{nf},k_{pf}) \\
 R(L) & = & 0 \\
 R(-L) & = & 0
-
 \end{array} \right.
-\end{equation*}
+\end{equation}
 
 \section{About Identifiable}
 \label{sect:AboutIdentifiable}
@@ -174,5 +185,42 @@ $\sigma=8$ &  & $4.1384\%$ &  & $3.2497\%$ \\
 \end{center}
 \end{table}
 
+\begin{thebibliography}{9}
+\bibitem{Putter02}
+Putter, H., et al., 
+\emph{A Bayesian approach to parameter estimation in HIV}. 
+dynamical models. Stat Med, 2002. 21(15): p. 2199-214.
+
+\bibitem{Li02}
+Li, L., et al., 
+\emph{Estimation and inference for a spline-enhanced population pharmacokinetic model}. 
+Biometrics, 2002. 58(3): p. 601-11.
+
+\bibitem{Davidian03}
+Davidian M, Giltinan D M, 
+\emph{Nonlinear models for repeated measurement data: an overview and update}. 
+Journal of Agricultural, Biological, and Environmental Statistics, 2003, 8(4): 387-419.
+
+\bibitem{Huang0601}
+Huang, Y. and H. Wu, 
+\emph{A bayesian approach for estimating antiviral efficacy in HIV dynamic models}. 
+J Applied Statistics, 2006. 33: p. 155-174.
+
+\bibitem{Huang0602}
+Huang, Y., Liu, D. and Wu, H., 
+\emph{Hierarchical Bayesian Methods for Estimation of Parameters in a Longitudinal HIV Dynamic System}. 
+Biometrics, 2006. 62, 413-423
+
+\bibitem{Guedj07}
+Guedj, J., R. Thiebaut, and D. Commenges, 
+\emph{Maximum likelihood estimation in dynamical models of HIV.} 
+Biometrics, 2007. 63(4): p. 1198-206.
+
+\bibitem{Lu11}
+Lu, T., Liang, H., Li, H., Wu, H., 
+\emph{High Dimensional ODEs Coupled with Mixed-Effects Modeling Techniques for Dynamic Gene Regulatory Network Identification}. 
+Journal of the American Statistical Association, 2011. 106, 1242-1258.
+
+\end{thebibliography}
 
 \end{document}
