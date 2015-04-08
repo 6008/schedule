@@ -17,175 +17,145 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-This is a review of the nonlinear mixed effects model based on.
+This is a basic review of the nonlinear mixed effects (NLME) model which need to be improved and expanded in the future. NLME models are very useful in description of  some dynamic system with measurements of individuals from population. But The part of parameter estimation is not very easy. This paper introduces some methods very briefly and observes some application of NLME model.
 \end{abstract}
 \section{Introduction of NLME}
 \label{sect:Introduction}
+In some research, the dataset may come from frequent measurements from a sample of individuals (subjects) from a population. For example, blood samples collected from several subjects in pharmacokinetic analysis and HIV dynamic research, milk samples collected from dairy cattles in dairy science, permanent sample plots in forestry, etc. It is a challenge to make inference from dataset like this. There are some common properties in population and some special properties in individuals so some mixed effects model will be a good solution. 
+The first candidate may be linear mixed effects model but it is too simple to describe dynamic system. So nonliear mixed effects models have become a popular platform for alalysis of these datasets.
 
-\subsection{A Simple Nonliear Mixed Effects Model}
-\label{sect:What}
+\subsection{Basic Model}
+\label{sect:basic}
+According to \cite{Davidian03}, the basic nonlinear mixed effects model has two stages, individual model and population model.
 
-\sybsection{}
+\begin{align}
+Stage 1: Indevidual Model. & & y_{ij} = f(x_{ij},\beta_{i})+e_{ij}, & & j=1,\ldots,n_{i} \label{im1} \\
+Stage 2: Population Model.  & & \beta{i} = d(a_{i},\beta,b_{i}), & & i=1,\ldots,m \label{pm1} 
+\end{align}
+
+where $x_{ij}$ can be time or response of the system, $y_{ij}$ denotes the $j$th measurement of the response, $\beta_{i}$ denotes the parameters, $e_{ij}$ denotes the realization error and measurement error, $a_{i}$ can be some fixed sysematic properties, $\beta$ denotes the fixed parameters (effects) in population and $b_{i}$ denotes the random effects. What is more, there is a parameter $u_i$ denotes the initial status, such as the dose at time zero in pharmacokinetic analysis.
+
+The two stages of this model are both nonlinear. In practice, the second stage \eqref{pm1} is often simplified to linear form as:
+\begin{equation}
+\beta{i}=A_{i}\beta+B_{i}b_{i}, \label{pm2} 
+\end{equation}
+
+\section{Inference of NLME Model}
+\label{sect:infer}
+There are a number of inferential methods for NLME.  Generally, most of these methods are based on likelihood or Bayesian method.
+
+\subsection{Methods Based on Individual Estimates} 
+\label{sect:ie}
+If the number of (measurement) samples is sufficiently large and the estimators of parameter $\beta{i}$ are asymptotically normal, then the methods based on individual estimates can be used. The first step of these methods is to estimate the parameters $\beta{i}$ from individual model. Then fit some linear mixed effects model based on the linear form population model \eqref{pm2} with known "error" covariance matrix. EM algorithm or other techniques can be applied to this step.
+
+\subsection{Methods Based on  Likelihood}
+\label{likelihood}
+When the number of (measurement) samples is not large enough, we can not get good estimators of  $\beta{i}$ from individual model. So other methods based on likelihood have been developed. The difficulty is that integrations appear in the likelihood function of NLME model. So in the beginning, first order methods and first order conditional methods are developed to get acceptable estimates based on approximation of the likelihood. With the advances in computational power, some new methods can be used to handle the integral using deterministic or stochastic approximation. EM-algorithm is also used to maximize the likelihood function where "E-step" is carried out using Monte Carlo integration.
+
+\subsection{Methods Based on a Bayesian Formulation}
+\label{bayesian}
+
+Bayesian analysis with MCMC techniques is a natural powerful weapon for NLME model. \footnote{The content of~\ref{sect:Introduction} and ~\ref{sect:infer} comes from \cite{Davidian03}.}
+
+\section{Some Applications}
+\label{sect:application}
+
+\subsection{Dynamic Gene Regulatory Network Identification}
+\label{sect:network}
+There are two major challenges in dynamic gene regulatory network identification, one is the high dinemsional system, the other one is the construction of dynamic network. \cite{Lu11}  applies ODE model for gene regulatory network (GRN) and proposes a five steps procedure CSIEF to identify dynamic GRNs, which includes clustering step, smoothing step, regulation identification step, parameter estimates refining step and function enrichment analysis step.
+In these five steps, the clustering step and smoothing step use mixed effects model, the parameter estimates refining step uses NLME model. The brief infomation for each step are given below.
+
+\paragraph{Step 1: Clustering}
+The purpose of this step is to reduce the dimension of the model. In the mean time, the problem is changed from 'gene regulatory network' to 'functional module regulatory network' based on the assumption that genes with similar function will not affect each other.
+The approach as following is from  \cite{Ma08}.
+Denote $G_i={(g_{i}(t_{1}),\ldots,g_{i}(t_{n_i}))}^T$ as the expression data vector for the $i$th gene, assume $G_i$ follows mixture normal distribution with $p$ clusters,
+\begin{equation}
+G_{i}~\sum_{k=1}^{p}w_{k}N(\mu_{k}(T_{i}),\Sigma_{k}), i=1,\ldots,n,
+\end{equation}
+The measurement model for $G_i$ for the $k$th cluster is
+\begin{equation}
+G_i=mu_{k}(T_{i})+Z_{i}b_{i}+\epsilon_{i},
+\end{equation}
+The maximum penalized likelihood approach and the EM algorithm can both be used to estimate the parameters in the models. BIC criterion can be used to determine the number of clusters.
+\paragraph{Step 2: Smoothing}
+This step will estimate the mean curve and its derivative for each module independently, the NPME model is as following \cite{Wu02}
+\begin{equation}
+g_{ki}(t_{ij})=M_{k}(t_{ij})+V_{ij}(t_{ij})+\epsilon_{k}(t_{ij})
+\end{equation}
+where $M_{k}(t)$ is the mean expression curve for the $k$th module and $M_{k}^{'}(t)=dM_{k}(t)/dt$ denotes its derivate. There are many methods can be used to estimate $M_{k}(t)$ and $M_{k}^{'}(t)$, a good reference is \cite{Wu06}.
+\paragraph{Step 3: regulation Identification}
+The ODE model in this step is as following
+\begin{equation}
+y_{k}(t)=\sum_{j=1}^{p}\beta_{kj}x_{j}(t)+\varepsilon_{k}(t),
+\end{equation}
+where $y_{k}(t)=\hat{M}_{k}^{'}(t)$ and $x_{j}(t)=\hat{M}_{j}(t)$.
+There are two target in this step, the primary one is model selection, the secondary one is to estimate parameters (of the system) for the first time. There are many method for this purpose to the standard high-dimensional linear regression model such as stepwise, bridge selection, LASSO, LARS, and so on. Here a method named CCCP-SCAD is used, which is the combination of concave convex procedure (CCCP) \cite{Le97} and smoothly clipped absolute deviation (SCAD) \cite{Fan01}, the detail of this part is from \cite{Kim08}.
+\paragraph{Step 4: parameter Estimates refining}
+The estimation in step 3 is computationally efficient and easy to implement. But this estimation is not very efficient in terms of estimation accuracy. So a NLME modeling approach is used to improve the accuracy.
+The mixed-effects ODE model for module $k$ is
+\begin{equation}
+\frac{dx_{ki}}{dt}=\sum_{j=1}^{m_k}\beta_{kij}M_{[kj]}(t), i=1,\ldots,n_k; k=1,\ldots,p. \label{s41}
+\end{equation}
+where $x_{ki}$ is the gene exression level the the $i$th gene in the $k$th module, $n_k$ is the number of genes in the $k$th module, $M_{[kj]}(t)$ are mean expression levels of the modules that have nonzero coefficients determined by SCAD on the $k$th module, $m_k$ is the number modules that have nonzero coefficients on the $k$th module.
+The SAEM approach \cite{Delyon99} is used to fit the model \eqref{s41}.
+\paragraph{Step 5: Function enrichment analysis}
+This step only build the GRN according to the estimation from the previous steps.
+
+The five step procedure overcomes the two major challenge successfully, but the correctness of the result is based on a strong assumption that the clustering is correct and the genes in a module do not affect each other. What is more, there are two steps have relationship with model selection which is a great risk to the correctness of the result.
+
+\subsection{Pharmacokinetic}
+\label{sect:pharmacokinetic}
+The main purpose of a clinical pharmacokinetic (PK) study is to understand the pharmacokinetics of a drug \cite{Li02}. There are one-compartment models and two-conpartment models in pharmacokinetic study. Two-compartment models consider the amount of drug in the gut, blood and tissue. Let $A_{1,i}(t)$, $A_{2,i}(t)$, $A_{3,i}(t)$ represent the amounts of drugs in gut, blood and tissue at time $t$ respectively, with initial value to be $1$, $0$, $0$ respectively which is to say that all the drug is in gut at time $0$. Let $k_{a,i}$ denote the absorption rate, $k_{e,i}$ denote the elimination rate (for subject $i$). What is more, $k_{23,i}$ and $k_{32,i}$ are the distribution rates for subject $i$. Then the two-compartment model is
+\begin{equation}
+\begin{array}{rcl}
+\frac{dA_{1,i}(t)}{dt} & = & -k_{a,i}A_{1,i}(t), \\
+\frac{dA_{2,i}(t)}{dt} & = & k_{a,i}A_{1,i}(t) - (k_{e,i}+k_{23,i})A_{2,i}(t)+k_{32,i}A_{3,i}(t), \\
+\frac{dA_{3,i}(t)}{dt} & = & k_{23,i}A_{2,i}(t)-k_{32,i}A_{3,i}(t).
+\end{array}
+\end{equation}
+
+Let $k_{23,i}=0$ and $k_{32,i}=0$ then this model is simplified to one-compartment model. 
+One of the drawback of these models is that the rates are constant over time which can not discribe some real situation. According to \cite{Li02}, the two-conpartment model with time-varying rates has some identifiable problem. So as an alternative, a one-conpartment model with time-varying rates is considered. This is the SEPK model (spline enhanced pharmacokinetic model).
+\subsection{HIV Dynamic Models}
+\label{sect:hiv}
+
+\subsubsection{Likelihood Approach}
+\label{sect:likelihoodapproach}
+
+\subsubsection{Bayesian Approach}
+\label{sect:bayesianapproach}
+
+\section{Conclusion}
+\label{sect:conclusion}
 
 \cite{Putter02}
 \cite{Huang0601}
 \cite{Huang0602}
 \cite{Guedj07}
-\cite{Li02}
+
 \cite{Lu11}
 
-There are several models in the review paper, include IDE model (2), Equation (4), single pollen tube model (2)\&(7) and multiple pollen tubes model (2)\&(11). Actually, the parameters of Equation (4) are not identifiable. But this will not affect the analysis and result of the paper so we just ignore it.
-
-The Identifiability of IDE model (2) is as same as the single pollen tube model (2)\&(7). And if we can justify the identifiablity of single pollen tube model then obviously the parameters of multiple pollen tubes model are identifiable because the multiple model is combination of some single models.
-
-What is more, when we talk about identifiability, it must relate to some dynamic system include state model and measurement model. So it is convenient to take single pollen tube model (2)\&(7) as the target of discussion. 
-
-\begin{equation}
-\left\{
-\begin{array}{rcl}
-D\frac{{\partial}^{2}R(x)}{{\partial}x^{2}} & = & k_{nf}R(x)-k_{pf}R^{\alpha}(x)\left(1-\frac{\int_{-L}^{L}R(x)dx}{R_{tot}}\right) \\
-y & = & R(x;k_{nf},k_{pf}) \\
-R(L) & = & 0 \\
-R(-L) & = & 0
-\end{array} \right.
-\end{equation}
-
-\section{About Identifiable}
-\label{sect:AboutIdentifiable}
-
-There are several kinds of definition of identifiable which include globally identifiable, locally identifiable, locally strongly identifiable and structurally identifiable etc. The first two definitions are too general and the third one is too restrict, so most identifiability methods are based on the fourth definition. However, to our case, the initial state is fixed, so we only need to verify the parameters are locally strongly identifiable. What is more, there are two kinds of method, theoretical ones and practical ones. We should use both of them. Actually, we can use 'Direct Test' method to verify that the parameters of our model are global identifiable (So they are of course locally strongly identifiable) theoretically and use 'Monte Carlo Simulation' to practically verify the locally strong identifiability again. Then we can ensure that the parameters of our model are identifiable. 
-
-\section{Direct Test}
-\label{sect:DirectTest}
-
-In this section, we will prove that the global identifiability of parameters under some common conditions which must be true in reality.
-
-\theoremstyle{definition} \newtheorem{proposition}{Proposition}
-
-\begin{proposition} \label{proposition:box}
- Denote the solution of the (unknown bound edition) model as $R(x)$. Suppose $R(x)>0$ is not constant in some interval $[-L_{0},L{0}]\subset[-L,L]$, $\int_{-L}^{L}R(x)dx<R_{tot}$, then the parameters of the model are global identifiable. 
-\end{proposition}
-
-\begin{proof}
-We just need to verify that for parameters $(k_{nf}^{0},k_{pf}^{0})$ and $(k_{nf}^{1},k_{pf}^{1})$, $R(x;k_{nf}^{0},k_{pf}^{0})=R(x;k_{nf}^{1},k_{pf}^{1})$ in $[-L_{0},L_{0}]$ only if $k_{nf}^{0}=k_{nf}^{1}$ and $k_{pf}^{0}=k_{pf}^{1}$.
-
-From the first equation of the model, we can get
-\begin{equation*}
-k_{nf}^{0}R(x)-k_{pf}^{0}R^{\alpha}(x)\left(1-\frac{\int_{-L}^{L}R(x)dx}{R_{tot}}\right)=k_{nf}^{1}R(x)-k_{pf}^{1}R^{\alpha}(x)\left(1-\frac{\int_{-L}^{L}R(x)dx}{R_{tot}}\right)
-\end{equation*}
-
-\begin{equation*}
-k_{nf}^{0}R(x)-k_{nf}^{1}R(x)=k_{pf}^{0}R^{\alpha}(x)\left(1-\frac{\int_{-L}^{L}R(x)dx}{R_{tot}}\right)-k_{pf}^{1}R^{\alpha}(x)\left(1-\frac{\int_{-L}^{L}R(x)dx}{R_{tot}}\right)
-\end{equation*}
-
-\begin{equation*}
-(k_{nf}^{0}-k_{nf}^{1})R(x)=R(x)(k_{pf}^{0}-k_{pf}^{1})R^{\alpha-1}(x)\left(1-\frac{\int_{-L}^{L}R(x)dx}{R_{tot}}\right)
-\end{equation*}
-
-For $R(x)>0$ in $[-L_{0},L_{0}]$
-\begin{equation*}
-k_{nf}^{0}-k_{nf}^{1}=(k_{pf}^{0}-k_{pf}^{1})R^{\alpha-1}(x)\left(1-\frac{\int_{-L}^{L}R(x)dx}{R_{tot}}\right)
-\end{equation*}
-
-If $k_{pf}^{0}-k_{pf}^{1}\ne{}0$, we can get
-\begin{equation*}
-R^{\alpha-1}(x)=(k_{nf}^{0}-k_{nf}^{1})/\left((k_{pf}^{0}-k_{pf}^{1})\left(1-\frac{\int_{-L}^{L}R(x)dx}{R_{tot}}\right)\right)
-\end{equation*}
-
-Because $1-\frac{\int_{-L}^{L}R(x)dx}{R_{tot}}>0$.
-
-This is contradiction to the condition that $R(x)$ is not constant in $[-L_{0},L_{0}]$. So we can get that $k_{pf}^{0}-k_{pf}^{1}=0$ then we have $k_{nf}^{0}-k_{nf}^{1}=0$.
 
 
-This proofs the proposition. 
-
-
-\end{proof}
-
-
-\section{Monte Carlo Simulation}
-\label{sect:MonteCarloSimulation}
-
-The steps of Monte Carlo Simulation are similar to Section6.1 of the review paper.
-
-Steps:
-
-1. Determine all the parameters and compute $\lambda$ and $\mu$ (Which actually are known according to the paper).
-
-2. Generate $DN=100$ datasets with $SN=301$ samples of $x$.
-
-3. Compute the solution of the following DE
-
-\begin{equation*}
-\left\{
-\begin{array}{rcl}
-\frac{\partial^{2}y}{\partial{}x^{2}} & = & y-y^{\alpha} \\
-y(-L) & = & 0 \\
-y(L) & = & 0
-\end{array}\right.
-\end{equation*}
-
-R or other software can do this. Denote the solution as $y_{0}(x)$.
-
-4. Generate $y$ by $y=\lambda{}y_{0}(\mu{}x)+\epsilon{}, \epsilon{}\sim{}N(0,\sigma{})$.
-
-5. Estimate $\lambda$ and $\mu$ for each dataset by 
-
-\begin{equation*}
-(\hat{\lambda},\hat{\mu})={argmin}_{\lambda,\mu}\sum_{j=1}^{SN}\left(y_{j}-\lambda{}y_{0}(\mu{}x_{j})\right)^2
-\end{equation*}
-
-Under constraint
-
-\begin{equation*}
-\left\{
-\begin{array}{l}
-\lambda>0, \mu>0 \\
-\mu{}R_{tot}-\lambda{}\|y_{0}\|_{1}>0
-\end{array}
-\right.
-\end{equation*}
-
-6. Convert $\hat{\lambda}$ and $\hat{\mu}$ to $\hat{k}_{nf}$ and $\hat{k}_{pf}$ by
-
-\begin{equation*}
-\begin{array}{rcl}
-\hat{k}_{nf} & = & D\hat{\mu}^2 \\
-\hat{k}_{pf} & = & \frac{D\hat{\mu}^{2}}{\hat{\lambda}^{\alpha-1}-\frac{\lambda{}^{\alpha}\|y_{0}\|_{1}}{\hat{\mu}R_{tot}}}
-\end{array}
-\end{equation*}
-
-7. Calculate $ARE$ for the parameters through all datasets
-
-\begin{equation*}
-\begin{array}{rcl}
-ARE_{k_{nf}} & = & \frac{1}{DN}\sum_{i=1}^{DN}\frac{\left|\hat{k}_{nf}^{(i)}-k_{nf}\right|}{k_{nf}} \\
-ARE_{k_{pf}} & = & \frac{1}{DN}\sum_{i=1}^{DN}\frac{\left|\hat{k}_{pf}^{(i)}-k_{pf}\right|}{k_{pf}}
-\end{array}
-\end{equation*}
-
-If the $ARE$s are close to 0 then the parameters should be identifiable. However, it is hard to decide that 'how close' will be enough to give a judgment. It is the disadvantage of this method. 
-
-    
-\begin{table}
-\caption{The result table}
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\multicolumn{5}{|c|}{$L=15$, $\alpha=1.2$, $D=0.1$, $R_{tot}=791$, $DN=100$, $SN=301$} \\
-\hline
-$\sigma$ & $K_nf$ & $ARE_{k_{nf}}$ & $K_pf$ & $ARE_{k_{pf}}$ \\
-\hline
-$\sigma=1$ & \multirow{4}{*}{$0.1$} & $1.3626\%$ & \multirow{4}{*}{$0.1125$} & $1.0041\%$ \\
-$\sigma=2$ &  & $1.7907\%$ &  & $1.2870\%$ \\
-$\sigma=4$ &  & $2.6026\%$ &  & $1.9821\%$ \\
-$\sigma=8$ &  & $4.1384\%$ &  & $3.2497\%$ \\
-\hline
-\end{tabular}
-\end{center}
-\end{table}
+$\boldsymbol{\alpha}$
 
 \begin{thebibliography}{9}
+
+\bibitem{Le97}
+Le Thi Hoai A, Tao P D., 
+\emph{Solving a class of linearly constrained indefinite quadratic problems by DC algorithms.} 
+Journal of Global Optimization, 1997, 11(3): 253-285.
+
+\bibitem{Delyon99}
+Delyon B, Lavielle M, Moulines E., 
+\emph{Convergence of a stochastic approximation version of the EM algorithm.} 
+Annals of statistics, 1999: 94-128.
+
+\bibitem{Fan01}
+Fan J, Li R.,
+\emph{Variable selection via nonconcave penalized likelihood and its oracle properties.} 
+Journal of the American statistical Association, 2001, 96(456): 1348-1360.
+
 \bibitem{Putter02}
 Putter, H., et al., 
 \emph{A Bayesian approach to parameter estimation in HIV}. 
@@ -195,6 +165,11 @@ dynamical models. Stat Med, 2002. 21(15): p. 2199-214.
 Li, L., et al., 
 \emph{Estimation and inference for a spline-enhanced population pharmacokinetic model}. 
 Biometrics, 2002. 58(3): p. 601-11.
+
+\bibitem{Wu02}
+Wu H, Zhang J T., 
+\emph{Local polynomial mixed-effects models for longitudinal data}. 
+Journal of the American Statistical Association, 2002, 97(459): 883-897.
 
 \bibitem{Davidian03}
 Davidian M, Giltinan D M, 
@@ -211,10 +186,25 @@ Huang, Y., Liu, D. and Wu, H.,
 \emph{Hierarchical Bayesian Methods for Estimation of Parameters in a Longitudinal HIV Dynamic System}. 
 Biometrics, 2006. 62, 413-423
 
+\bibitem{Wu06}
+Wu H, Zhang J T., 
+\emph{Nonparametric regression methods for longitudinal data analysis: mixed-effects modeling approaches.} 
+John Wiley \& Sons, 2006.
+
 \bibitem{Guedj07}
 Guedj, J., R. Thiebaut, and D. Commenges, 
 \emph{Maximum likelihood estimation in dynamical models of HIV.} 
 Biometrics, 2007. 63(4): p. 1198-206.
+
+\bibitem{Ma08}
+Ma P, Zhong W., 
+\emph{Penalized clustering of large-scale functional data with multiple covariates.} 
+Journal of the American Statistical Association, 2008, 103(482).
+
+\bibitem{Kim08}
+Kim Y, Choi H, Oh H S., 
+\emph{Smoothly clipped absolute deviation on high dimensions.} 
+Journal of the American Statistical Association, 2008, 103(484): 1665-1673.
 
 \bibitem{Lu11}
 Lu, T., Liang, H., Li, H., Wu, H., 
