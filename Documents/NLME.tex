@@ -17,21 +17,19 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-This is a basic review of the nonlinear mixed effects (NLME) model which need to be improved and expanded in the future. NLME models are very useful in description of  some dynamic system with measurements of individuals from population. But The part of parameter estimation is not very easy. This paper introduces some methods very briefly and observes some application of NLME model.
+This is a basic review of the nonlinear mixed effects (NLME) model which need to be improved and expanded in the future. NLME models are very useful in describing some dynamic system with measurements of individuals from population. This paper introduces some methods very briefly and observes some application of NLME model.
 \end{abstract}
 \section{Introduction of NLME}
 \label{sect:Introduction}
-In some research, the dataset may come from frequent measurements from a sample of individuals (subjects) from a population. For example, blood samples collected from several subjects in pharmacokinetic analysis and HIV dynamic research, milk samples collected from dairy cattles in dairy science, permanent sample plots in forestry, etc. It is a challenge to make inference from dataset like this. There are some common properties in population and some special properties in individuals so some mixed effects model will be a good solution.
-
-The first candidate may be linear mixed effects model but it is too simple to describe dynamic system. So nonliear mixed effects models have become a popular platform for alalysis of these datasets.
+In some research, the dataset may come from frequent measurements from samples of individuals from a population. For example, blood samples collected from several subjects in pharmacokinetic analysis and HIV dynamic research, milk samples collected from dairy cattles in dairy science, permanent sample plots in forestry, etc. It is a challenge to make inference from dataset like this. There are some common properties in population and some special properties in individuals so some mixed effects model will be a good solution. The first candidate may be linear mixed effects model but it is too simple to describe dynamic system. So nonliear mixed effects models have become a popular platform for alalysis of these datasets.
 
 \subsection{Basic Model}
 \label{sect:basic}
 According to \cite{Davidian03}, the basic nonlinear mixed effects model has two stages, individual model and population model.
 
 \begin{align}
-Stage 1: Indevidual Model. & & y_{ij} = f(x_{ij},\beta_{i})+e_{ij}, & & j=1,\ldots,n_{i} \label{im1} \\
-Stage 2: Population Model.  & & \beta{i} = d(a_{i},\beta,b_{i}), & & i=1,\ldots,m \label{pm1} 
+Stage 1: \ Individual\  Model. & & y_{ij} = f(x_{ij},\beta_{i})+e_{ij}, & & j=1,\ldots,n_{i} \label{im1} \\
+Stage 2: \ Population\  Model.  & & \beta{i} = d(a_{i},\beta,b_{i}), & & i=1,\ldots,m \label{pm1} 
 \end{align}
 
 where $x_{ij}$ can be time or response of the system, $y_{ij}$ denotes the $j$th measurement of the response, $\beta_{i}$ denotes the parameters, $e_{ij}$ denotes the realization error and measurement error, $a_{i}$ can be some fixed sysematic properties, $\beta$ denotes the fixed parameters (effects) in population and $b_{i}$ denotes the random effects. What is more, there is a parameter $u_i$ denotes the initial status, such as the dose at time zero in pharmacokinetic analysis.
@@ -43,7 +41,7 @@ The two stages of this model are both nonlinear. In practice, the second stage \
 
 \section{Inference of NLME Model}
 \label{sect:infer}
-There are a number of inferential methods for NLME.  Generally, most of these methods are based on likelihood or Bayesian method.
+There are a number of inferential methods for NLME.  Most of these methods are based on likelihood or Bayesian method.
 
 \subsection{Methods Based on Individual Estimates} 
 \label{sect:ie}
@@ -56,7 +54,7 @@ When the number of (measurement) samples is not large enough, we can not get goo
 \subsection{Methods Based on a Bayesian Formulation}
 \label{sect:bayesian}
 
-Bayesian analysis with MCMC techniques is a natural powerful weapon for NLME model. The detail of this approach is in~\ref{sect:bayesianapproach}.  \footnote{The content of~\ref{sect:Introduction} and ~\ref{sect:infer} comes from \cite{Davidian03}.}
+Bayesian analysis with MCMC techniques is a natural powerful weapon for NLME model. The detail of this approach is in~\ref{sect:bayesianapproach} as an specific example.  \footnote{The content of~\ref{sect:Introduction} and ~\ref{sect:infer} comes from \cite{Davidian03}.}
 
 \section{Some Applications}
 \label{sect:application}
@@ -65,7 +63,7 @@ Bayesian analysis with MCMC techniques is a natural powerful weapon for NLME mod
 \label{sect:network}
 There are two major challenges in dynamic gene regulatory network identification, one is the high dinemsional system, the other one is the construction of dynamic network. \cite{Lu11}  applies ODE model for gene regulatory network (GRN) and proposes a five steps procedure CSIEF to identify dynamic GRNs, which includes clustering step, smoothing step, regulation identification step, parameter estimates refining step and function enrichment analysis step.
 
-In these five steps, the clustering step and smoothing step use mixed effects model, the parameter estimates refining step uses NLME model. The brief infomation for each step are given below.
+In these five steps, the clustering step and smoothing step use mixed effects model, the NLME model is involved in the parameter estimates refining step. The brief introduction of each step is given below.
 
 \paragraph{Step 1: Clustering}
 The purpose of this step is to reduce the dimension of the model. In the mean time, the problem is changed from 'gene regulatory network' to 'functional module regulatory network' based on the assumption that genes with similar function will not affect each other.
@@ -93,7 +91,7 @@ The ODE model in this step is as following
 y_{k}(t)=\sum_{j=1}^{p}\beta_{kj}x_{j}(t)+\varepsilon_{k}(t),
 \end{equation}
 where $y_{k}(t)=\hat{M}_{k}^{'}(t)$ and $x_{j}(t)=\hat{M}_{j}(t)$.
-There are two target in this step, the primary one is model selection, the secondary one is to estimate parameters (of the system) for the first time. There are many method for this purpose to the standard high-dimensional linear regression model such as stepwise, bridge selection, LASSO, LARS, and so on. Here a method named CCCP-SCAD is used, which is the combination of concave convex procedure (CCCP) \cite{Le97} and smoothly clipped absolute deviation (SCAD) \cite{Fan01}, the detail of this part is from \cite{Kim08}.
+There are two targets in this step, the primary one is model selection, the secondary one is to estimate parameters (of the system) for the first time. There are many method for this purpose to the standard high-dimensional linear regression model such as stepwise, bridge selection, LASSO, LARS, and so on. Here a method named CCCP-SCAD is used, which is the combination of concave convex procedure (CCCP) \cite{Le97} and smoothly clipped absolute deviation (SCAD) \cite{Fan01}, the detail of this part is from \cite{Kim08}.
 \paragraph{Step 4: parameter Estimates refining}
 The estimation in step 3 is computationally efficient and easy to implement. But this estimation is not very efficient in terms of estimation accuracy. So a NLME modeling approach is used to improve the accuracy.
 The mixed-effects ODE model for module $k$ is
@@ -106,7 +104,7 @@ The SAEM approach \cite{Delyon99} is used to fit the model \eqref{s41}.
 \paragraph{Step 5: Function enrichment analysis}
 This step only build the GRN according to the estimation from the previous steps.
 
-The five step procedure overcomes the two major challenge successfully, but the correctness of the result is based on a strong assumption that the clustering is correct and the genes in a module do not affect each other. What is more, there are two steps have relationship with model selection which is a great risk to the correctness of the result.
+The five steps procedure overcomes the two major challenge successfully, but the correctness of the result is based on a strong assumption that the clustering is correct and the genes in a module do not affect each other. What is more, there are two steps have relationship with model selection which is a great risk to the correctness of the result.
 
 \subsection{Pharmacokinetic}
 \label{sect:pharmacokinetic}
@@ -138,14 +136,14 @@ log(k_{a,i}(t_{ij})) & = & X_{2,ij}a_{2}+Z_{2,ij}b_{2i}, \\
 log(k_{d,i}(t_{ij})) & = & X_{3,ij}a_{3}+g(t_{ij})+Z_{3,ij}b_{3i}, 
 \end{array}
 \end{equation}
-where $y_{ij}$ is the observed log plasma drug concentration for subject $i$ at time $t_{ij}$, $V_{i}$ is the subject-specific volume of distribution and the true plasma drug concentration is $A_{2,i}(t)/V_{i}$. The function $f(\cdot)$ is log transformation of the true plasma drug concentration. $X_{ij}=diag(X_{1,i},X_{2,ij},X_{3,ij})$ is a $3\times{}p$-dimensional time-dependent design matrix for the $p$-dimensional fixed effect vector $a=(a_{1}^{T},a_{2}^{T},a_{3}^{T})^{T}$, $Z_{ij}=diag(Z_{1,i},Z_{2,ij},Z_{3,ij})$ is a  $3\times{}q_{i}$-dimensional time-dependent design matrix for the $q_{i}$-dimensional random effect vector $b_{i}=(b_{1i}^{T},b_{2i}^{T},b_{3i}^{T})^{T}$, $\epsilon_{ij}$ is i.i.d. $N(0,\sigma_{0}^{2})$, $b_{i}$ is i.i.d. $N(0,D_{i})$ and $g(t)$ is spline function. The populaton model can be written as
+where $y_{ij}$ is the observed log plasma drug concentration for subject $i$ at time $t_{ij}$, $V_{i}$ is the subject-specific volume of distribution and the true plasma drug concentration is $A_{2,i}(t)/V_{i}$. The function $f(\cdot)$ is log transformation of the true plasma drug concentration. $X_{ij}=diag(X_{1,i},X_{2,ij},X_{3,ij})$ is a $3\times{}p$-dimensional time-dependent design matrix for the $p$-dimensional fixed effect vector $a=(a_{1}^{T},a_{2}^{T},a_{3}^{T})^{T}$, $Z_{ij}=diag(Z_{1,i},Z_{2,ij},Z_{3,ij})$ is a  $3\times{}q_{i}$-dimensional time-dependent design matrix for the $q_{i}$-dimensional random effect vector $b_{i}=(b_{1i}^{T},b_{2i}^{T},b_{3i}^{T})^{T}$, $\epsilon_{ij}$ is i.i.d. $N(0,\sigma_{0}^{2})$, $b_{i}$ is i.i.d. $N(0,D_{i})$ and $g(t)$ is spline function. The individual and populaton model can be written as
 \begin{equation}
 \begin{array}{rcl}
 Y & = & f\{\beta(t),t\}+\epsilon, \\
 log\{\beta(t)\} & = & Xa+Ng+Zb,
 \end{array}
 \end{equation} 
-where $\beta(t)$ denotes $V_{i},k_{a,i}(t_{ij}),k_{d,i}(t_{ij})$ for all the subject i, $N$ denote the indicator matrix for spline function $g$. The parameters of the model and the spline function can be estimated by approximation maximum likelihood approach mentioned in~\ref{sect:likelihood}. As this work is completed over ten years ago, maybe we can estimate the parameters more precise by applying 'exact' maximum likelihood approach.
+where $\beta(t)$ denotes $V_{i},k_{a,i}(t_{ij}),k_{d,i}(t_{ij})$ for all the subject i, $N$ denote the indicator matrix for spline function $g$. The parameters of the model and the spline function can be estimated by approximation maximum likelihood approach mentioned in~\ref{sect:likelihood}. 
 \subsection{HIV Dynamic Models}
 \label{sect:hiv}
 The basic HIV dynamic model is a model that describes the population dynamics of HIV and its target cells in plasma.
@@ -169,7 +167,7 @@ V_{0} & = & \frac{\lambda{}N}{c}-\frac{\rho}{k}, \\
 T_{0}^{*} & = & \frac{c}{\delta{}N}, 
 \end{array}
 \end{equation}
-This is the initial values of all the HIV dynamic models with antiviral. Roughly speaking, there are two types of antiviral drugs which are commonly used in standard anti-HIV treatment \cite{Putter02}. The first are inhibitors of Reverse Transcriptase (RTI's), the second are protease inhibitors (PI's). The RTI's inhibit the transcription of viral RNA into DNA which will prevent the CD4+ T cells being infected. The PI's inhibit the cleaving of long multi-proteins into smaller functional units to render a large fraction of virus particles defactive. Then we can conclude the general post-treatment system of differential euqtions:
+This is the initial values of all the HIV dynamic models with antiviral. Roughly speaking, there are two types of antiviral drugs which are commonly used in standard anti-HIV treatment \cite{Putter02}. The first is inhibitors of Reverse Transcriptase (RTI's), the second is protease inhibitors (PI's). The RTI's inhibit the transcription of viral RNA into DNA which will prevent the CD4+ T cells being infected. The PI's inhibit the cleaving of long multi-proteins into smaller functional units to render a large fraction of virus particles defactive. Then we can conclude the general post-treatment system of differential euqtions:
 \begin{equation}
 \begin{array}{rcl}
 \frac{dT}{dt} & = & \lambda{}-\rho{}T-(1-\eta{}_{RTI}(t))kTV \\
@@ -180,10 +178,10 @@ This is the initial values of all the HIV dynamic models with antiviral. Roughly
 \end{equation}
 where $\eta{}_{RTI}(t)$ indicates the fraction of new infections inhibited, $\eta{}_{PI}(t)$ denotes the fraction of virus produced being non-infectious. Both of them take value from $0$ to $1$, $0$ means no treatment and $1$ means perfect inhibition. $V$ and $U$ denote the infectious virus and defective virus respectively. The concept of this part comes from \cite{Putter02} and the notations follow \cite{Huang0601} in general.
 
-To estimate parameters from these models, The first thing is to discuss the identifiability of the parameters. Basicly speaking, there always be some parameters which are not identifiable because too many parameters in the model. Then we have to take some of them as constant based on prior knowledge. The next step is to transform the remaining parameters to proper form (such as log form or some combination) and then take them into a NLME model. Finally, we can get the estimation of them by maximum likelihood approach or Bayesian approach.
+To estimate parameters from these models, The first thing is to discuss the identifiability of the parameters. Basicly speaking, there always be some parameters which are not identifiable because there are too many parameters in the model. Then we have to take some of them as constant based on prior knowledge. The next step is to transform the remaining parameters to proper form (such as log form or some combination) and then take them into a NLME model. Finally, we can get the estimation of them by maximum likelihood approach or Bayesian approach.
 \subsubsection{Likelihood Approach}
 \label{sect:likelihoodapproach}
-\cite{Guedj07} proposed a model which is some different from the general model \eqref{generalmodel}.
+\cite{Guedj07} proposes a model which is some different from the general model \eqref{generalmodel}.
 \begin{equation}
 \left\{
 \begin{array}{rcl}
@@ -199,7 +197,7 @@ whrere $Q$ is quiescent CD4+ T cells, $\mu{}$ is death rate of it, $\alpha{}_Q$ 
 A maximum likelihood appoach is used in \cite{Guedj07}. Because the model is some complex, not the log likelihood function but the first derivatives of it are used to estimate the parameters. 
 \subsubsection{Bayesian Approach}
 \label{sect:bayesianapproach}
-Another way is the Bayesian approach. Many specifical models have been established. \cite{Putter02} proposed a short term model in which the efficiency of RTI and PI is considered to be constant and equal. \cite{Huang0601} and \cite{Huang0602} proposed a simplified model in which only the RTI drugs involved and used $IC_{50}$ to model the drug efficiency. The process of these models are very similar so we take \cite{Huang0601} as example.
+Another way is the Bayesian approach. Many specific models have been established. \cite{Putter02} proposed a short term model in which the efficiency of RTI and PI is considered to be constant and equal. \cite{Huang0601} and \cite{Huang0602} proposed a simplified model in which only the RTI drugs involved and used $IC_{50}$ to model the drug efficiency. The process of these models are very similar so we take \cite{Huang0601} as example.
 
 $IC_{50}$ represents the drug concentration necessary to inhibit viral replication by $50\%$. Then the drug efficiency is represented as
 \begin{equation}
@@ -213,35 +211,43 @@ where $C_{min}$ is the minimum concentration of drug in plasma and $IQ(t)=C_{min
 \frac{dV}{dt} & = & N\delta{}T^{*}-cV  \label{specificmodel}
 \end{array}
 \end{equation}
-There are too many parameters so the prior information must be used to avoid the identifiability problem. After this step, the remaining parameters must be transformed for convenience. Denote the number of subjects by $n$ and the number of measurements on the $i$th subject by $m_i$, let $\mu=(log\phi{},logc,log\delta{},log\lambda{},log\rho{},logN,logk)^{T}$, $\Theta=\{\theta_{i},i=1,\ldots,n\}$, $\theta_{i}=(log\phi{}_{i},logc_{i},log\delta{}_{i},log\lambda{}_{i},log\rho{}_{i},logN_{i},logk_{i})^{T}$, $Theta_{\{i\}}=\{\theta_{l},l\neq{}i\}$ and $Y=\{y_{ij},i=1,\ldots,n;j=1,\ldots,m_{i}\}$. Let $f_{ij}(\theta_{i},t_{j})$ be logarithm of the (numeric) solution of $V$ from \eqref{specificmodel} for the $i$th subject at time $t_j$. The repeated measurements of it, $y_{ij}(t)$ can be written as
+There are too many parameters so the prior information must be used to avoid the identifiability problem. After this step, the remaining parameters must be transformed for convenience. Denote the number of subjects by $n$ and the number of measurements on the $i$th subject by $m_i$, let
+\begin{equation}
+\begin{array}{rcl}
+\mu & = & (log\phi{},logc,log\delta{},log\lambda{},log\rho{},logN,logk)^{T}, \\
+\Theta & = & \{\theta_{i},i=1,\ldots,n\}, \\
+\theta_{i} & = & (log\phi{}_{i},logc_{i},log\delta{}_{i},log\lambda{}_{i},log\rho{}_{i},logN_{i},logk_{i})^{T}, \\
+\Theta_{\{i\}} & = & \{\theta_{l},l\neq{}i\}, \\
+Y & = & \{y_{ij},i=1,\ldots,n;j=1,\ldots,m_{i}\}
+\end{array}
+\end{equation}
+Let $f_{ij}(\theta_{i},t_{j})$ be logarithm of the (numeric) solution of $V$ from \eqref{specificmodel} for the $i$th subject at time $t_j$. The repeated measurements of it, $y_{ij}(t)$ can be written as
 \begin{equation}
 y_{ij}(t_{j})=f_{ij}(\theta_{i},t_{j})+e_{i}(t_{j}), i=1,\ldots,n;j=1,\ldots,m_{i}
 \end{equation}
 where $e_{i}(t)$ is a measurement error with mean zero. Then a Bayesian nonlinear mixed-effect model can be written as following stages.
 
 \paragraph{Stage 1.}
-Within-subject variation in common logarithmic viral load measurements:
+Within-subject variation in common logarithmic viral load measurements which is the individual model:
 \begin{equation}
 y_{i}=f_{i}(\theta{}_{i})+e_{i}, [e_{i}|\sigma{}^{2},\theta{}_{i}]\sim{}N(0,\sigma{}^{2}I_{m_i})
 \end{equation}
 \paragraph{Stage 2.}
-Between-subject variation:
+Between-subject variation which is the population model:
 \begin{equation}
 \theta_{i}=\mu+b_{i}, [b_{i}|\Sigma]\sim{}N(0,\Sigma)
 \end{equation}
 \paragraph{Stage 3.}
 Hyperprior distribution:
 \begin{equation}
-\sigma^{-2}\sim{}Ga(a,b), \mu\sim{}N(\eta,\Lambda), \Sigma{}^{-1}\sim{}Wi(\Sigma,v)
+\sigma^{-2}\sim{}Ga(a,b), \mu\sim{}N(\eta,\Lambda), \Sigma{}^{-1}\sim{}Wi(\Omega,v)
 \end{equation}
-The parameters in the hyperprior distribution are known.
-
-Then the iterative MCMC algorithm is outlined as follows
+The parameters in the hyperprior distribution are known. Then the iterative MCMC algorithm can be outlined as follows
 
 \paragraph{Step 1.}
 Initialize the iteration counter to $j=1$ and start with initial values $\Gamma{}^{(0)}=(\sigma{}^{-2(0)},\mu{}^{(0)},\Sigma{}^{-1(0)},\Theta{}^{(0)})^{T}$.
 \paragraph{Step 2.}
-Obtain a new value  $\Gamma{}^{(j)}=(\sigma{}^{-2(j)},\mu{}^{(j)},\Sigma{}^{-1(j)},\Theta{}^{(j)})^{T}$ from $Gamma{}^{(j-1)}$ through successive generation of values:
+Obtain a new value  $\Gamma{}^{(j)}=(\sigma{}^{-2(j)},\mu{}^{(j)},\Sigma{}^{-1(j)},\Theta{}^{(j)})^{T}$ from $\Gamma{}^{(j-1)}$ through successive generation of values:
 \paragraph{Step 2.1 Gibbs sampling.}
 \begin{equation}
 \begin{array}{rcl}
@@ -250,7 +256,7 @@ Obtain a new value  $\Gamma{}^{(j)}=(\sigma{}^{-2(j)},\mu{}^{(j)},\Sigma{}^{-1(j
 \Sigma{}^{-1(j)} & \sim{} & \pi{}(\Sigma{}^{-1}|\sigma{}^{-2(j-1)},\mu{}^{(j-1)},\Theta{}^{(j-1)},Y)
 \end{array}
 \end{equation}
-\paragraph{Step 2.2 Metropolis-Hastings step}
+\paragraph{Step 2.2 Metropolis-Hastings step.}
 For $\theta{}_{i}^{(j)}$, generate a new value $\varphi$ from the proposal (symmetric) density $q(\varphi{}|\theta{}_{i}^{(j-1)})$, calculate
 \begin{equation}
 \alpha{}(\varphi{}|\theta{}_{i}^{(j-1)})=\frac{\pi{}(\varphi{}|\sigma{}^{-2(j)},\mu{}^{(j)},\Sigma{}^{-1(j)},\Theta{}_{\{i\}}^{(j-1)},Y)}{\pi{}(\theta{}_{i}^{(j-1)}|\sigma{}^{-2(j)},\mu{}^{(j)},\Sigma{}^{-1(j)},\Theta{}_{\{i\}}^{(j-1)},Y)}
@@ -258,6 +264,9 @@ For $\theta{}_{i}^{(j)}$, generate a new value $\varphi$ from the proposal (symm
 If $\alpha{}(\varphi{}|\theta{}_{i}^{(j-1)})\ge{}1$ then accept it,$\theta{}_{i}^{(j)}=\varphi{}$. If $\alpha{}(\varphi{}|\theta{}_{i}^{(j-1)})<1$ then also accept it with a given probability.
 \paragraph{Step 3.}
 Change the counter from $j$ to $j+1$ and return to Step 2 until convergence is reached.
+
+\section{Conclusion}
+In this paper, we introduce the concept of NLME models and list some applications of this kind of model. The parameter estimating methods have some advantage and drawback respectively and there is not a uniform algorithm to solve the problem. Some applications have potential to improve. For example the pharmacokinetic model may be can used in the HIV dynamic model to character the efficiency of drugs.
 
 \begin{thebibliography}{9}
 
