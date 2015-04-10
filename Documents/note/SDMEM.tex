@@ -1,0 +1,85 @@
+\documentclass[12pt]{extarticle}
+\usepackage[top=0.5in, bottom=0.8in, left=0.5in, right=0.5in]{geometry}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{bm}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+\usepackage[pdftex]{hyperref}
+\usepackage{multirow}
+\hypersetup{colorlinks=false, linkcolor=blue, pdffitwindow=true, pdftitle={Stochastic Differential Mixed-Effects Models}}
+
+\title{Note of Stochastic Differential Mixed-Effects Models}
+\author{Wei Cui}
+\begin{document}
+\maketitle
+\section{Introduction}
+Dynamical biological processes are usually modelled by means of systems of deterministic differential equations(ordinary, partial, ordelay). These however do not account for the noisy components of the system dynamics often present in biological systems.
+There are only a few papers for SDE models with random effects. The problem is that estimating parameters in SDE models is not straightforward. A natural approach would be likelihood inference, but the transition densities of the process are rarely known, and thus it is usually not possible to write the likelihood function explicitly.
+
+SDE model with log-normally distributed random effects and a constant diffusion term.\cite{Overgaard05,Tornoe05}
+
+The likelihood function for a simple SDE model with normally distributed random effects is calculated explicitly\cite{Ditlevsen05}, bet generally the likelihood function is unavailable.
+
+An estimation method based on a stochastic EM algorithm for fitting SDE with mixed effects\cite{Donnet08}, but the proposed methods are time-consuming from a computational point of view.
+
+In this paper a computationally efficient estimation method for the parameters of an SDE model incorporating random parameters is proposed. These are stochastic differential mixed-effects models (SDMEMs). It is not necessary to fit the individual data separately but a single estimation procedure is used to fit the overall data simultaneously. The drift and diffusion terms can depend linearly or nonlinearly on state variables and random effects following any sufficiently well-behaved continuous distribution and an approximation to the likelihood function is computed.
+
+The likelihood can seldom be obtained in closed form as it involves explicit knowledge of the transition density. Various ways have been proposed to approximate the transition density.
+\begin{enumerate}
+  \item Solving numerically the Kolmogorov partial differential equations satisfied by the transition density\cite{Lo88}. Computationally intense and poorly accurate\cite{Sahalia02}.
+  \item Deriving a closed-form Hermite expansion to the transition density\cite{Sahalia08}. Accurate and fast, but may be difficult to apply\cite{Durham02}.
+  \item Simulating the process to Monte Carlo integrate the transition density\cite{Durham02}. A method using exact simulation also has been proposed\cite{Beskos06}. Computationally intense and poorly accurate\cite{Sahalia02}.
+\end{enumerate}
+This paper chooses to employ the transition dnesity approximation method suggested in\cite{Sahalia08}. Attention is restricted to time-homogeneous SDEs and the generalization to time-inhomogeneous SDEs can be obtained according to\cite{Egorov03}. The likelihood function is calculated by numerically integrating the approximated conditional likelihood with respect to the random parameters using Gaussian quadrature rules and the parameters of the SDMEM are estimated by (approximated) maximum likelihood (ML).
+\section{Formulation of SDMEMs}
+An SDMEM is defined as:
+\begin{equation}
+dX_{t}^{i}=\mu{}(X_{t}^{i},\theta,b^{i})dt+\sigma{}(X_{t}^{i},\theta,b^{i})dW_{t}^{i}
+\end{equation}
+where $\theta$ is a $p$-dimensional fixed effects parameter and $b^i$ is a $q$-dimensional random effects parameter. The joint density function of $b^i$ is denoted by $p_{B}(b^{i}|\Psi{})$. The $r$-dimensional parameter $\Psi$ collects all the parameters specifying the marginal distributions of components of $b^i$ as well as the covariance structure between components. The $W_{t}^{i}$ is standard Brownian motions. Assume the distribution of $X_{t}^{i}$ has a strictly positive density with respect to the Lebesgue measure. 
+
+The paper joints all responses of every subject at every time to a total response vector. The target is to estimate $(\theta{},\Psi)$ using simultaneously all the data. The special values of $b^i$s are not of interest, but only the identification of $\Psi$ characterizing their distribution.
+\section{Maximum likelihood estimation (MLE) in SDMEMs}
+The likelihood function should be
+\begin{equation}
+L(\theta{},\Phi{})=\prod_{i=1}^{M}p(\underline{x}^{i}|\theta{},\Phi{})=\prod_{i=1}^{M}\int_{B}p_{\underline{X}}(\underline{x}^{i}|b^{i},\theta{})p_{B}(b^{i}|\Psi)db^{i} \label{eq:likelihood}
+\end{equation}
+where the product of the transition densities for a given realization of the random effects and for a given $\theta$:
+\begin{equation}
+p_{\underline{X}}(\underline{x}^{i}|b^{i},\theta{})=\prod_{j=1}^{n_{i}}p_{X}(x_{j}^{i},\Delta{}_{j}^{i}|x_{j-1}^{i},b^{i},\theta)
+\end{equation}
+In simple cases the integral \eqref{eq:likelihood} can be solved and explicit estimating equations for the MLE can be found. But in general it is not possible to explicitly solve the integral. If $p_{X}(\cdot)$ is known but the integral cannot be solved analytically, the integral has to be numerically evaluated. If $p_{X}(\cdot)$ is unknown, the following approach will be useful, which approximate the transition density in closed-form, using a Hermite expansion.
+\subsection{Likelihood approximation}
+\subsection{Random effects estimation}
+\subsection{Closed-form transition density expansion}
+\section{Implementation issues and numerical applications}
+\section{Applications}
+\section{Conclusions}
+
+
+\begin{thebibliography}{9}
+\bibitem{Lo88}
+Lo A W. Maximum likelihood estimation of generalized It{\^o} processes with discretely sampled data[J]. Econometric Theory, 1988, 4(02): 231-247.
+\bibitem{Durham02}
+Durham G B, Gallant A R. Numerical techniques for maximum likelihood estimation of continuous-time diffusion processes[J]. Journal of Business \& Economic Statistics, 2002, 20(3): 297-338.
+\bibitem{Sahalia02}
+A{\"i}t-Sahalia Y. [Numerical Techniques for Maximum Likelihood Estimation of Continuous-Time Diffusion Processes]: Comment[J]. Journal of Business \& Economic Statistics, 2002: 317-321.
+\bibitem{Egorov03}
+Egorov A V, Li H, Xu Y. Maximum likelihood estimation of time-inhomogeneous diffusions[J]. Journal of Econometrics, 2003, 114(1): 107-139.
+\bibitem{Overgaard05}
+Overgaard R V, Jonsson N, Torn{\o}e C W, et al. Non-linear mixed-effects models with stochastic differential equations: implementation of an estimation algorithm[J]. Journal of pharmacokinetics and pharmacodynamics, 2005, 32(1): 85-107.
+\bibitem{Tornoe05}
+Torn{\o}e C W, Overgaard R V, Agers{\o} H, et al. Stochastic differential equations in NONMEM{\circledR}: implementation, application, and comparison with ordinary differential equations[J]. Pharmaceutical research, 2005, 22(8): 1247-1258.
+\bibitem{Ditlevsen05}
+Ditlevsen S, De Gaetano A. Mixed effects in stochastic differential equation models[J]. REVSTAT-Statistical Journal, 2005, 3(2): 137-153.
+\bibitem{Beskos06}
+Beskos A, Papaspiliopoulos O, Roberts G O, et al. Exact and computationally efficient likelihood‐based estimation for discretely observed diffusion processes (with discussion)[J]. Journal of the Royal Statistical Society: Series B (Statistical Methodology), 2006, 68(3): 333-382.
+\bibitem{Donnet08}
+Donnet S, Samson A. Parametric inference for mixed models defined by stochastic differential equations[J]. ESAIM: Probability and Statistics, 2008, 12: 196-218.
+\bibitem{Sahalia08}
+A{\"i}t-Sahalia Y. Closed-form likelihood expansions for multivariate diffusions[J]. The Annals of Statistics, 2008, 36(2): 906-937.
+\end{thebibliography}
+\end{document}
