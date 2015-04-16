@@ -1,0 +1,92 @@
+%%%%% Begin LaTeX Beamer Preamble %%%%%
+
+  \documentclass[9pt]{beamer}
+
+  \usetheme{Goettingen} % Or use Luebeck (different bullet points from Malmoe)
+  % other themes: AnnArbor, Antibes, Bergen, Berkeley, Berlin, Boadilla, boxes, CambridgeUS, Copenhagen, Darmstadt, default, Dresden, Frankfurt, Goettingen, Hannover, Ilmenau, JuanLesPins, Luebeck, Madrid, Malmoe, Marburg, Montpellier, PaloAlto, Pittsburg, Rochester, Singapore, Szeged, default, classic
+
+  \usefonttheme{professionalfonts}
+  %font themes: default, professionalfonts, serif (Times New Roman), structurebold, structureitalicserif, structuresmallcapsserif
+
+  \usecolortheme{seahorse} % Other tolerable color schemes rose, whale, orchid, dolphin, lily
+  % color themes: albatross, beaver, beetle, crane, default, dolphin, dove (black and white), fly (gray and white), lily, orchid, rose, seagull (gray), seahorse (light blue), sidebartab, whale, wolverine
+
+  %\setbeamercovered{transparent} % Given overlays, pauses and similar, this command allows you to specify in a quite general way how a covered item should be rendered
+
+  \setbeamertemplate{navigation symbols}{\textcolor{black}{{\footnotesize \insertframenumber/\inserttotalframenumber}}} % Removes navigation tools and adds slide number/total slide count at bottom right
+  %\setbeamertemplate{navigation symbols}{} % Just removes navigation tools
+
+  %\setbeamertemplate{bibliography item}[article] % Changes the bibliography item icon, options: article, book, ...
+  \setbeamertemplate{bibliography item}{} % No bibliography item icon
+
+  \setbeamertemplate{caption}[numbered] % Option to have the figures numbered
+
+  \useoutertheme[subsection=false]{smoothbars} % Suppress subsections
+
+  % New command, math operator declarations
+  \DeclareMathOperator*{\argmax}{argmax}
+  \DeclareMathOperator*{\argmin}{argmin}
+
+  % Packages
+  \usepackage{amsmath, amsthm, amssymb}
+  \usepackage[english]{babel}
+  \usepackage[latin1]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{times}
+  \usepackage{color}
+  \usepackage{verbatim}
+  \usepackage{graphicx}
+  \usepackage{bm}
+  \usepackage[all]{xy}
+  \usepackage[latin1]{inputenc}
+  \usepackage{hyperref}
+  
+%\usepackage{enumitem}
+%\setenumerate[1]{label=\arabic*.}
+%\newcounter{ResumeEnumerate}
+  % Presentation meta-information
+  \title[Bayesian Approach in HIV Dynamical Models]{Bayesian Approach in HIV Dynamical Models}
+  \author[Wei Cui]{Wei Cui  { \texttt{}}}
+
+
+  \institute{~\\Department of Statistics \\University of California, Riverside}
+  
+  \date{\small{April 17th, 2015}}
+  \subject{Slide Presentation} % Enters option text as the subject text in the pdf document info
+
+%%%%% End LaTeX Beamer Preamble %%%%%
+
+\begin{document} %%%%%%%
+
+
+
+\begin{frame} %%%
+  \titlepage
+\end{frame} %%%
+
+% Do a brief overview of the talk here before getting into it.
+\begin{frame}{Outline} %%%
+%\begin{frame}[allowframebreaks]{Outline}
+  \tableofcontents
+\end{frame} %%%
+
+\section[Model]{Model}
+\subsection[Background]{Background}
+\begin{frame}{Life Circle of HIV}
+  \begin{figure}
+    \centering
+    \def\svgwidth{\columnwidth}
+    \input{HIVReplicationCycle.pdf_tex}
+  \end{figure}
+"\href{http://en.wikipedia.org/wiki/HIV\#/media/File:HIV-replication-cycle.svg}{The HIV replication cycle}" by \href{http://commons.wikimedia.org/wiki/User:Splette}{Thomas Splettstoesser} is licensed under \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}
+\end{frame}
+
+\begin{frame}{HIV RNA Copies and CD$4^{+}$ Count}
+  \includegraphics[scale=0.5]{Hiv-timecourse_copy}
+\end{frame}
+
+\subsection[BasicModel]{Basic Model}
+\begin{frame}
+$1+1=1$
+\end{frame}
+\end{document} %%%%%%%

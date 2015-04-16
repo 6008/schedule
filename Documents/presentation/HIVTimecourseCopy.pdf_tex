@@ -1,0 +1,107 @@
+%% Creator: Inkscape inkscape 0.48.4, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'HIVTimecourseCopy.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{565.58986816bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.59581325)%
+    \put(0,0){\includegraphics[width=\unitlength]{HIVTimecourseCopy.pdf}}%
+    \put(0.18272369,0.00044064){\makebox(0,0)[lb]{\smash{Weeks}}}%
+    \put(0.57096515,0.00109559){\makebox(0,0)[lb]{\smash{Years}}}%
+    \put(0.13813928,0.03967922){\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0.0545532,0.05570922){\color[rgb]{0,0,1}\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0.04382048,0.09527387){\color[rgb]{0,0,1}\makebox(0,0)[lb]{\smash{100}}}%
+    \put(0.04382048,0.13483991){\color[rgb]{0,0,1}\makebox(0,0)[lb]{\smash{200}}}%
+    \put(0.04382048,0.17440444){\color[rgb]{0,0,1}\makebox(0,0)[lb]{\smash{300}}}%
+    \put(0.04382048,0.21397047){\color[rgb]{0,0,1}\makebox(0,0)[lb]{\smash{400}}}%
+    \put(0.04382048,0.25353511){\color[rgb]{0,0,1}\makebox(0,0)[lb]{\smash{500}}}%
+    \put(0.04382048,0.29310103){\color[rgb]{0,0,1}\makebox(0,0)[lb]{\smash{600}}}%
+    \put(0.04382048,0.33266709){\color[rgb]{0,0,1}\makebox(0,0)[lb]{\smash{700}}}%
+    \put(0.04382048,0.37223173){\color[rgb]{0,0,1}\makebox(0,0)[lb]{\smash{800}}}%
+    \put(0.04382048,0.41179623){\color[rgb]{0,0,1}\makebox(0,0)[lb]{\smash{900}}}%
+    \put(0.03845419,0.45136228){\color[rgb]{0,0,1}\makebox(0,0)[lb]{\smash{1000}}}%
+    \put(0.03845419,0.49092834){\color[rgb]{0,0,1}\makebox(0,0)[lb]{\smash{1100}}}%
+    \put(0.03845419,0.53049284){\color[rgb]{0,0,1}\makebox(0,0)[lb]{\smash{1200}}}%
+    \put(0.18303839,0.03967922){\makebox(0,0)[lb]{\smash{3}}}%
+    \put(0.22793763,0.03967922){\makebox(0,0)[lb]{\smash{6}}}%
+    \put(0.27283618,0.03967922){\makebox(0,0)[lb]{\smash{9}}}%
+    \put(0.31773529,0.03967922){\makebox(0,0)[lb]{\smash{12}}}%
+    \put(0.41258649,0.03967922){\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0.45606221,0.03967922){\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0.49953811,0.03967922){\makebox(0,0)[lb]{\smash{3}}}%
+    \put(0.54301314,0.03967922){\makebox(0,0)[lb]{\smash{4}}}%
+    \put(0.5864896,0.03967922){\makebox(0,0)[lb]{\smash{5}}}%
+    \put(0.62996605,0.03967922){\makebox(0,0)[lb]{\smash{6}}}%
+    \put(0.67344109,0.03967922){\makebox(0,0)[lb]{\smash{7}}}%
+    \put(0.71691629,0.03967922){\makebox(0,0)[lb]{\smash{8}}}%
+    \put(0.76039275,0.03967922){\makebox(0,0)[lb]{\smash{9}}}%
+    \put(0.80386921,0.03967922){\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.85807691,0.03967922){\makebox(0,0)[lb]{\smash{11}}}%
+    \put(0.02584561,0.00827952){\color[rgb]{0.02352941,0.16078431,1}\rotatebox{90}{\makebox(0,0)[lb]{\smash{CD4+ Lymphocyte Count (cells/mm  ) }}}}%
+    \put(0.97635765,0.54305445){\color[rgb]{1,0,0}\rotatebox{-90}{\makebox(0,0)[lb]{\smash{HIV RNA Copies per mL plasma}}}}%
+    \put(0.43603895,0.41799902){\makebox(0,0)[lb]{\smash{Clinical latency}}}%
+    \put(0.28139192,0.56368763){\makebox(0,0)[lb]{\smash{Acute HIV syndromeWide dissemination of virusSeeding of lymphoid organs}}}%
+    \put(0.15407606,0.54482874){\makebox(0,0)[b]{\smash{Primaryinfection}}}%
+    \put(0.74833502,0.49426771){\makebox(0,0)[lb]{\smash{Death}}}%
+    \put(0.75491718,0.44770252){\makebox(0,0)[b]{\smash{Opportunisticdiseases}}}%
+    \put(0.70006985,0.34350476){\makebox(0,0)[b]{\smash{Constitutionalsymptoms}}}%
+    \put(0.76980433,0.5661313){\makebox(0,0)[b]{\smash{Symptoms ofAIDS}}}%
+    \put(0.0128392,0.56435811){\color[rgb]{0.02352941,0.16078431,1}\rotatebox{90}{\makebox(0,0)[lb]{\smash{3}}}}%
+    \put(0.92840716,0.53109101){\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.95118041,0.53970379){\color[rgb]{1,0,0}\makebox(0,0)[lb]{\smash{7}}}%
+    \put(0.92840716,0.43660589){\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.95118041,0.44521865){\color[rgb]{1,0,0}\makebox(0,0)[lb]{\smash{6}}}%
+    \put(0.92840716,0.34212074){\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.95118041,0.3507335){\color[rgb]{1,0,0}\makebox(0,0)[lb]{\smash{5}}}%
+    \put(0.92840716,0.24763559){\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.95118041,0.25624835){\color[rgb]{1,0,0}\makebox(0,0)[lb]{\smash{4}}}%
+    \put(0.92840716,0.15314902){\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.95118041,0.16176177){\color[rgb]{1,0,0}\makebox(0,0)[lb]{\smash{3}}}%
+    \put(0.92840716,0.05866386){\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.95118041,0.06727667){\color[rgb]{1,0,0}\makebox(0,0)[lb]{\smash{2}}}%
+  \end{picture}%
+\endgroup%
