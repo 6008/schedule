@@ -1,0 +1,7 @@
+\section{Hierarchical linear models}
+
+
+\paragraph{Estimation of variance components} \\
+\emph{Normal theory maximum likelihood.} Given the specification of a normal distribution for both random effects and the consequent ability to write down the marginal likelihood, maximum likelihood represents an appealing approach to variance component estimation. One advantage is that the estimates are constrained to be non-negative; a second is that ML techniques extend readily to more complex mixed models. Iterative computation is required, but several algorithms are available for the general mixed effects model. One disadvantage of maximum likelihood estimation is that it makes no allowance for the loss of degrees of freedom associated with estimation of fixed effects when estimating variance components. As a result, variance component estimates are generally biased downward. \\
+\emph{Restricted maximum likelihood.} Restricted maximum likelihood estimation of variance components corrects for the loss of degrees of freedom due to estimating fixed effects. In the simple case considered here, this amounts to estimating $\sigma_{e}^{2}$ by dividing the within-litter sum of squares by $N-m$ rather than $N$ as in the case of maximum likelihood. Iterative computation is typically neede. \\
+REMLestimation techniques are generally favored, as it is considered desirable to correct for loss of degrees of freedom for fixed effects where appropriate.

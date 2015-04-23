@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A Introduction of Hadoop Cluster</title>
+  <meta charset="utf-8">
+  <meta name="description" content="A Introduction of Hadoop Cluster">
+  <meta name="author" content="Wei Cui">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>A Introduction of Hadoop Cluster</h1>
+    <h2></h2>
+    <p>Wei Cui<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The Cluster</li>
+<li>Hadoop</li>
+<li>Installation</li>
+<li>Configuration</li>
+<li>Application</li>
+<li>TODO</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>The Cluster</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>1 Head Node : Raspberry Pi Model B with 1 core@900MHz 512MB memory and 8GB MicroSD card </li>
+<li>3 Computing Node : Raspberry Pi 2 with 4 cores@1GHz 1GB memory and 16GB MicroSD card</li>
+<li>Network : Wireless router</li>
+<li>Power : 50W USB power</li>
+<li>ssh <a href="mailto:hduser@138.23.57.146">hduser@138.23.57.146</a> to access. PASSWORD: cuilab</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Hadoop</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>HDFS : Big block size and multiple replications</li>
+<li>Map Reduce : simple and efficient parallel computing solution</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Installation</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Download the package from <br/> <a href="http://apache.mirrors.spacedump.net/hadoop/core/hadoop-1.2.1/hadoop-1.2.1.tar.gz">http://apache.mirrors.spacedump.net/hadoop/core/hadoop-1.2.1/hadoop-1.2.1.tar.gz</a></li>
+<li>unzip</li>
+<li>move all the files to /opt/hadoop directory or anywhere you want</li>
+<li>change the owner of /opt/hadoop to hduser (or any other)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Configuration</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>System Environment</li>
+<li>Hadoop Environment</li>
+<li>Hadoop Settings</li>
+<li>Clone to other nodes</li>
+<li>Configure SSH</li>
+<li>Configure head node</li>
+<li>Ready? Go!</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>System Environment</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Make sure Java is installed</li>
+<li>Setting environment variable JAVA_HOME</li>
+<li>Setting environment variable HADOOP_INSTALL</li>
+<li>Setting environment variable PATH</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>System Environment (Continue)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>In file /etc/bash.bashrc (need root privilege): <br/>
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed &quot;s:bin/java::&quot;) <br/>
+export HADOOP_INSTALL=/opt/hadoop <br/>
+export PATH=$PATH:$HADOOP_INSTALL/bin <br/>
+save and run command source /etc/bash.bashrc</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Hadoop Environment</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>In file /opt/hadoop/conf/hadoop-env.sh uncomment and change the following lines (need root privilege): <br/>
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed &quot;s:bin/java::&quot;) <br/>
+export HADOOP_HEAPSIZE=250 <br/>
+export HADOOP_DATANODE_OPTS=&quot;-Dcom.sun.management.jmxremote $HADOOP_DATANODE_OPTS <font color="red">-client</font>&quot;</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Hadoop Settings</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>sudo mkdir -p /hdfs/tmp</li>
+<li>change owner to hduser</li>
+<li>change mode to 750 <br/>
+In directory /opt/hadoop/conf/</li>
+<li>core-site.xml Basic settings of Hadoop</li>
+<li>mapred-site.xml Settings of Map-Reduce</li>
+<li>hdfs-site.xml Settings of HDFS</li>
+<li>masters: change from localhost to node0</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>core-site.xml</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>&lt;configuration&gt;&lt;property&gt; <br/>
+    &lt;name&gt;hadoop.tmp.dir&lt;/name&gt; <br/>
+    &lt;value&gt;/hdfs/tmp&lt;/value&gt; <br/>
+  &lt;/property&gt;&lt;property&gt; <br/>
+    &lt;name&gt;fs.default.name&lt;/name&gt; <br/>
+    &lt;value&gt;hdfs://node0:9000&lt;/value&gt; <br/>
+  &lt;/property&gt;&lt;/configuration&gt; <br/>
+hadoop files&#39; storage and the NAMENODE. node0 is the head node.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>mapred-site.xml</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>&lt;configuration&gt;&lt;property&gt; <br/>
+    &lt;name&gt;mapred.job.tracker&lt;/name&gt; <br/>
+    &lt;value&gt;node0:9001&lt;/value&gt;&lt;/property&gt;&lt;property&gt; <br/>
+    &lt;name&gt;mapred.tasktracker.map.tasks.maximum&lt;/name&gt; <br/>
+    &lt;value&gt;4&lt;/value&gt;&lt;/property&gt;&lt;property&gt; <br/>
+    &lt;name&gt;mapred.tasktracker.reduce.tasks.maximum&lt;/name&gt; <br/>
+    &lt;value&gt;4&lt;/value&gt;&lt;/property&gt;&lt;/configuration&gt; <br/>
+Set job tracker to head node.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>hdfs-site.xml</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>&lt;configuration&gt;&lt;property&gt; <br/>
+    &lt;name&gt;dfs.replication&lt;/name&gt; <br/>
+    &lt;value&gt;2&lt;/value&gt;&lt;/property&gt;&lt;property&gt; <br/>
+    &lt;name&gt;dfs.block.size&lt;/name&gt; <br/>
+    &lt;value&gt;4194304&lt;/value&gt;&lt;/property&gt;&lt;/configuration&gt; <br/>
+Set the replication number as 2 and block size as 4MB. In real cluster, the replication number should be no less than 3 and block size should no less than 64MB.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Clone to other nodes</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>If all machines are new for Hadoop, we can clone the storage of the head node to others.</p>
+
+<p>If not, we have to repeat all the steps above to every machine. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Configure SSH</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Add every node&#39;s name-adress pair to all nodes&#39; file /etc/hosts <br/>
+192.168.0.100   node0 <br/>
+192.168.0.101   node1 <br/>
+192.168.0.102   node2 <br/>
+192.168.0.103   node3 <br/></li>
+<li>generate public key for every node <br/>
+ssh-keygen -t rsa -P &quot;&quot;</li>
+<li>add this key to every nodes&#39; file ~/.ssh/authorized_keys</li>
+<li>ssh every node from all nodes using node&#39;s name (include itself)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Configure head node</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>In directory /opt/hadoop/conf/ </p>
+
+<ul>
+<li>slaves: <br/>
+node1 &lt;Enter&gt; node2 &lt;Enter&gt; node3 </li>
+<li>mapred-site.xml: <br/>
+DELETE the task number setting. <br/><br/>
+Restart the head node after the operations.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Ready? Go!</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Let&#39;s make hadoop work. <br/>
+On head node run commands: <br/>
+hadoop namenode -format <br/>
+start-dfs.sh <br/>
+start-mapred.sh <br/>
+Actually, you can use &quot;start-all.sh&quot; instead of &quot;start-dfs.sh&quot; and &quot;start-mapred.sh&quot;</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>Application</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Example: wordcount</li>
+<li>Must learn JAVA?</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>Example: wordcount</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Steps of using Map-Reduce</p>
+
+<ul>
+<li>Set the Mapper</li>
+<li>Set the Reducer</li>
+<li>Upload data files into HDFS</li>
+<li>RUN</li>
+<li>Download the result files from HDFS</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>Example: wordcount (Continue)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Hadoop has some examples in  /opt/hadoop/hadoop-examples-1.2.1.jar which includes mapper and reducer (so we do not need to configure). The simplest one is wordcount. We have a file named &quot;bigfile.txt&quot; in home directory. <br/>
+hadoop dfs -copyFromLocal ./bigfile.txt /big <br/>
+hadoop jar /opt/hadoop/hadoop-examples-1.2.1.jar wordcount /big /big-out <br/>
+hadoop dfs -copyToLocal /big-out ~/ <br/>
+You can check the status of nodes by access <a href="http://138.23.57.146:50070/">http://138.23.57.146:50070/</a> <br/>
+You can check the status of jobs by access <a href="http://138.23.57.146:50030/">http://138.23.57.146:50030/</a> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Must learn JAVA?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Although Hadoop is based on JAVA, you can use almost any language to realize mapper and reducer and then run hadoop as streaming. And yes, you can use R.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>TODO</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Ambari</li>
+<li>Mahout</li>
+<li>Cassandra</li>
+<li>Spark</li>
+<li class='.....</li>'></ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='The Cluster'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Hadoop'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Installation'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Configuration'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='System Environment'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='System Environment (Continue)'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Hadoop Environment'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Hadoop Settings'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='core-site.xml'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='mapred-site.xml'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='hdfs-site.xml'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Clone to other nodes'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Configure SSH'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Configure head node'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Ready? Go!'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Application'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Example: wordcount'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Example: wordcount (Continue)'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Must learn JAVA?'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='TODO'>
+         21
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

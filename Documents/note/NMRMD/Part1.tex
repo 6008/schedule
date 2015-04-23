@@ -1,0 +1,23 @@
+\section{Introduction}
+Some common features of the interested data: \\
+1. Repeated response measurements taken on a number of different individuals. \\
+2. Nonlinear dependence of the response $y$ on a set of unknown parameters $\beta$, for each individual. \\
+3. Response profiles that are similarly shaped across individuals, but that may have different values of the parameter vector $\beta$ for different individuals. \\
+4. A pattern of within-individual variability that is not necessarily homogeneous. Possible deviations from constant variation, or homoscedasticity, include a dependence of the variability on mean response, serial correlation among measurements with an individual, or both.  \\
+5. Inter-individual variability between regression parameters that may be considered to be random, to be systematically related to individual-specific characteristics, or a combination of both. \\
+\\
+Two-stage model:\\
+The first stage specifies the mean and covariance structure for a given individual. \\
+The second stage characterizes inter-individual variation. \\
+\\
+For kinds of model specifications for the random parameters:\\
+Parametric: variation in the inter-individual random parameters is specified by a parametric model and the random component is assumed to belong to a particular distributional family. \\
+Nonparametric: no assumptions at all about the form or distribution of the $\beta_i$. \\
+Semiparametric: specify a parametric model for the $\beta_i$ but to avoid the assumption of a particular distributional family for the random component. \\
+Bayesian: individual-specific regression parameters $\beta_i$ are considered to arise from a distribution whose mean and covariance are drawn from an appropriate prior distribution. \\
+\\
+Different kind of model specifications leads to different inferential approaches.
+One other factor: the relative amount of information that is available perindividual. Two extremely situations: \\
+Sparse information on each of a large number of individuals \\
+Rich information on each of a small number of individuals \\
+The sampling design plays a role in determining what analysis methods may be employed. \\
