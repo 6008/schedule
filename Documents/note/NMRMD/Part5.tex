@@ -1,1 +1,93 @@
 \section{Inference based on individual estimates}
+Two broad classes of inferential procedures have been proposed for the hierarchical nonlinear model framework with a parametric model specification. In cases where sufficient measurements are taken on individuals to allow construction of individual-specific regression parameter estimates, such estimates may be used as building blocks for further inference.
+\subsection{Construction of individual estimates}
+Two-stage methods: (1) obtain individual estimates $\beta_i^*$; (2) input these $\beta_i^*$ to any procedure that uses individual estimates as building blocks. This section is about (1).
+\subsubsection{Generalized least squares}
+Advantage of GLS methods: (1) superior robustness to model mis-specification; (2) generalizes readily to the case where data are available from several individuals. \\
+Model:
+\begin{equation}
+  \begin{array}{rcl}
+    y_i & = & f_i(\beta_i)+e_i \\
+    E(e_i|\beta_i) & = & 0 \\
+    Cov(e_i|\beta_i) & = & \sigma^2S_i(\beta_i,\gamma)
+  \end{array}
+\end{equation}
+In a manner completely analogous to the case of data from a single individual, we may define the following GLS estimation scheme: \\
+1. In $m$ separate unweighted regressions (for example, OLS), obtain preliminary estimates $\hat{\beta}_i^{(p)}$ for each individual, $i = 1,\ldots,m$. \\
+2. Use residuals from these preliminary fits to estimate $\sigma$ and $\gamma$. Form estimated weight matrices based on the estimate $\hat{\gamma}$ obtained from this procedure, along with the preliminary $\hat{\beta}_i^{(p)}$, to form
+\begin{equation}
+  \hat{W}_i=S_i^{-1}(\hat{\beta}_i^{(p)},\hat{\gamma}).
+\end{equation}
+3. Using the estimated weight matrices from step 2, re-estimate the $\beta_i$ by $m$ separate minimizations: for individual $i$, $i = 1,\ldots,m$, minimize in $\beta_i$
+\begin{equation}
+  \{y_i-f_i(\beta_i)\}'\hat{W}_i\{y_i-f_i(\beta_i)\}.
+\end{equation}
+Treating the resulting estimators as new preliminary estimators and return to step 2.
+\subsubsection{Pooled estimation of covariance parameters}
+Estimation of the within-individual covariance parameters $\sigma$ and $\gamma$ in step 2 of the GLS algorithm above may be carried out in several ways. An appealing feature of GLS is that inferential methods for $(\sigma,\gamma{}')'$ based on data from a single individual generalize naturally to the case of several individuals. Essentially, methods based on residuals from a regression fit for a single individual extend by pooling residuals across individuals. \\
+Take the pseudolikelihood estimators as example. The PL estimators of $\sigma$ and $\gamma$ for the $i$th individual can be noted as
+\begin{equation}
+  PL_i(\hat{\beta}_i^{(p)},\sigma,\gamma)
+\end{equation}
+Generalization to the case of $m$ individuals is trivial, simply choose $\sigma$ and $\gamma$ to minimize
+\begin{equation}
+  \sum_{i=1}^{m}PL_i(\hat{\beta}_i^{(p)},\sigma,\gamma)
+\end{equation}
+We can do the similar thing to PL, REML or AR.
+\subsubsection{Confidence regions for covariance parameters}
+
+\subsection{Estimation of population parameters}
+Once the individual estimates $\beta_i^* have been obtained, several possibilities exist for implementing stage 2 of a two-stage estimation scheme, that of constucting estimates of $\beta$ and $D$. Assume
+\begin{equation}
+  \beta_i=A_i\beta+b_i
+\end{equation}
+so that $\beta_i \sim A_i\beta+b_i$. Extension to a nonlinear specification is discussed below.
+\subsubsection{Standard two-stage method}
+The standard two-stage (STS) method treats the estimates $\beta_i^*$ as if they were the true $\beta_i$. In the simplest case where $A_i \equiv I_{n_i}$, and the $\beta_i$ are independent and identically distributed $N(\beta,D)$, STS estimates are constructed as the sample mean and covariance of the $\beta_i^*$
+\begin{equation}
+  \begin{array}{rcl}
+    \hat{\beta} & = & m^{-1}\sum_{i=1}^m\beta_i^*, \\
+    \hat{D}_{STS} & = & (m-1)^{-1}\sum_{i=1}^m(\beta_i^*-\hat{beta}_{STS})(\beta_i^*-\hat{\beta}_{STS})'.
+  \end{array}
+\end{equation}
+For general $A_i$, the approximation $\beta_i^* \approx A_i\beta+b_i$ suggests modification of these estimates to
+\begin{equation}
+  \begin{array}{rcl}
+    \hat{\beta}_{STS} & = & \(\sum_{i=1}^{m}A_i'A_i\)^{-1}\(\sum_{i=1}^{m}A_i'\beta_i^*\), \\
+    \hat{D}_{STS} & = & (m-1)^{-1}\sum_{i=1}^{m}(\beta_i^*-A_i\hat{\beta}_{STS})(\beta_i^*-A_i\hat{\beta}_{STS})'.
+  \end{array}
+\end{equation}
+These estimates are appealing on the grounds of computational simplicity, and they do not require the assumption of normality. However, no account is taken of the uncertainty in estimating $\beta$_i, with the result that the estimator for $D$ is upwardly biased. \\
+For simplicity, suppose that $A_i \equiv I_{n_i}$ and that $\beta_i^*$ is a GLS estimator. Given $\beta_i$, $\beta_i^*$ has asymptotic covariance matrix $\sigma^2\Sigma_i$, where $\Sigma_i^{-1}=X_i'(\beta_i)S_i^{-1}(\beta_i,\gamma)X_i(\beta_i)$. Then $\beta_i^*$ approximately satisfies $\beta_i^* \sim \beta_i+e_i^*$, where $e_i^*$ has covariance matrix $\sigma^2\Sigma_i$. Treating this expression as exact, with $\sigma^2\Sigma_i$ known, it is straightforward to show that $E(\beta_i^*)=\beta$ and $Cov(\beta_i^*)=D+\sigma^2\Sigma_i$ from which it follows that
+\begin{equation}
+  E(\hat{D}_{STS})=D+\sigma^2m^{-1}\sum_{i=1}^{m}\Sigma_i
+\end{equation}
+Thus, the STS estimate of D is biased upward in a manner corresponding to the average of the asymptotic covariance matrices for the $\beta_i^*$, indicating that the bias of $\hat{D}_{STS}$ is a consequence of the failure of the STS method to take uncertainty of estimation of the $\beta_i$ into account. A further drawback of the STS approach is that no refinement of the individual $\beta_i^*$, such as shrinkage toward the mean, is implemented.
+
+\subsubsection{Global two-stage method}
+
+\paragraph{Estimation}
+Incorporation of the uncertainty of estimation in $\beta_i^*$ is usually based on the asymptotic theory for $\beta_i^*$ given $\beta_i$. It is assumed that $\beta_i^*|\beta_i$ is approximately $N(\beta_i,C_i)$, where $C_i$ is the asymptotic covariance matrix for $\beta_i^*$. For GLS as above, $C_i=\sigma^2\Sigma_i$. Under this assumption, the marginal distribution of $\beta_i^*$ is approximately normal with mean $A_i\beta$ and covariance matrix $C_i+D$, so that $\beta_i^*$ may be written as
+\begin{equation}
+  \beta_i^* \sim A_i\beta+b_i+e_i^*
+\end{equation}
+where $e_i^*$ has mean $0$ and covariance matrix $C_i$. This approximation suggests estimation of $\beta$ and $D$ by maximum likelihood applied to 'data' $\beta_i^*$; that is, estimate $\beta$ and $D$ by minimizing twice the negative loglikelihood
+\begin{equation}
+  L_{GTS}(\beta,D)=\sum_{i=1}^{m}log|C_i+D|+\sum_{i=1}^{m}
+\paragraph{Confidence intervals and hypothesis testing}
+
+\subsubsection{Bayesian method}
+
+\subsubsection{General inter-individual models}
+
+\subsubsection{Choice of individual estimates}
+
+\subsection{Discussion}
+
+\paragraph{Validity of asymptotic theory approximation}
+
+\paragraph{Flexibility}
+
+\paragraph{Randomness of the components of $\beta_i$}
+
+\paragraph{Time-dependent covariates}
