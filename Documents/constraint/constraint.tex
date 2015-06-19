@@ -1,0 +1,47 @@
+\documentclass[12pt]{extarticle}
+\usepackage[top=0.5in, bottom=0.8in, left=0.5in, right=0.5in]{geometry}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm}            
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{bm}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+\usepackage[pdftex]{hyperref}
+\usepackage{multirow}
+\hypersetup{colorlinks=false, linkcolor=blue, pdffitwindow=true, pdftitle={Note of Asymptotic property}}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+
+\title{Note on the constraint condition}
+
+\begin{document}
+\maketitle
+
+We can not do anything to $k_{nf} > 0, k_{pf} > 0$ but we can change the constraint condition $(9)$ in Theorem 3. \\
+
+There are three inequalities in constraint condition $9$ \\
+
+1. $\lambda > 0$ \\
+
+There are two ways to handle this condition. \\
+The first one is to mention the implied condition $E[Y_j] > 0$ which will obviously replace the condition about $\lambda$ because $\sigma(x) \geq 0$. \\
+The second one is that we just change the condition as $\lambda \geq 0$ because we know that it is safe if the sample data is well defined. \\
+
+2. $\mu > 0$ \\
+
+Thanks to the good even property of function $\sigma_0$, there is no problem if $\mu \neq 0$. Actually, under the implied condition that the intensity $Y$ depends on the position $X$, we can easily get that $\mu = 0$ is impossible which means we can remove this condition. \\
+
+3. $\Lambda^{*}(\mu, \lambda) = \mu R_{tot} - \lambda \|\sigma_0\|_1 > 0$ \\
+This condition transfers and simplifies the condition just before Theorem 3. We can only transfer but not simplify the origin condition. Then the constraint condition of Theorem 3 will be like this:
+
+\begin{equation}
+  \left\{
+  \begin{array}{l}
+    \Lambda^{*}(\mu, \lambda) = \lambda^{\alpha - 1} - \frac{1}{\alpha}\left(\frac{\alpha - 1}{\alpha}\mu\frac{R_{tot}}{\|\sigma_0\|_1}\right)^{\alpha - 1} - \frac{1}{R_{tot}}\lambda^{\alpha}\frac{1}{\mu}\|\sigma_0\|_1 \leq 1 \\
+    \lambda \geq 0
+  \end{array}\right.
+\end{equation}
+
+\end{document}
