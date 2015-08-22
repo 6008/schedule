@@ -1,0 +1,145 @@
+\section{Canonical Correlation Analysis}
+
+Canonical correlation analysis (CCA) is one of the most important tools of multivariate statistical analysis. Its extension to the functional context is not trivial, and in many ways illustrates the differences between multivariate and functional data.
+
+\subsection{Multivariate canonical components}
+
+Suppose $\textbf{X}$ and $Y$ are two random vectors, respectively, in $R^p$ and $R^q$. For deterministic vectors $a \in R^p$ and $b \in R^q$ define the random variables
+
+\begin{equation}
+  A = a^{T}X, \hspace{} B = b^{T}Y
+\end{equation}
+
+We want to find $a$ and $b$ which maximize
+
+\begin{equation}
+  Corr(A, B) = \frac{Cov(A, B)}{\sqrt{Var[A]Var[B]}} \label{eq:target4.1}
+\end{equation}
+
+with a normalizing condition
+
+\begin{equation}
+  Var[A] = 1, \hspace{} Var[B] = 1 \label{eq:constraint4.2}
+\end{equation}
+
+If such $a$ and $b$ exist, we denote them $a_1$ and $b_1$, and set $A_{1} = a_{1}^{T}X$, $B_{1} = b_{1}^{T}Y$. We call $(A_1, B_1)$ the first pair of canonical variables and
+
+\begin{equation}
+  \rho_{1} = Cov(A_1, B_1) = max\{Cov(a^{T}X, b^{T}Y): Var[a^{T}X] = Var[b^{T}Y] = 1\}
+\end{equation}
+
+the first canonical correlation.
+
+Once $a_1$ and $b_1$ have been found, we want to find another pair $(a, b)$ which maximizes \ref{eq:target4.1} subject to \ref{eq:constraint4.2}, but also satisfies
+
+\begin{equation}
+  Cov(A, A_1) = Cov(A, B_1) = Cov(B, B_1) = Cov(B, A_1) = 0
+\end{equation}
+
+If such $a$ and $b$ exist, we denote them $a_2$ and $b_2$ and call $A_2 = a_{2}^{T}X$, $B_2 = b_{2}^{T}Y$ the second pair of canonical variables and the resulting value $\rho_2$ of \ref{eq:target4.1} the second canonical correlation. Notice that $\rho_{2} \leq \rho_{1}$ because $\rho_{2}$ is a maximum over a smaller subspace.
+
+We can continue in this way to find $k$th canonical components $(\rho_{k}, a_{k}, b_{k}, A_{k}, B_{k})$ by requiring that the pair $(A_{k}, B_{k})$ maximizes \ref{eq:target4.1} subject to \ref{eq:constraint4.2} and
+
+\begin{equation}
+  Cov(A_k, A_j) = Cov(A_k, B_j) = Cov(B_k, B_j) = Cov(B_k, A_j) = 0, \hspace{} j < k
+\end{equation}
+
+One can show that, under mild assumptions, the canonical components exist for $k \leq min(p, q)$, and can be computed as follows. Assume that $EX = 0$ and $EY = 0$ and define the covariance matrices
+
+\begin{equation}
+  C_{11} = E[XX^T], \hspace{} C_{22} = E[YY^T], \hspace{} C_{12} = E[XY^T], \hspace{} C_{21} = E[YX^{T}]
+\end{equation}
+
+Assume that $C_{11}$ and $C_{22}$ are non-singular and introduce the correlation matrices
+
+\begin{equation}
+  R = C_{11}^{-1/2}C_{12}C_{22}^{-1/2}, \hspace{} R^{T} = C_{22}^{-1/2}C_{21}C_{11}^{-1/2}
+\end{equation}
+
+Setting $m = min(p, q)$, it can be shown that the first $m$ eigenvalues of the matrices
+
+\begin{equation}
+  M_{X} = RR^T = C_{11}^{-1/2}C_{12}C_{22}^{-1}C_{21}C_{11}^{-1/2}
+\end{equation}
+
+and
+
+\begin{equation}
+  M_{Y} = R^{T}R = C_{22}^{-1/2}C_{21}C_{11}^{-1}C_{12}C_{22}^{-1/2}
+\end{equation}
+
+are the same and positive, and are equal to
+
+\begin{equation}
+  \rho_{1}^{2} \geq \rho_{2}^{2} \geq \cdots \geq \rho_{m}^{2} > 0
+\end{equation}
+
+Define the corresponding eigenvectors by
+
+\begin{equation}
+  M_{X}e_{k} = \rho_{k}^{2}e_{k}, \hspace{} M_{Y}F_{k} = \rho_{k}^{2}f_{k}, \hspace{} k = 1, 2, \ldots, m
+\end{equation}
+
+Then
+
+\begin{equation}
+  a_{k} = C_{11}^{-1/2}e_{k}, \hspace{} b_{k} = C_{22}^{-1/2}f_{k}
+\end{equation}
+
+are the weights of the $k$th pair of canonical variables, and $\rho_{k}$ is the $k$th canonical correlation. It is easy to check that the vectors $e_{k}$ and $f_{k}$ have unit norm and are related via
+
+\begin{equation}
+  e_{k} = \rho^{-1}Rf_{k}, \hspace{} f_{k} = \rho_{k}^{-1}R^{T}e_{k}
+\end{equation}
+
+For the development in the subsequent sections, it is convenient to summarize the above using the inner product notation. Observe that
+
+\begin{equation}
+  \begin{array}{rcccl}
+    Cov(a^{T}X, b^{T}Y) & = & E[a^{T}X b^{T}Y] & = & E[a^{T}X Y^{T}b] \\
+    & = & a^{T}E[X Y^{T}]b & = & \langle{}a, C_{12}b\rangle{}
+  \end{array}
+\end{equation}
+
+and
+
+\begin{equation}
+  Var[a^{T}X] = \langle{}a, C_{11}a\rangle{}, \hspace{} Var[b^{T}Y] = \langle{}b, C_{22}b\rangle{}
+\end{equation}
+
+Thus
+
+\begin{equation}
+  \begin{array}{rcl}
+    \rho_{k} & = & \langle{}a_{k}, C_{12}b_{k}\rangle{} \\
+    & = & max\{\langle{}a, C_{12}b\rangle{}: a \in R^{p}, b \in R^{q}, \langle{}a, C_{11}a\rangle{} = 1, \langle{}b, C_{22}b\rangle{} = 1\}
+  \end{array}
+\end{equation}
+
+subject to the conditions
+
+\begin{equation}
+  \langle{}A_{k}, A_{j}\rangle{} = \langle{}A_{k}, B_{j}\rangle{} = \langle{}B_{k}, B_{j}\rangle{} = \langle{}B_{k}, A_{j}\rangle{} = 0, \hspace{} j < k,
+\end{equation}
+
+where $A_{j} = \langle{}a_{j}, X\rangle{}$, $B_{j} = \langle{}b_{j}, Y\rangle{}$.
+
+\subsection{Functional canonical components}
+
+\subsection{Sample functional canonical components}
+
+\subsection{Functional canonical correlation analysis of a magnetometer data}
+
+\subsection{Square root of the covariance operator}
+
+\subsection{Existence of the functional canonical components}
+
+\subsection{Bibliographical notes}
+
+Smoothing is necessary in order to define the functional canonical correlations meaningfully:
+
+Leurgans (1993)
+
+Proof of some properties of the multivariate CCA
+
+Johnson and Wichern (2002).

@@ -1,0 +1,534 @@
+\section{Hilbert Space Model for Functional Data}
+
+\subsection{Operators in a Hilbert space}
+
+A Hilbert space $H$ is a real or complex inner product space that is also a complete metric space with respect to the distance function induced by the inner product. To say that $H$ is a complex inner product space means that $H$ is a complex vector space on which there is an inner product $\langle{}x, y\rangle{}$ associating a complex number to each pair of elements $x, y$ of $H$ that satisfies the following properties:
+
+The inner product of a pair of elements is equal to the complex conjugate of the inner product of the swapped elements:
+
+\begin{equation}
+  \langle{}y, x\rangle{} = \bar{\langle{}x, y\rangle{}}
+\end{equation}
+
+The inner product is linear in its first argument. For all complex numbers $a$ and $b$,
+
+\begin{equation}
+  \langle{}ax_1 + bx_2, y\rangle{} = a\langle{}x_1, y\rangle{} + b\langle{}x_2, y\rangle{}
+\end{equation}
+
+The inner product of an element with itself is positive definite:
+
+\begin{equation}
+  \langle{}x, x\rangle{} \geq 0
+\end{equation}
+
+where the case of equality holds precisely when $x = 0$.
+
+The norm is the real-valued function $\|x\| = \sqrt{\langle{}x, x\rangle{}}$, and the distance $d$ is a distance function
+
+\begin{equation}
+  d(x, y) = \|x - y\| = \sqrt{\langle{}x - y, x - y\rangle{}}
+\end{equation}
+
+A Hilbert space is separable if and only if it admits a countable orthonormal basis. All infinite-dimensional separable Hilbert spaces are therefore isometrically isomorphic to $\ell^2$.
+
+Consider a separable Hilbert space $H$ with inner product $\langle{}\cdot, \cdot\rangle{}$ which generates the norm $\| \cdot \|$. Denote by $\mathcal{L}$ the space of bounded (continuous) linear operators on $H$ with the norm
+
+\begin{equation}
+  \|\Psi\|_{\mathcal{L}} = sup\{\|\Psi(x)\| : \|x\| \leq 1\}
+\end{equation}
+
+An operator $\Psi \in \mathcal{L}$ is said to be compact if there exist two orthonormal bases $\{v_j\}$ and $\{f_j\}$, and a real sequence $\{\lambda_j\}$ converging to zero, such that
+
+\begin{equation}
+  \Psi(x) = \sum_{j = 1}^{\infty} \lambda_j \langle{}x, v_j\rangle{} f_j, \hspace{} x \in H
+\end{equation}
+
+The existence of this representation is equivalent to any one of following conditions:
+
+1. $\Psi$ maps every bounded set into a compact set.
+
+2. The convergence $\langle{}y, x_n\rangle{} \to \langle{}y, x\rangle{}$ for every $y \in H$ implies that $\|\Psi(x_n) - \Psi(x)\| \to 0$.
+
+Compact operators are also called completely continuous operators. This representation is called the singular value decomposition.
+
+A compact operator admitting the representation is said to be a Hilbert-Schmidt operator if $\sum_{j = 1}^{\infty}\lambda_{j}^{2} < \infty$. The space $S$ of Hilbert-Schmidt operators is a separable Hilbert space with the scalar product
+
+\begin{equation}
+  \langle{}\Psi_1, \Psi_2\rangle{}_S = \sum_{i = 1}^{\infty} \langle{}\Psi_1(e_i), \Psi_2(e_i)\rangle{}
+\end{equation}
+
+where $\{e_i\}$ is an arbitrary orthonormal basis. The value of this scalar product does not depend on $\{e_i\}$.
+
+An operator $\Psi \in \mathcal{L}$ is said to be symmetric if
+
+\begin{equation}
+  \langle{}\Psi(x), y\rangle{} = \langle{}x, \Psi(y)\rangle{}, \hspace{} x, y \in H
+\end{equation}
+
+and positive-definite if
+
+\begin{equation}
+  \langle{}\Psi(x), x\rangle{} \geq 0, \hspace{} x \in H
+\end{equation}
+
+A symmetric positive-definite Hilbert-Schmidt operator $\Psi$ admits the decomposition
+
+\begin{equation}
+  \Psi(x) = \sum_{j = 1}^{\infty}\lambda_j \langle{}x, v_j\rangle{} v_j, \hspace{} x \in H
+\end{equation}
+
+with orthonormal $v_j$ which are the eigenfunctions of $\Psi$, i.e. $\Psi(v_j) = \lambda_j v_j$. The $v_j$ can be extended to a basis by adding a complete orthonormal system in the orthogonal complement of the subspace spanned by the original $v_j$. The $\{v_j\}$ can thus be assumed to form a basis, but some $\lambda_j$ may be zero.
+
+\subsection{The space $L^2$}
+
+The space $L^2 = L^2 ([0, 1])$ is the set of measurable real-valued functions $x$ defined on $[0, 1]$ satisfying $\int_{0}^{1} x^2(t) \,dt < \infty$. The space $L^2$ is a separable Hilbert space with the inner product $\langle{} x, y \rangle{} = \int x(t)y(t) \,dt$. The integral is over the whole interval $[0, 1]$.
+
+An important class of operators in $L^2$ are the integral operators defined by
+
+\begin{equation}
+  \Psi(x)(t) = \int \psi(t, s)x(s) \,ds , \hspace{} x \in L^2
+\end{equation}
+
+with the real kernel $\psi(\cdot, \cdot)$. Such operators are Hilbert-Schmidt if and only if
+
+\begin{equation}
+  \iint \psi^2 (t, s) \,dt\,ds < \infty
+\end{equation}
+
+in which case
+
+\begin{equation}
+  \|\Psi\|_S^2 = \iint \psi^2 (t, s) \,dt\,ds
+\end{equation}
+
+If $\psi(s, t) = \psi(t, s)$ and $\iint \psi(t, s)x(t)x(s) \,dt\,ds \geq 0$, the integral operator $\Psi$ is symmetric and positive-definite, and
+
+\begin{equation}
+  \psi(t, s) = \sum_{j = 1}^{\infty} \lambda_j v_j(t) v_j(s) \hspace{} in L^2([0, 1]\times[0, 1])
+\end{equation}
+
+If $\psi$ is continuous, the above expansions holds for all $s, t \in [0, 1]$, and the series converges uniformly. This result is known as Mercer's theorem.
+
+\subsection{Random elements in $L^2$ and the covariance operator}
+
+We view a random curve $X = \{X(t), t \in [0, 1]\}$ as a random element of $L^2$ equipped with the Borel $\sigma$-algebra. We say that $X$ is integrable if $E\|X\| = E[\int X^2(t) dt]^{1/2} < \infty$. If $X$ is integrable, there is a unique function $\mu \in L^2$ such that $E\langle{}y, X\rangle{} = \langle{}y, \mu\rangle{}$ for any $y \in L^2$. It follows that $\mu(t) = E[X(t)]$ for almost all $t \in [0, 1]$. The expectation commutes with bounded operators, i.e. if $\Psi \in \mathcat{L}$ and $X$ is integrable, then $E\Psi(X) = \Psi(EX)$.
+
+If $X$ is square integrable, i.e.
+
+\begin{equation}
+  E\|X\|^2 = E \int X^2(t)dt < \infty
+\end{equation}
+
+and $EX = 0$, the covariance operator of $X$ is defined by
+
+\begin{equation}
+  C(y) = E[\langle{}X, y\rangle{} X], \hspace{} y \in L^2
+\end{equation}
+
+It is easy to see that C $C$ is symmetric and positive-definite, so it has non-negative eigenvalues.
+
+However, not every symmetric positive-definite operator in $L^2$ is a covariance operator. To explain, let $v_j$, $\lambda_j$, $j \geq 1$, be the eigenfunctions and the eigenvalues of the covariance operator C. The relation $C(v_j) = \lambda_j v_j$ implies that
+
+\begin{equation}
+  \lambda_j = \langle{}C(v_j), v_j\rangle{} = \langle{}E[\langle{}X, v_j\rangle{} X], v_j\rangle{} = E[\langle{}X, v_j\rangle{}^2]
+\end{equation}
+
+The eigenfunctions $v_j$ are orthogonal, and they can be normalized to have unit norm, so that $\{ v_j \}$ forms a basis in $L^2$. Consequently, by Parseval's equality,
+
+\begin{equation}
+  \sum_{j = 1}^{\infty} \lambda_j = \sum_{j = 1}^{\infty} E[\langle{}X, v_j\rangle{}^2] = E\|X\|^2 < \infty
+\end{equation}
+
+One can show that, in fact, $C \in \mathcat{L}(L^2)$ is a covariance operator if and only if it is symmetric positive-definite and its eigenvalues satisfy $\sum_{j = 1}^{\infty}\lambda_j < \infty$.
+
+To give a specific example of a bounded, symmetric, positive-definite operator which is not a covariance operator, consider an arbitrary orthonormal basis $\{ e_j, j \geq 1\}$, so that every $x \in L^2$ can be expanded as $x = \sum_{j} \langle{}x, e_j\rangle{} e_j$. Define
+
+\begin{equation}
+  \Psi(x) = \sum_{j} \langle{}x, e_j\rangle{} j^{-1}e_j
+\end{equation}
+
+The operator $\Psi$ is bounded because
+
+\begin{equation}
+  \| \Psi(x) \|^2 = \sum_j \langle{}x, e_j\rangle{}^2 j^{-2} \leq \sum_j \langle{}x, e_j\rangle{}^2 = \| x \|^2
+\end{equation}
+
+Thus, in fact, $\| \Psi \|_{\mathcat{L}} \leq 1$. To see that this operator is symmetric, observe that
+
+\begin{equation}
+  \begin{array}{rcl}
+    \langle{} \Psi(x), y \rangle{} & = & \langle{} \sum_j \langle{}x, e_j\rangle{} j^{-1}e_j, \sum_k \langle{}y, e_k\rangle{} e_k\rangle{} \\
+    & = & \sum_{j, k} \langle{}x, e_j\rangle{}\langle{}y, e_k\rangle{}\langle{}e_j, e_k\rangle{} j^{-1} \\
+    & = & \sum_{j} \langle{}x, e_j\rangle{}\langle{}y, e_j\rangle{} j^{-1} \\
+    & = & \langle{}x, \Psi(y)\rangle{}
+  \end{array}
+\end{equation}
+
+Since
+
+\begin{equation}
+  \langle{} \Psi(x), x \rangle{} = \sum_{j} \langle{} x, e_j \rangle{}^{2} j^{-1} \geq 0
+\end{equation}
+
+the operator $\Psi$ is positive-definite.
+
+The eigenvalues of $\Psi$ are equal to $j^{-1}$ because $\Psi(e_j) = j^{-1}e_j$, $j \geq 1$. Since $\sum_{j}j^{-1} = \infty$, $\Psi$ is not a covariance operator.
+
+\begin{Theorem}[central limit theorem]
+  Suppose ${X_n, n \geq 1}$ is a sequence of i.i.d. mean zero random elements in a separable Hilbert space such that $E\|X_i\|^2 < \infty$. Then
+
+  \begin{equation}
+    N^{-1/2}\sum_{n = 1}^{N}X_n \xrightarrow{d} Z
+  \end{equation}
+  
+  where $Z$ is a Gaussian random element with the covariance operator
+
+  \begin{equation}
+    C(x) = E[\langle{}Z, x\rangle{} Z] = E[\langle{}X_1, x\rangle{} X_1]
+  \end{equation}
+
+\end{Theorem}
+
+Notice that a normally distributed function $Z$ with a covariance operator $C$ admits the expansion
+
+\begin{equation}
+  Z \eq{d} \sum_{j = 1}^{\infty} \sqrt{\lambda_j} N_j v_j \label{eq:Zexpand}
+\end{equation}
+
+with independent standard normal $N_j$. This follows because $C$ is the covariance operator of the right-hand side of \ref{eq:Zexpand}, and it determines the distribution, as both sides are normally distributed.
+
+\begin{Theorem}[law of large numbers]
+  Suppose $\{ X_n, n \geq 1 \}$ is a sequence of i.i.d. random elements in a separable Hilbert space such that $E\| X_i \|^2 < \infty$. Then $\mu = EX_i$ is uniquely defined by $\langle{}\mu, x\rangle{} = E\langle{}X, x\rangle{}$, and
+
+  \begin{equation}
+    N^{-1}\sum_{n = 1}^{N}X_n \xrightarrow{a.s.} \mu
+  \end{equation}
+
+\end{Theorem}
+
+\subsection{Estimation of mean and covariance functions}
+
+\begin{Assumption} \label{Assumption:iid}
+  The observations $X_1, X_2, \ldots, X_N$ are i.i.d. in $L^2$, and have the same distribution as $X$, which is assumed to be square integrable.
+\end{Assumption}
+
+We define the following parameters:
+
+\begin{equation}
+  \begin{array}{rclr}
+    \mu(t) & = & E[X(t)] & (mean function) \\
+    c(t, s) & = & E[(X(t) - \mu(t))(X(s) - \mu(s))] & (covariance function) \\
+    C & = & E[\langle{}(X - \mu), \cdot \rangle{}(X - \mu)] & (covariance operator)
+  \end{array}
+\end{equation}
+
+The mean function $\mu$ is estimated by the sample mean function
+
+\begin{equation}
+  \hat{\mu}(t) = N^{-1}\sum_{i = 1}^{N}X_i(t)
+\end{equation}
+
+and the covariance function by its sample counterpart
+
+\begin{equation}
+  \hat{c}(t, s) = N^{-1}\sum_{i = 1}^{N}(X_i(t) - \hat{\mu}(t))(X_i(s) - \hat{\mu}(s))
+\end{equation}
+
+The sample covariance operator is defined by
+
+\begin{equation}
+  \hat{C}(x) = N^{-1}\sum_{i = 1}^{N}\langle{} X_i - \hat{\mu}, x\rangle{}(X_i - \hat{\mu}), \hspace{} x \in L^2
+\end{equation}
+
+Note that $\hat{C}$ maps $L^2$ into a finite dimensional subspace spanned by $X_1, X_2, \ldots, X_N$. This illustrates the limitations of statistical inference for functional observations; a finite sample can recover an infinite dimensional object only with limited precision.
+
+The first theorem states that $\hat{\mu}$ is an unbiased MSE consistent estimator of $\mu$, and implies that it is consistent, in a sense that $\| \hat{\mu} - \mu \| \xleftarrow{P} 0$.
+
+\begin{Theorem}
+  If Assumption~\ref{Assumption:iid} holds, then $E\hat{\mu} = \mu$ and $E\|\hat{mu} - \mu\|^2 = O(N^{-1})$.
+\end{Theorem}
+
+\begin{Lemma}
+  If $X_1, X_2 \in L^2$ are independent, square integrable and $EX_1 = 0$, then $E[\langle{}X_1, X_2\rangle{}] = 0$.
+\end{Lemma}
+
+The covariance operator $C$ is Hilbert-Schmidt. Just as the scalar case, $\hat{c}(t, s)$ is a biased estimator of $c(t, s)$.
+
+\begin{equation}
+  E[\hat{c}(t, s)] = \frac{N}{N - 1}c(t, s) \hspace{} (in L^2([0, 1] \times [0, 1]))
+\end{equation}
+
+The bias of $\hat{c}$ is asymptotically negligible, and is introduced by the estimation of the mean function $\mu$. Replacing $\mu$ by $\hat{mu}$ in general has a negligible effect, and in theoretical work, it is convenient to assume that $\mu$ is known and equal to zero. This simplifies many formulas. When applying such results to real data, it is important to remember to first subtract the sample mean function $\hat{\mu}$ from functional observations.
+
+From now on, except when explicitly stated, we thus assume that the observations have mean zero. We therefore have
+
+\begin{equation}
+  \begin{array}{rcl}
+    \hat{c}(t, s) & = & N^{-1}\sum_{i = 1}^{N}X_i(t)X_i(s) \\
+    \hat{C}(x) & = & N^{-1}\sum_{i = 1}^{N}\langle{}X_n, x\rangle{} X_n \\
+    \hat{C}(x)(t) & = & \int \hat{c}(t, s)x(s) \,ds, \hspace{} x \in L^2
+  \end{array}
+\end{equation}
+
+\begin{Theorem}
+  If $E\|X\|^{4} < \infty$, $EX = 0$, and Assumption~\ref{Assumption:iid} holds, then
+
+  \begin{equation}
+    E\|\hat{C}\|_{\mathcat{S}}^{2} \leq E\|X\|^{4}
+  \end{equation}
+
+\end{Theorem}
+
+\begin{Theorem}
+  If $E\|X\|^4 < \infty$, $EX = 0$, and Assumption~\ref{Assumption:iid} holds, then
+
+  \begin{equation}
+    E\|\hat{C} - C\|_{\mathcat{S}}^{2} \leq N^{-1}E\|X\|^{4}
+  \end{equation}
+
+\end{Theorem}
+
+This conclusion can be equivalently stated as
+
+\begin{equation}
+  E\iint [\hat{c}(t, s) - c(t, s)]^2 \,dt\,ds \leq N^{-1}E\| X \|^4
+\end{equation}
+
+This implies that $\hat{c}(t, s)$ is a mean squared consistent estimator of the covariance function $c(t, s)$.
+
+\begin{Assumption}\label{Assumption:doubleiid}
+  The $X$, $Y$, $X_i$, $Y_i$, $i \geq 1$, are random elements of $L^2$ which satisfy the following conditions:
+
+  C1: $X$, $X_i$, $i \geq 1$ are independent and identically distributed,
+
+  C2: $Y$, $Y_i$, $i \geq 1$ are independent and identically distributed,
+
+  C3: $\{ X, X_i, i \geq 1 \}$ and $\{ Y, Y_i, i geq 1 \}$ are independent,
+
+  C4: $EX = 0$, $E\|X\|^4 < \infty$, $EY = 0$, $E\|Y\|^4 < \infty$.
+
+\end{Assumption}
+
+Let $k^{*}  = k_N^{*}$ be a sequence of integers satisfying $1 \leq k_N^{*} \leq N$ and
+
+\begin{equation}
+  \lim_{N \rightarrow \infty} \frac{k_N^{*}}{N} = 0, \hspace{} for some 0 \leq \theta \leq 1 \label{eq:kNlimit}
+\end{equation}
+
+Define
+
+\begin{equation}
+  \hat{c}_N^{*}(t, s) = \frac{1}{N}\(\sum_{1\leq{}i\leq{}k*} X_i(t)X_i(s) + \sum_{k*\leq{}i\leq{}N}Y_i(t)Y_i(s)\)
+\end{equation}
+
+and
+
+\begin{equation}
+  c_{\theta}(t, s) = \theta{}E[X(t)X(s)] + (1 - \theta)E[Y(t)Y(s)]
+\end{equation}
+
+Introduce the corresponding operators $\hat{C}_N^{*}$ and $C_{\theta}$ defined by
+
+\begin{equation}
+  \begin{array}{rclc}
+    \hat{C}_N^{*}(x)(t) & = & \int \hat{c}_N^{*}(t, s)x(s) \,ds, & x \in L^2 \\
+    C_{\theta}(x)(t) & = & \int c_{\theta}(t, s)x(s) \,ds, & x \in L^2
+  \end{array}
+\end{equation}
+
+\begin{Theorem}\label{Theorem:Cconvergence}
+  If Assumption~\ref{Assumption:doubleiid} and condition \ref{eq:kNlimit} hold, then
+
+  \begin{equation}
+    E\|\hat{C}_N^{*} - C_{\theta}\|_{\mathcat{S}}^2 \rightarrow 0
+  \end{equation}
+
+\end{Theorem}
+
+\subsection{Estimation of the eigenvalues and the eigenfunctions}
+
+We often must estimate the eigenvalues and eigenfunctions of $C$, but the interpretation of these quantities as parameters, and their estimation, must be approached with care. The eigenvalues must be identifiable, so we must assume that $\lambda_1 > \lambda_2 > \cdots > \lambda_p > \lambda_{p + 1}$, which implies that the first $p$ eigenvalues are nonzero. The eigenfunctions $v_j$ are defined by $C v_j = \lambda_j v_j$, so if $v_j$ is an eigenfunction, then so is $a v_j$, for any nonzero scalar $a$. The $v_j$ are typically normalized, so that $\| v_j \| = 1$, but this does not determine the sign of $v_j$. Thus if $\hat{v}_j$ is an estimate computed from the data, we can only hope that $\hat{c}_j \hat{v}_j$ is close to $v_j$, where
+
+\begin{equation}
+  \hat{c}_j = sign(\langle{}\hat{v}_j, v_j\rangle{})
+\end{equation}
+
+Note that $\hat{c}_j$ cannot be computed from the data, so it must be ensured that the statistics we want to work with do not depend on $\hat{c}_j$.
+
+With these preliminaries in mind, we define the estimated eigenelements by
+
+\begin{equation}
+  \int \hat{c}(t, s)\hat{v}_j(s) \,ds = \hat{\lambda}_j\hat{v}_j(t), \hspace{} j = 1, 2, \ldots, N.
+\end{equation}
+
+\begin{Theorem}\label{Theorem:eigenvalue}
+  Suppose $E\|X\|^4 < \infty$, $EX = 0$, Assumption~\ref{Assumption:iid} holds, and
+  
+  \begin{equation}
+    \lambda_1 > \lambda_2 > \cdots > \lambda_p > \lambda_{p + 1} \label{eq:ordercondition}
+  \end{equation}
+
+  Then, for each $1 \leq j \leq p$,
+
+  \begin{equation}
+    \limsup\limits_{N \rightarrow \infty} N E[\|\hat{c}_j \hat{v}_j - v_j\|^2] < \infty, \hspace{} \limsup\limits_{N \rightarrow \infty} N E[|\lambda_j - \hat{\lambda}_j|^2] < \infty. \label{eq:limsup}
+  \end{equation}
+
+\end{Theorem}
+
+Theorem~\ref{Theorem:eigenvalue} implies that, under regularity conditions, the population eigenfunctions can be consistently estimated by the empirical eigenfunctions. If the assumptions do not hold, the direction of the $\hat{v}_k$ may not be close to the $v_k$.
+
+The study of several change point procedures requires a version of Theorem~\ref{Theorem:eigenvalue}. By Theorem~\ref{Theorem:Cconvergence}, the empirical covariance operator $\hat{C}_N^{*}$ converges to $C_{\theta}$. Hence the empirical eigenvalues and eigenfunctions should be compared to $\lambda_{j,\theta}$ and $v_{j,\theta}$, the eigenvalues and eigenfunctions of $C_{\theta}$ defined by
+
+\begin{equation}
+  \int c_{\theta}(t, s)v_{j, \theta}(s) \,ds = \lambda_{j, \theta}v_{j, \theta}(t), \hspace{} j \geq 1
+\end{equation}
+
+We also define
+
+\begin{equation}
+  \hat{c}_{j, \theta} = sign(\langle{}\hat{v}_j, v_{j, \theta}\rangle{})
+\end{equation}
+
+and state the following theorem.
+
+\begin{Theorem}
+  Suppose Assumption~\ref{Assumption:doubleiid} and condition \ref{eq:kNlimit} hold, and
+
+  \begin{equation}
+    \lambda_{1, \theta} > \lambda_{2, \theta} > \cdots > \lambda_{p, \theta} > \lambda_{p + 1, \theta}
+  \end{equation}
+
+  Then for each $1 \leq j \leq p$,
+
+  \begin{equation}
+    E[\|\hat{c}_{j, \theta}\hat{v}_j - v_{j, \theta}\|^2] \rightarrow 0 \hspace{} and \hspace{} E[|\hat{\lambda}_j - \lambda_{j, \theta}|^2] \rightarrow 0
+  \end{equation}
+
+\end{Theorem}
+
+\subsection{Asymptotic normality of the eigenfunctions}
+
+In most applications, the $L^2$ and in probability bounds implied by \ref{eq:limsup} are sufficient. These bounds are optimal, as the random functions $N^{1/2}(\hat{c}_j\hat{v}_j - v_j)$ and the random variables $N^{1/2}(\lambda_j - \hat{\lambda}_j)$ have non-degenerate limits. It can be shown that they are asymptotically normal.
+
+First, we introduce the random functions
+
+\begin{equation}
+  Z_N(t, s) = N^{1/2}(\hat{c}(t, s) - c(t, s))
+\end{equation}
+
+where $\hat{c}(t, s)$, $c(t, s)$ can be either centered with the (sample) mean function, or uncentered if the mean function is assumed zero. The following theorem established the week convergence of $Z_N(\cdot, \cdot)$ in the space $L^2([0, 1]\times{}[0, 1])$ assuming mean zero observations.
+
+\begin{Theorem}\label{Theorem:weekconvergence}
+  If Assumption~\ref{Assumption:iid} holds with $EX(t) = 0$ and $E\|X\|^4 < \infty$, then $Z_N(t, s)$ converges weakly in $L^2([0, 1]\times{}[0, 1])$ to a Gaussian process $\Gamma(t, s)$ with $E\Gamma(t, s) = 0$ and
+
+  \begin{equation}
+    E[\Gamma(t, s)\Gamma(t', s')] = E[X(t)X(s)X(t')X(s')] - c(t, s)c(t', s')
+  \end{equation}
+  
+\end{Theorem}
+
+We note that if the $X_n$ are strongly mixing random functions, then the functions $X_n(t)X_n(s)$ are also strongly mixing with the same rate. Hence, assuming some moment conditions, the weak convergence of the sequence $Z_N$ can also be established in the dependent case.
+
+Since $Z_N(\cdot, \cdot)$ converges weekly in the space $L^2([0, 1]\times{}[0, 1])$, the asymptotic normality of $\hat{\lambda}_j - \lambda_j$ and $\hat{c}_j\hat{v}_j$ is an immediate consequence of next theorem. First we state the required conditions.
+
+\begin{Assumption}\label{Assumption:bounded}
+  The random function $X \in L^2$ which has the same distribution as the $X_n$ satisfies the following conditions:
+
+  C1: For all $\kappa > 0$, \sup_{0\leq{}t\leq{}1} E|X(t)|^{\kappa} < \infty,
+
+  C2: there is $\gamma > 0$ such that for all $\kappa > 0$
+
+  \begin{equation}
+    \sup_{0\leq{}t,s\leq{}1}E[|t - s|^{-\gamma}|X(t) - X(s)|]^{\kappa} < \infty,
+  \end{equation}
+
+  C3: for each integer $r \geq 0$, the sequence $\left\{\lambda_{j}^{-1}E\langle{}X, v_j\rangle{}^{2r}\right\}$ is bounded.
+  
+\end{Assumption}
+
+\begin{Theorem}
+  If Assumption~\ref{Assumption:iid} and~\ref{Assumption:bounded} and condition \ref{eq:ordercondition} hold, then for $1 \leq j \leq p$,
+
+  \begin{equation}
+    N^{1/2}(\hat{\lambda}_j - \lambda_j) = \iint Z_N(t, s)v_j(t)v_j(s) \,dt\,ds + o_{P}(1)
+  \end{equation}
+
+  and
+
+  \begin{equation}
+    \sup_{0\leq{}t\leq{}1}|N^{1/2}(\hat{c}_j\hat{v}_j(t) - v_j(t)) - \hat{T}_j(t)| = o_{P}(1)
+  \end{equation}
+
+  where
+
+  \begin{equation}
+    \hat{T}_j(t) = \sum_{k \neq j} (\lambda_j - \lambda_k)^{-1}v_k(t)\iint Z_n(t, s)v_j(t)v_j(s) \,dt\,ds
+  \end{equation}
+  
+\end{Theorem}
+
+\subsection{Bibliographical notes}
+
+The introduction of Hilbert space follows:
+
+Bosq, D. (2000). Linear Processes in Function Spaces. Springer, New York.
+
+Good references on Hilbert spaces:
+
+Riesz, F. and Sz.-Nagy, B. (1990) Functional Analysis. Dover.
+
+Akhiezier, N. I. and Glazman, I. M. (1993). Theory of Linear Operators in Hilbert Space. Dover, New York.
+
+Debnath, L. and Mikusinski, P. (2005). Introduction to Hilbert Spaces with Applications. Elsevier.
+
+In-depth theory of operators in a Hilbert space:
+
+Gohberg, I., Golberg, S. and Kaashoek, M.A. (1990). Classes of Linear Operators. Operator Theory: Advances and Applications, volume 49. Birkha\"{u}ser
+
+Mercer's theorem, see
+
+Riesz, F. and Sz.-Nagy, B. (1990) Functional Analysis. Dover.
+
+Central limit theorem and the law of large number and the theorem of eigenvalues, see
+
+Bosq, D. (2000). Linear Processes in Function Spaces. Springer, New York.
+
+The theorem of eigenvalues is established in
+
+Dauxois, J., Pousse, A. and Romain, Y. (1982). Asymptotic theory for principal component analysis of a vector random function. Journal of Multivariate Analysis, 12, 136-154.
+
+Counterexample of this theory
+
+Johnstone, I. M. and Lu, A. Y. (2009). On consistency and sparcity for principal components analysis in high dimensions. Journal of the Americal Statistical Association, 104, 682-693.
+
+The asymptotic formula of eigenvalues have non-degenerate limits, see
+
+Mas, A. (2002). Weak convergence for the covariance operators of a Hilbertian linear process. Stochastic Processes and their Applications, 99, 117-135.
+
+Another version of the asymptotic theorem of eigenvalues
+
+Hall, P. and Hosseini-Nasab, M. (2006). On properties of functional principal components. Journal of the Royal Statistical Society (B), 68, 109-126.
+
+Hall, P. and Hosseini-Nasab, M. (2007). Theory for high-order bounds in functional principal components analysis. Technical Report. The University of Melbourne.
+
+Statistical model with a noise and a smooth component:
+
+Kernel-based:
+
+Boente, G. and Fraiman, R. (2000). Kernel-based functional principal components. Statistics and Probability Letters, 48, 335-345.
+
+local polynomial smoothing:
+
+Zhang, J-T. and Chen, J. (2007). Statistical inference for functional data. The Annals of Statistics, 35, 1052-1079.
+
+Define the population median $m$ and its sample counterpart without assuming the finite first moment, see
+
+Gervini, D. (2008). Robust functional estimation using the spatial median and spherical principal components. Biometrika, 95, 587-600.
+
+This paper also proposes a method of robust estimation of the eigenfunctions.
+
+Define the mode of the distribution a random function:
+
+Dalaigle, A. and Hall.P. (2010). Defining probability density function for a distribution of random functions. The Annals of Statistics, 38, 1171-1193.

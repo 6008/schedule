@@ -1,0 +1,172 @@
+\section{Functional Principal Components}
+
+One of the most fundamental concepts of FDA is the functional principal components (FPC's). FPC's allow us to reduce the dimension of infinitely dimensional functional data to a small finite dimension in an optimal way. FPC's can be introduced as coordinates maximizing variability or as an optimal orthonormal basis.
+
+\subsection{A maximization problem}
+
+Some preliminary results.
+
+\begin{Theorem}[Principal axis theorem]
+  Suppose $A$ is a symmetric $p\times{}p$ matrix. Then there is an orthonormal matrix $U = [u_1, \ldots, u_p]$ whose columns are the eigenvectors of $A$, i.e.
+
+  \begin{equation}
+    U^TU = I \hspace{} and \hspace{} Au_j = \lambda_ju_j.
+  \end{equation}
+
+  Moreover
+
+  \begin{equation}
+    U^TAU = \Lambda = diag[\lambda_1, \lambda_2, \ldots, \lambda_p].
+  \end{equation}
+
+\end{Theorem}
+
+\begin{Theorem}\label{Theorem:supremum}
+  Suppose $Psi$ is a symmetric, positive definite Hilbert-Schmidt operator with eigenfunctions $v_j$ and eigenvalues $\lambda_j$ satisfying \ref{eq:ordercondition}. Then,
+
+  \begin{equation}
+    \sup\{\langle{}\Psi(x), x\rangle{}: \| x \| = 1, \langle{}x, v_j\rangle{}, 1 \leq j \leq i - 1, i < p\} = \lambda_i
+  \end{equation}
+
+  and the supremum is reached if $x = v_i$. The maximizing function is unique up to a sign.
+
+\end{Theorem}
+
+\subsection{Optimal empirical orthonormal basis}
+
+Suppose we observe functions $x_1, X_2, \ldots, x_N$. In this section it is not necessary to view these functions as random, but we can think of them as the observed realizations of random functions in $L^2$. Fix an integer $p < N$. We think of $p$ as being much smaller than $N$, typically a single digit number. We want to find an orthonormal basis $u_1, U_2, \ldots, u_p$ such that
+
+\begin{equation}
+  \hat{S}^2 = \sum_{i = 1}^{N}\| x_i - \sum_{k = 1}^{p} \langle{} x_i, u_k \rangle{} u_k \|^2
+\end{equation}
+
+is minimum. Once such a basis is found, we can replace each curve $x_i$ by $\sum_{k=1}^{p}\langle{}x_i, u_k\rangle{}u_k$, to a good approximation. For the $p$ we have chosen, this approximation is uniformly optimal, in the sense of minimizing $\hat{S}^2$. This means that instead of working with infinitely dimensional curves $x_i$, we can work with $p$-dimensional vectors
+
+\begin{equation}
+  \textbf{x}_i = [\langle{}x_i, u_1\rangle{}, \langle{}x_i, u_2\rangle{}, \ldots, \langle{}x_i, u_p\rangle{}]^{T}
+\end{equation}
+
+This is a central idea of functional data analysis, as to perform any practical calculations we must reduce the dimension from infinity to a finite number. The functions $u_j$ are called collectively the optimal empirical orthonormal basis or natural orthonormal components which are computed directly from the functional data.
+
+The functions $u_1, u_2, \ldots, u_p$ minimizing $\hat{S}^2$ are equal up to a sign to the normalized eigenfunctions of the sample covariance operator. Since
+
+\begin{equation}
+  \hat{S}^2 = \sum_{i = 1}^{N}\| x_i \|^2 - \sum_{ i = 1 }^{N}\sum_{ k = 1}^{p}\langle{} x_i, u_k \rangle{}^2
+\end{equation}
+
+Maximize
+
+\begin{equation}
+  \sum_{k=1}^{p}\sum_{i=1}^{N}\langle{}x_i, u_k\rangle{}^2 = \sum_{k=1}^{p}\langle{}\hat{C}(u_k), u_k\rangle{} = \sum_{k=1}^{p}\sum_{j=1}^{\infty}\hat{\lambda}_j\langle{}u_k, \hat{v}_j\rangle{}^2
+\end{equation}
+
+By Theorem~\ref{Theorem:supremum}, the sum cannot exceed $\sum_{k=1}^{p}\hat{\lambda}_k$, and this maximum is attained if $u_1 = \hat{v}_1, u_2 = \hat{v}_2, \ldots, u_p = \hat{v}_p$.
+
+\subsection{Functional principal components}
+
+Suppose $X_1, X_2, \ldots, X_N$ are functional observations. The eigenfunctions of the sample covariance operator $\hat{C}$ are called the empirical functional principal components(EFPC's) of the data $X_1, X_2, \ldots, X_N$. If these observations have the same distribution as a square integrable $L^2$-valued random function $X$, we define the functional principal components (FPC's) as the eigenfunctions of the covariance operator $C$. We have seen that under regularity conditions the EFPC estimate the FPC's up to a sign.
+
+The EFPC's can be interpreted as an optimal orthonormal basis with respect to which we can expand the data. The inner product $\langle{}X_i, \hat{v}_j\rangle{} = \int{} X_i(t)\hat{v}_j(t) \,dt$ is called the $j$th score of $X_i$. It can be interpreted as the weight of the contribution of the FPC $\hat{v}_j$ to the curve $X_i$.
+
+Another interpretation of EFPC's follows from the first section. Observe taht under the assumption $EX_i = 0$, the statistic
+
+\begin{equation}
+  \frac{1}{N}\sum_{i = 1}^{N}\langle{}X_i, x\rangle{}^2 = \langle{}\hat{C}(x), x\rangle{}
+\end{equation}
+
+can be viewed as the sample variance of the data \" in the direction \" of the function $x$. If we are interested in finding the function $x$ which is \" most correlated \" with the variability of the data (away from the mean if the data are not centered), we must thus find $x$ which maximize $\langle{}\hat{C}(x), x\rangle{}$. Clearly, we must impose a restriction on the norm of $x$, so if we require that $\|x\| = 1$, we can see that $x = \hat{v}_1$, the first EFPC. Next, we want to find a second direction, orthogonal to $\hat{v}_1$, which is \"most correlated\" with the variability of the data. This direction is $\hat{v}_2$. Observe that since the $\hat{v}_j$, $i = 1, \ldots, N$, form a basis in $R^N$,
+
+\begin{equation}
+  \frac{1}{N}\sum_{i = 1}^{N}\|X_i\|^2 = \frac{1}{N}\sum_{i = 1}^{N}\sum_{j = 1}^{N}\langle{}X_i, \hat{v}_j\rangle{}^2 = \sum_{j = 1}^{N}\frac{i = 1}^{N}\langle{}X_i, \hat{v}_j\rangle{}^2 = \sum_{j = 1}^{N}\hat{\lambda}_j
+\end{equation}
+
+Thus, we may say that the variance in the direction $\hat{v}_j$ is $\hat{\lambda}_j$, or that $\hat{v}_j$ explains the fraction of the total sample variance equal to $\hat{\lambda}_j / (\sum_{k = 1}^{N}\hat{\lambda}_k)$. We also have the corresponding population analysis of variance:
+
+\begin{equation}
+  E\|X\|^2 = \sum_{j = 1}^{\infty}E[\langle{}X, v_j\rangle{}^2] = \sum_{j = 1}^{\infty}\langle{}C v_j, v_j\rangle{} = \sum_{j = 1}^{\infty}\lambda_j
+\end{equation}
+
+We now present an example that describes how functional data with specified FPC's can be generated. Set
+
+\begin{equation}
+  X_n(t) = \sum_{j = 1}^{p}a_{j}Z_{jn}e_{j}(t)
+\end{equation}
+
+where $a_j$ are real numbers, for every $n$, the $Z_{jn}$ are i.i.d. mean zero random variables with unit variance, and the $e_j$ are orthogonal functions with unit norm. To compute the covariance operator, we do not have to specify the dependence between the sequences $\{Z_{jn}, j \geq 1\}$. This is needed to claim the convergence of the EFPC's to the FPC's. Denote by $X$ a random function with the same distribution as each $X_n$, i.e. $X(t) = \sum_{j = 1}^{p}a_{j}Z_{j}e_{j}(t)$. Then the covariance operator of $X$ acting on $x$ is equal to
+
+\begin{equation}
+  C(x)(t) = E[(\int X(s)x(s)\,ds)X(t)] = \int E[X(t)X(s)]x(s) \,ds
+\end{equation}
+
+By the independence of the $Z_j$, the covariance function is equal to
+
+\begin{equation}
+  E[X(t)X(s)] = E[\sum_{j = 1}^{p}a_{j}Z_{j}e_{j}(t)\sum_{i = 1}^{p}a_{i}Z_{i}e_{i}(s)] = \sum_{j = 1}^{p}a_{j}^{2}e_{j}(t)e_{j}(s)
+\end{equation}
+
+Therefore,
+
+\begin{equation}
+  C(x)(t) = \sum_{j = 1}^{p}a_{j}^{2}(\int e_{j}(s)x(s) \,ds)e_{j}(t)
+\end{equation}
+
+It follows that the EPC's of the $X_n$ are the $e_j$, and the eigenvalues are $\lambda_j = a_{j}^{2}$.
+
+Methods of functional data analysis which use EFPC's assume that the observations are well approximated by an expansion with a small $p$ and relatively smooth functions $e_j$.
+
+In most applications, it is important to determine a value of $p$ such that the actual data can be replaced by the approximation $\sum_{i=1}^{p}\langle{}\hat{v}_j, X_n\rangle{}\hat{v}_j$. A popular method is the scree plot. This is a graphical method proposed in a different context. To apply it, one plots the successive eigenvalues $\hat{\lambda}_j$ against $j$. The method suggests to fund $j$ where the decrease of the eigenvalues appears to level off. This point is used as the selected value of $p$. To the right of it, one finds only the \"factorial scree\" (\"scree\" is a geological term referring to the debris which collects on the lower part of a rocky slope). The method that works best for the applications is the CPV method defined as follows. The cumulative percentage of total variance (CPV) explained by the first $p$ EFPC's is
+
+\begin{equation}
+  CPV(p) = \frac{\sum_{k=1}^{p}\hat{\lambda}_k}{\sum_{k=1}^{N}\hat{\lambda}_k}
+\end{equation}
+
+We choose $p$ for which $CPV(p)$ exceeds a desired level, $85\%$ is the recommended value. Other methods, known as pseudo-AIC and cross-validation have also been proposed. All these methods are described and implemented in the MATLAB package PACE developed at the University of California at Davis.
+
+\subsection{Computation of functional principal components}
+
+\subsection{Bibliographical notes}
+
+The first preliminary result: (Chapter 6 of )
+
+Leon, S. (2006). Linear Algebra with Applications. Pearson.
+
+The scree plot method in a different context
+
+Cattell, R.B. (1966). The scree test for the number of factors. Journal of Multivariate Behavioral Research, 1, 245-276.
+
+Interpretation and estimation of the functional principal components: (Chapter 8, 9, 10 of )
+
+Ramsay, J.O. and Silverman, B.W. (2005). Functional Data Analysis. Springer.
+
+A comprehensive Modern treatment of principal component analysis:
+
+Jolliffe, I.T. (2002). Principal Component Analysis. Springer.
+
+Who also gives a brief account of the history of the subject. We note that the mathematical ideas behind the PCA are related to those of the singular value decomposition of matrices, which was obtained independently by Beltrami and Jordan in 1870's.
+
+The statistical idea of the PCA form two different angles:
+
+Pearson, K. (1901). On lines and planes of closest fit to systems of points in space. Philosophical Magazine, 2, 559-572
+
+Hotelling, H. (1933). Analysis of a complex of statistical variables into principal components. Journal of Educational Psychology, 24, 498-520.
+
+Illustrative examples of PCA applied to yield curves: (Chapter 17)
+
+Ruppert, D. (2011). Statistics and Data Analysis for Financial Engineering. Springer.
+
+Sample functional principal components in the \"small $n$ large $p$\" setting:
+
+Jung, S. and Marron, J.S. (2009). PCA consistency in high dimension and low sample size. The Annals of Statistics, 37, 4104-4130.
+
+If the data lack smoothness, different approach are required, possible solutions:
+
+Johnstone, I.M. and Lu, A.Y. (2009). On consistency and sparcity for principal components analysis in high dimensions. Journal of the Americal Statistical Association, 104, 682-693.
+
+The approaches described here are suitable for data which can be viewed as curves observed at fine time grids with a measurement error which is negligible relative to the size of the data or the purpose of analysis. This approach is not suitable for data that are available only at sparse time points, possibly with a large measurement error. A group of researchers at UC Davis developed a new approach to deal with such data:
+
+M\"{u}ller, H.-G. (2009). Functional modeling of longitudinal data. In Longitudinal Data Analysis (eds G. Fitzmaurice, M.Davidian, G.Verbeke and G.Molenberghs), pp. 223-252. Wikey, New York.
+
+In many applications, linear decompositions with respect to fixed bases are useful, or even nonlinear decompositions:
+
+Izem, R. and Marron, J.S. (2007). Functional data analysis of nonlinear modes of variation. Electronic Journal of Statistics, 1, 641-676.
+
