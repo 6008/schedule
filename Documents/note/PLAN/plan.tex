@@ -1,0 +1,77 @@
+\documentclass[12pt]{extarticle}
+\usepackage[top=0.5in, bottom=0.8in, left=0.5in, right=0.5in]{geometry}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{bm}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+\usepackage[pdftex]{hyperref}
+\hypersetup{colorlinks=false, linkcolor=blue, pdffitwindow=true, pdftitle={Plan on Pollen Tube Project}}
+
+\title{Plan on Pollen Tube Project}
+\author{Wei Cui}
+\begin{document}
+\maketitle
+
+This is some ideas on the future pollen tube project.
+
+\section{The models}
+
+The previous model is a constraint ODE. In the future, time and other factors will be added into this model. 
+
+\subsection{Partial differential equation}
+
+A normal extention of the original model with time is a constraint PDE.
+
+\begin{equation}
+  \frac{\partial R}{\partial t} = k_{pf}k_{E}R^{\alpha}(R_{total} - \int R \,dx)(1 - \frac{R}{R_{max}}) - k_{nf}k_{E}R + D\frac{\partial^{2} R}{\partial s^{2}}
+\end{equation}
+
+There are two problems here. The first one is how to determine the constraint conditions. The second one is the original condition.
+
+In the future, not only the ROP1, but also Calcium will affect this process. So the model will be improved again. The model will become a group of PDEs and ODEs.
+
+\subsection{Stochastic differential equation}
+
+There is a diffusion process in the ODE(PDE) model so we can consider the stochastic differetial equation to replace ODE(PDE).
+
+\subsection{Non-parametric model}
+
+Except the ODE, PDE and SDE models, we can still consider some analysis from data directly for the solution of the equation is difficult to get.
+
+\section{Some key topics of the models}
+
+After determine the model, there are some specific topics should be discussed. The most important topics among them are identifiability of PDE, asymptotic of NLME model and the optimization problem.
+
+\subsection{Identifiability}
+
+The first important topic is identifiability of PDE. Though the theory of identifiability of ODE is almost complete, the theory of PDE is still developing. (A review of identifiability of ODE should be finished). For the latest PDE model, the identifiability still can be got by direct test method. With constraint conditions, this will become much easier. But if the model developes to a group of PDEs or SDEs, then the identifiability may become complicate. Maybe we can move the theory of ODE directly to PDE with some efforts. What is more, identifiability itself is also a very interest problem to investigate.
+
+\subsection{Asymptotic}
+
+The second important topic is asymptotic of NLME model. There is some asymptotic theory about constraint NLME model with measurement error. There is also some asymptotic theory about NLME model with measurement error and computational error. But our problem is a constraint NLME model (comes from PDE) with measurement error and computational error (because we may solve the PDE by numerical method). This is a very interesting topic. (a review of asymptotic should be finished)
+
+\subsection{Optimization}
+
+Our essential problem actually is an optimization problem. So research on optimization is necessary. This is really a huge problem. (a review of optimization theory should be finished) Some special optimization method according to our model may be proposed. 
+
+\section{The methods}
+
+The choice of method depends on the model used. If the PDE (SDE) model used, we will discuss the problem in the framework of NLME. If the non-parametric model used, there are many different methods can be applied. One of them is functional data analysis.
+
+\subsection{In the framework of NLME model}
+
+Suppose we have determined the PDE (SDE) model, then the whole task can be completed by the following steps.
+
+1. Determine the identifiability of PDE (SDE). \\
+2. Solve the PDE (SDE). The solution can be analytical or numerical. \\
+3. The asymptotic discussion of NLME model. \\
+4. Use optimazation theory to determine the parameters. \\
+
+\subsection{The attempt of functional data analysis}
+
+To be finished. (A review of FDA and some elementary attempts should be finished)
+
+\end{document}
